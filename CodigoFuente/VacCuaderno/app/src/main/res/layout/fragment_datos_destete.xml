@@ -17,7 +17,7 @@
             />
 
         <GridView
-            android:id="@+id/grid_animales"
+            android:id="@+id/grid_datos_destete"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

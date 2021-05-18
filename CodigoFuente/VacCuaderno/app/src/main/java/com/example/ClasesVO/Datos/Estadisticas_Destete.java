@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 
 import com.example.ClasesVO.Animales.Ternero;
+import com.example.MainActivity;
 
 /**
  * @author Elia Baladrón Peral
@@ -22,8 +23,7 @@ public class Estadisticas_Destete {
 	}
 	
 	void calcular() {
-	    //TODO: Obtener terneros
-		ArrayList<Ternero> terneros = new ArrayList<Ternero>();
+		ArrayList<Ternero> terneros = MainActivity.obtenerTerneros();
 		for(Ternero t: terneros) {
 			if(t.getFechaDestete() != null)
 				comprobarDiferencia(t);
@@ -45,5 +45,24 @@ public class Estadisticas_Destete {
 			dias += d.getDiasDiferencia();
 		}
 		media = dias/datos.size();
+	}
+
+	public ArrayList<Destete> getDatos() {
+		return datos;
+	}
+
+	public void setDatos(ArrayList<Destete> datos) {
+		this.datos = datos;
+	}
+
+	public int getMedia() {
+		return media;
+	}
+	public String getMediaString() {
+		return Integer.toString(media);
+	}
+
+	public void setMedia(int media) {
+		this.media = media;
 	}
 }

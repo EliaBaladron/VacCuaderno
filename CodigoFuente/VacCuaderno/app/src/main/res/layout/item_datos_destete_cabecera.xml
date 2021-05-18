@@ -19,7 +19,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/destete_crotal"
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:gravity="center"

@@ -469,6 +469,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
+    public static ArrayList<Ternero> obtenerTerneros(){
+        ArrayList<Ternero> terneros = bdAnimalesTerneros.getDatosObjetos();
+
+        for(Ternero ternero: terneros){
+            ArrayList<Animal> t = bdAnimales.getDatosObjeto(ternero.getCrotal());
+            ternero.setAnimal((Animal) t.get(0));
+        }
+        return terneros;
+    }
+
     public static void anadir(Animal animal){
         bdAnimales.insertarDatos(animal);
     }

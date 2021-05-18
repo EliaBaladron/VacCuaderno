@@ -37,12 +37,18 @@ public class Destete {
     public Date getFechaNacimiento() {
         return fechaNacimiento;
     }
+    public String getFechaNacimientoString() {
+        return fechaNacimiento.toString();
+    }
     public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
     public Date getFechaDestete() {
         return fechaDestete;
+    }
+    public String getFechaDesteteStrng() {
+        return fechaDestete.toString();
     }
     public void setFechaDestete(Date fechaDestete) {
         this.fechaDestete = fechaDestete;
