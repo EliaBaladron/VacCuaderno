@@ -64,7 +64,8 @@ public class Activity_Animal_Toro extends AppCompatActivity {
 
     //Metodos de los botones
     void eliminar(){
-        Fragment_Animales.eliminar(this.animal);
+        //Fragment_Animales.eliminar(this.animal);
+        MainActivity.eliminar(this.animal);
         volver();
     }
     void volver(){
@@ -192,10 +193,16 @@ public class Activity_Animal_Toro extends AppCompatActivity {
         fab_cancelar.setVisibility(View.INVISIBLE);
     }
 
-    void actualizar(){
+    /*void actualizar(){
         Fragment_Animales.actualizar(this.animal);
     }
     void anadir(){
         Fragment_Animales.anadir(this.animal);
+    }*/
+    void actualizar(){
+        MainActivity.actualizar(this.animal);
+    }
+    void anadir(){
+        MainActivity.anadir(this.animal);
     }
 }

@@ -103,6 +103,12 @@
             android:theme="@style/Theme.Prueba03.NoActionBar">
         </activity>
 
+        <!-- Exportar -->
+        <activity
+            android:name="com.example.Activity.Datos.Activity_Exportar"
+            android:theme="@style/Theme.Prueba03.NoActionBar">
+        </activity>
+
     </application>
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />

@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,14 +19,14 @@ import com.example.MainActivity;
 import com.example.prueba03.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import org.apache.poi.util.SystemOutLogger;
+
 import java.util.ArrayList;
 
 /**
  * @author Elia Baladrón Peral
  */
 public class Fragment_Animales extends Fragment {
-
-    //public static String BD_Animales = "BD_Animales";
 
     GridView gridView;
     FloatingActionButton fab_add;
@@ -34,43 +35,18 @@ public class Fragment_Animales extends Fragment {
 
     public static ArrayList<Animal> animales;
 
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
     public Fragment_Animales(){}
     public Fragment_Animales(MainActivity main) {
         this.main = main;
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment First.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Fragment_Animales newInstance(String param1, String param2) {
-        Fragment_Animales fragment = new Fragment_Animales();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    public static Fragment_Animales newInstance() {
+        return new Fragment_Animales();
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -113,7 +89,7 @@ public class Fragment_Animales extends Fragment {
         });
     }
 
-    public static void actualizar(Animal animal){
+    /*public static void actualizar(Animal animal){
         main.bdAnimales.actualizarBD(animal);
     }
     public static void eliminar(Animal animal){
@@ -121,5 +97,5 @@ public class Fragment_Animales extends Fragment {
     }
     public static void anadir(Animal animal){
         main.bdAnimales.insertarDatos(animal);
-    }
+    }*/
 }

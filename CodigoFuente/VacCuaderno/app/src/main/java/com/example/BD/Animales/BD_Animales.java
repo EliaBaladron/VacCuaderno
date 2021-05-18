@@ -34,7 +34,7 @@ public class BD_Animales extends AppCompatActivity {
 
     /**
      * Método invocado en la creación del gestor de la tabla
-     * @param savedInstanceState	
+     * @param savedInstanceState	s
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -167,9 +167,9 @@ public class BD_Animales extends AppCompatActivity {
         return items;
     }
     /**
-     * 
-     * @param crotal
-     * @return
+     * Obtiene los datos de la tabla con el crotal pasado
+     * @param crotal    Crotal que deben tener los objetos obtenidos
+     * @return          Listado de Animal cuyo crotal es igual al pasado
      */
     public ArrayList<Animal> getDatosObjeto(String crotal){
         //Obtiene el repositorio de la BD en modo lectura

@@ -8,7 +8,9 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.ClasesVO.Animales.Animal;
 import com.example.ClasesVO.Animales.Vaca;
+import com.example.FeedReader.FeedReaderContract_Animales;
 import com.example.FeedReader.FeedReaderContract_Animales_Vacas;
 import com.example.FeedReader.FeedReaderDbHelper_VacApp;
 import com.example.prueba03.R;
@@ -155,7 +157,41 @@ public class BD_Animales_Vacas extends AppCompatActivity {
                 sortOrder               // The sort order
         );
 
-        ArrayList<Vaca> items = getObjetos(cursor);
+        ArrayList<Vaca> items = new ArrayList<>();
+        items.addAll(getObjetos(cursor));
+
+        cursor.close();
+        db.close();
+
+        return items;
+    }
+    /**
+     * Obtiene los datos de la tabla con el crotal pasado
+     * @param crotal    Crotal que deben tener los objetos obtenidos
+     * @return          Listado de Vaca cuyo crotal es igual al pasado
+     */
+    public ArrayList<Vaca> getDatosObjeto(String crotal){
+        //Obtiene el repositorio de la BD en modo lectura
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+
+        // How you want the results sorted in the resulting Cursor
+        String sortOrder = FeedReaderContract_Animales_Vacas.FeedEntry.CROTAL + " DESC";
+
+        String selection = FeedReaderContract_Animales_Vacas.FeedEntry.CROTAL + " = ?";
+        String[] selectionArgs = { crotal };
+
+        Cursor cursor = db.query(
+                FeedReaderContract_Animales_Vacas.FeedEntry.TABLE_NAME,   // The table to query
+                null,             // The array of columns to return (pass null to get all)
+                selection,              // The columns for the WHERE clause
+                selectionArgs,          // The values for the WHERE clause
+                null,                   // don't group the rows
+                null,                   // don't filter by row groups
+                sortOrder               // The sort order
+        );
+
+        ArrayList<Vaca> items = new ArrayList<>();
+        items.addAll(getObjetos(cursor));
 
         cursor.close();
         db.close();

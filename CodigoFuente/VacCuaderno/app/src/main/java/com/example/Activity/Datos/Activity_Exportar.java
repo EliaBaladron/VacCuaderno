@@ -3,6 +3,7 @@ package com.example.Activity.Datos;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +22,8 @@ public class Activity_Exportar extends AppCompatActivity {
         super.onCreate(savedInstanceState, persistentState);
 
         exportar();
+
+        onBackPressed();
     }
 
     void exportar(){
@@ -33,6 +36,7 @@ public class Activity_Exportar extends AppCompatActivity {
             @Override
             public void onCompleted(String filePath) {
                 Log.println(Log.INFO, "Exportar", "Datos animales exportados");
+                Toast.makeText(getApplicationContext(), "Datos exportados", Toast.LENGTH_SHORT).show();
             }
             @Override
             public void onError(Exception e) {

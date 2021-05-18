@@ -32,48 +32,22 @@ public class Fragment_Veterinario_Controles extends Fragment {
 
     static MainActivity main;
 
-    public static int seleccionado;
     public static ArrayList<Controles> controles;
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    //private static final String ARG_PARAM1 = "param1";
-    //private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    //private String mParam1;
-    //private String mParam2;
 
     public Fragment_Veterinario_Controles() {
         // Required empty public constructor
     }
     public Fragment_Veterinario_Controles(MainActivity main) {
-        this.main = main;
+        Fragment_Veterinario_Controles.main = main;
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @return A new instance of fragment First.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Fragment_Veterinario_Controles newInstance(/*String param1, String param2*/) {
-        Fragment_Veterinario_Controles fragment = new Fragment_Veterinario_Controles();
-        //Bundle args = new Bundle();
-        //args.putString(ARG_PARAM1, param1);
-        //args.putString(ARG_PARAM2, param2);
-        //fragment.setArguments(args);
-        return fragment;
+    public static Fragment_Veterinario_Controles newInstance() {
+        return new Fragment_Veterinario_Controles();
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /*if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }*/
     }
 
     @Override

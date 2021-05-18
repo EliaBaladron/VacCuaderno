@@ -25,6 +25,9 @@ import com.example.BD.Crotales.BD_Crotales_SinPoner;
 import com.example.BD.Rebaño.BD_Rebaños;
 import com.example.BD.Veterinario.BD_Veterinario_Controles;
 import com.example.BD.Veterinario.BD_Veterinario_Visitas;
+import com.example.ClasesVO.Animales.Animal;
+import com.example.ClasesVO.Animales.Ternero;
+import com.example.ClasesVO.Animales.Vaca;
 import com.example.FeedReader.FeedReaderDbHelper_VacApp;
 import com.example.PagerAdapter.*;
 
@@ -32,6 +35,8 @@ import com.example.prueba03.R;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
+
+import java.util.ArrayList;
 
 /**
  * @author Elia Baladrón Peral
@@ -43,9 +48,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     FeedReaderDbHelper_VacApp dbHelper_vacApp;
 
-    public BD_Animales bdAnimales;
-    public BD_Animales_Terneros bdAnimalesTerneros;
-    public BD_Animales_Vacas bdAnimalesVacas;
+    public static BD_Animales bdAnimales;
+    public static BD_Animales_Terneros bdAnimalesTerneros;
+    public static BD_Animales_Vacas bdAnimalesVacas;
     public BD_Crotales_Faltan bdCrotalesFaltan;
     public BD_Crotales_Pedidos bdCrotalesPedidos;
     public BD_Crotales_Recibidos bdCrotalesRecibidos;
@@ -462,4 +467,58 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         return false;
     }
+
+
+    public static void anadir(Animal animal){
+        bdAnimales.insertarDatos(animal);
+    }
+    public static void anadir(Ternero ternero){
+        bdAnimalesTerneros.insertarDatos(ternero);
+    }
+    public static void anadir(Vaca vaca){
+        bdAnimalesVacas.insertarDatos(vaca);
+    }
+
+    public static void actualizar(Animal animal){
+        bdAnimales.actualizarBD(animal);
+    }
+    public static void actualizar(Ternero ternero){
+        bdAnimalesTerneros.actualizarBD(ternero);
+    }
+    public static void actualizar(Vaca vaca){
+        bdAnimalesVacas.actualizarBD(vaca);
+    }
+
+    public static void eliminar(Animal animal){
+        bdAnimales.borrarDatos(animal);
+    }
+    public static void eliminar(Ternero ternero){
+        bdAnimalesTerneros.borrarDatos(ternero);
+    }
+    public static void eliminar(Vaca vaca){
+        bdAnimalesVacas.borrarDatos(vaca);
+    }
+
+
+    /**
+     * Si existe un ternero con el crotal pasado se elimina de la BD
+     * @param crotal    Crotal a comprobar y borrar si existe
+     */
+    public static void eliminarTernero(String crotal){
+        ArrayList<Ternero> terneros = bdAnimalesTerneros.getDatosObjeto(crotal);
+        if(terneros.size() > 0)
+            bdAnimalesTerneros.borrarDatos(terneros.get(0));
+    }
+    /**
+     * Si existe una vaca con el crotal pasado se elimina de la BD
+     * @param crotal    Crotal a comprobar y borrar si existe
+     */
+    public static void eliminarVaca(String crotal){
+        ArrayList<Vaca> vacas = bdAnimalesVacas.getDatosObjeto(crotal);
+
+        if(vacas.size() > 0)
+            bdAnimalesVacas.borrarDatos(vacas.get(0));
+    }
+
+
 }

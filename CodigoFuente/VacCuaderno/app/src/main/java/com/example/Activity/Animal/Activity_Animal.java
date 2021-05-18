@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 import com.example.ClasesVO.Animales.Animal;
 import com.example.Fragment.Animales.Fragment_Animales;
+import com.example.Fragment.Animales.Fragment_Animales_Terneros;
+import com.example.Fragment.Animales.Fragment_Animales_Vacas;
 import com.example.MainActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -64,7 +66,13 @@ public class Activity_Animal extends AppCompatActivity {
     }
     //Metodos de los botones
     void eliminar(){
-        Fragment_Animales.eliminar(this.animal);
+        //Fragment_Animales.eliminar(this.animal);
+        //Fragment_Animales_Vacas.eliminar(this.animal.getCrotal());
+        //Fragment_Animales_Terneros.eliminar(this.animal.getCrotal());
+        MainActivity.eliminar(this.animal);
+        MainActivity.eliminarVaca(this.animal.getCrotal());
+        MainActivity.eliminarTernero(this.animal.getCrotal());
+
         volver();
     }
     void volver(){
@@ -197,11 +205,18 @@ public class Activity_Animal extends AppCompatActivity {
         fab_cancelar.setVisibility(View.INVISIBLE);
     }
 
+    /*
     void actualizar(){
         Fragment_Animales.actualizar(this.animal);
     }
     void anadir(){
         Fragment_Animales.anadir(this.animal);
+    }*/
+    void actualizar(){
+        MainActivity.actualizar(this.animal);
+    }
+    void anadir(){
+        MainActivity.anadir(this.animal);
     }
 
 

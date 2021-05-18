@@ -69,8 +69,10 @@ public class Activity_Animal_Vaca extends AppCompatActivity {
 
     //Metodos de los botones
     void eliminar(){
-        Fragment_Animales.eliminar(this.vaca.getAnimal());
-        Fragment_Animales_Vacas.eliminar(this.vaca);
+        //Fragment_Animales.eliminar(this.vaca.getAnimal());
+        //Fragment_Animales_Vacas.eliminar(this.vaca);
+        MainActivity.eliminar(this.vaca.getAnimal());
+        MainActivity.eliminar(this.vaca);
         volver();
     }
     void volver(){
@@ -213,12 +215,20 @@ public class Activity_Animal_Vaca extends AppCompatActivity {
         fab_cancelar.setVisibility(View.INVISIBLE);
     }
 
-    void actualizar(){
+    /*void actualizar(){
         Fragment_Animales.actualizar(this.vaca.getAnimal());
         Fragment_Animales_Vacas.actualizar(this.vaca);
     }
     void anadir(){
         Fragment_Animales.anadir(this.vaca.getAnimal());
         Fragment_Animales_Vacas.anadir(this.vaca);
+    }*/
+    void actualizar(){
+        MainActivity.actualizar(this.vaca.getAnimal());
+        MainActivity.actualizar(this.vaca);
+    }
+    void anadir(){
+        MainActivity.anadir(this.vaca.getAnimal());
+        MainActivity.anadir(this.vaca);
     }
 }

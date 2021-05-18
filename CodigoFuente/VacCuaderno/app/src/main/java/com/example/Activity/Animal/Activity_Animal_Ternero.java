@@ -67,8 +67,10 @@ public class Activity_Animal_Ternero extends AppCompatActivity {
     }
     //Metodos de los botones
     void eliminar(){
-        Fragment_Animales.eliminar(this.ternero.getAnimal());
-        Fragment_Animales_Terneros.eliminar(this.ternero);
+        //Fragment_Animales.eliminar(this.ternero.getAnimal());
+        //Fragment_Animales_Terneros.eliminar(this.ternero);
+        MainActivity.eliminar(this.ternero.getAnimal());
+        MainActivity.eliminar(this.ternero);
         volver();
     }
     void volver(){
@@ -218,11 +220,15 @@ public class Activity_Animal_Ternero extends AppCompatActivity {
     }
 
     void actualizar(){
-        Fragment_Animales.actualizar(this.ternero.getAnimal());
-        Fragment_Animales_Terneros.actualizar(this.ternero);
+        //Fragment_Animales.actualizar(this.ternero.getAnimal());
+        //Fragment_Animales_Terneros.actualizar(this.ternero);
+        MainActivity.actualizar(this.ternero.getAnimal());
+        MainActivity.actualizar(this.ternero);
     }
     void anadir(){
-        Fragment_Animales.anadir(this.ternero.getAnimal());
-        Fragment_Animales_Terneros.anadir(this.ternero);
+        //Fragment_Animales.anadir(this.ternero.getAnimal());
+        //Fragment_Animales_Terneros.anadir(this.ternero);
+        MainActivity.anadir(this.ternero.getAnimal());
+        MainActivity.anadir(this.ternero);
     }
 }
