@@ -15,7 +15,7 @@ import java.util.ArrayList;
 /**
  * @author Elia Baladrón Peral
  */
-public class GridAdapter_Crotal_Recibidos extends BaseAdapter {
+public class GridAdapter_Crotal extends BaseAdapter {
     private Context context;
     private ArrayList<Crotal> arrayList;
 
@@ -24,7 +24,7 @@ public class GridAdapter_Crotal_Recibidos extends BaseAdapter {
      * @param cont	Contexto
      * @param al	Listado de objetos
      */
-    public GridAdapter_Crotal_Recibidos(Context cont, ArrayList<Crotal> al){
+    public GridAdapter_Crotal(Context cont, ArrayList<Crotal> al){
         this.context = cont;
         this.arrayList = al;
     }

@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.Activity.Crotal.Activity_Crotal_Faltan;
 import com.example.ClasesVO.Otros.Crotal;
-import com.example.GridAdapter.Crotal.GridAdapter_Crotal_Faltan;
+import com.example.GridAdapter.Crotal.GridAdapter_Crotal;
 import com.example.MainActivity;
 import com.example.prueba03.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -70,7 +70,8 @@ public class Fragment_Crotales_Faltan extends Fragment {
     void iniciarVista(){
         crotales = main.bdCrotalesFaltan.getDatosObjetos();
 
-        GridAdapter_Crotal_Faltan adapter = new GridAdapter_Crotal_Faltan(this.getContext(), crotales);
+        //GridAdapter_Crotal_Faltan adapter = new GridAdapter_Crotal_Faltan(this.getContext(), crotales);
+        GridAdapter_Crotal adapter = new GridAdapter_Crotal(this.getContext(), crotales);
         gridView.setAdapter(adapter);
 
         gridView.setOnItemClickListener((parent, view, position, id) -> {
