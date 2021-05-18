@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">VacCuaderno</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+
+
+    <string name="animales">Animales</string>
+    <string name="vacas">Vacas</string>
+    <string name="terneros">Terneros</string>
+    <string name="toros">Toros</string>
+
+    <string name="compraventa">Compraventa</string>
+    <string name="compras">Compras</string>
+    <string name="ventas">Ventas</string>
+    <string name="ventas_todas">Todas</string>
+    <string name="ventas_realizadas">Realizadas</string>
+    <string name="ventas_planificadas">Planificadas</string>
+
+    <string name="crotales">Crotales</string>
+    <string name="crotales_faltan">Faltan</string>
+    <string name="crotales_pedidos">Pedidos</string>
+    <string name="crotales_recibidos">Recibidos</string>
+    <string name="crotales_sinPoner">Sin poner</string>
+
+    <string name="veterinario">Veterinario</string>
+    <string name="veterinario_controles">Controles</string>
+    <string name="veterinario_visitas">Visitas</string>
+
+    <string name="datos">Datos</string>
+    <string name="datos_exportar">Exportar</string>
+    <string name="datos_importar">Importar</string>
+    <string name="datos_estadisticas_destete">Destete</string>
+    <string name="datos_estadisticas_dinero">Dinero</string>
+
+
+    <string name="fechaNac">Nacimiento</string>
+    <string name="sexo">Sexo</string>
+    <string name="raza">Raza</string>
+    <string name="codMadre">Cod Madre</string>
+    <string name="rebano">Rebaño</string>
+    <string name="fecDestete">Destete</string>
+    <string name="proposito">Proposito</string>
+    <string name="embarazo">Embarazo</string>
+
+
+    <string name="crotal">Crotal</string>
+    <string name="unidades">Unidades</string>
+
+    <string name="fecha">Fecha</string>
+    <string name="descripcion">Descripción</string>
+
+    <string name="precio">Precio</string>
+
+    <string name="nobre">Nombre</string>
+    <string name="id">ID</string>
+
+
+
+
+    <string name="title_activity__animal">Activity_Animal</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+
+</resources>

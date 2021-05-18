@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <EditText
+        android:enabled="false"
+        android:id="@+id/layout_animal_nombre"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/verdeClaro"
+        android:gravity="center"
+        android:text="nombre"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:enabled="false"
+        android:id="@+id/layout_animal_crotal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/verde"
+        android:gravity="center"
+        android:text="ES123412341234"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_animal_nombre" />
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:foregroundGravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_animal_crotal">
+
+        <TextView
+            android:layout_width="175dp"
+            android:layout_height="50dp"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:gravity="center"
+            android:text="@string/fechaNac"
+            android:textColor="@color/verdeOscuro"
+            android:textSize="30sp" />
+
+        <EditText
+            android:enabled="false"
+            android:id="@+id/layout_animal_fechaNac"
+            android:layout_width="225dp"
+            android:layout_height="50dp"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:gravity="center"
+            android:text="fechaNac"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="175dp"
+            android:layout_height="50dp"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:gravity="center"
+            android:text="@string/sexo"
+            android:textColor="@color/verdeOscuro"
+            android:textSize="30sp" />
+
+        <EditText
+            android:enabled="false"
+            android:id="@+id/layout_animal_sexo"
+            android:layout_width="225dp"
+            android:layout_height="50dp"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:gravity="center"
+            android:text="sexo"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="175dp"
+            android:layout_height="50dp"
+            android:layout_row="4"
+            android:layout_column="0"
+            android:gravity="center"
+            android:text="@string/raza"
+            android:textColor="@color/verdeOscuro"
+            android:textSize="30sp" />
+
+        <EditText
+            android:enabled="false"
+            android:id="@+id/layout_animal_raza"
+            android:layout_width="225dp"
+            android:layout_height="50dp"
+            android:layout_row="4"
+            android:layout_column="1"
+            android:gravity="center"
+            android:text="raza"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="175dp"
+            android:layout_height="50dp"
+            android:layout_row="5"
+            android:layout_column="0"
+            android:gravity="center"
+            android:text="@string/codMadre"
+            android:textColor="@color/verdeOscuro"
+            android:textSize="30sp" />
+
+        <EditText
+            android:enabled="false"
+            android:id="@+id/layout_animal_codMadre"
+            android:layout_width="225dp"
+            android:layout_height="50dp"
+            android:layout_row="5"
+            android:layout_column="1"
+            android:gravity="center"
+            android:text="ES123412341234"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="175dp"
+            android:layout_height="50dp"
+            android:layout_row="6"
+            android:layout_column="0"
+            android:gravity="center"
+            android:text="@string/rebano"
+            android:textColor="@color/verdeOscuro"
+            android:textSize="30sp" />
+
+        <EditText
+            android:enabled="false"
+            android:id="@+id/layout_animal_reb"
+            android:layout_width="225dp"
+            android:layout_height="50dp"
+            android:layout_row="6"
+            android:layout_column="1"
+            android:gravity="center"
+            android:text="rebaño"
+            android:textSize="25sp" />
+
+    </GridLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_animales"
+        android:title="@string/animales" />
+    <item
+        android:id="@+id/menu_crotales"
+        android:title="@string/crotales"/>
+    <item
+        android:id="@+id/menu_rebano"
+        android:title="@string/rebano"/>
+    <item
+        android:id="@+id/menu_veterinario"
+        android:title="@string/veterinario" />
+    <item
+        android:id="@+id/menu_datos"
+        android:title="@string/datos" />
+    <item
+        android:id="@+id/menu_compraventa"
+        android:title="@string/compraventa">
+        <menu>
+            <item
+                android:id="@+id/menu_compras"
+                android:title="@string/compras"
+                />
+            <item
+                android:id="@+id/menu_ventas"
+                android:title="@string/ventas" />
+        </menu>
+    </item>
+</menu>

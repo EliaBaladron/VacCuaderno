@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/animal_nombre"
+        android:layout_width="275dp"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:text="Nombre"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/animal_crotal"
+        android:layout_width="275dp"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:text="ES 1234 1234 1234"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/animal_nombre" />
+
+    <TextView
+        android:id="@+id/animal_sexo"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:text="H"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/animal_nombre"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/animal_idReb"
+        android:layout_width="75dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:text="Id rebaño"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/animal_nombre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
