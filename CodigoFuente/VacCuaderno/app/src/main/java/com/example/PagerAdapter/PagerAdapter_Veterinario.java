@@ -10,6 +10,9 @@ import com.example.Fragment.Veterinario.Fragment_Veterinario_Controles;
 import com.example.Fragment.Veterinario.Fragment_Veterinario_Visitas;
 import com.example.MainActivity;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 public class PagerAdapter_Veterinario extends FragmentStatePagerAdapter {
 
     private int tabsNUmber;

@@ -15,16 +15,27 @@ import com.example.FeedReader.FeedReaderContract_Animales;
 
 import java.util.ArrayList;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 public class BD_Animales extends AppCompatActivity {
 
     FeedReaderDbHelper_VacApp dbHelper;
 
+    /**
+     * Constructor que obtiene la base de datos
+     * @param dbHelperVacApp	Base de datos
+     */
     public BD_Animales(FeedReaderDbHelper_VacApp dbHelperVacApp){
         this.dbHelper = dbHelperVacApp;
 
         //insertarDatos();
     }
 
+    /**
+     * Método invocado en la creación del gestor de la tabla
+     * @param savedInstanceState	
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,13 +45,18 @@ public class BD_Animales extends AppCompatActivity {
         //dbHelper = new FeedReaderDbHelper_VacApp(getApplicationContext());
     }
 
+    /**
+     * Método invocado en la destrucción del gestor de la tabla
+     */
     @Override
     protected void onDestroy() {
         dbHelper.close();
         super.onDestroy();
     }
 
-    //Método que inserta datos de prueba
+    /**
+     * Método que inserta datos de prueba
+     */
     public void insertarDatos(){
         //Vacas
         insertarDatos(new Animal("Nombre1", "ES 1234 1234 1231", "2010-04-11", "H", "Raza1", "", "1"));
@@ -57,6 +73,11 @@ public class BD_Animales extends AppCompatActivity {
     }
 
 
+    /**
+     * Método que inserta un nuevo objeto
+     * @param animal	Objeto a guardar en la BD
+     * @return			Objeto creado, con el ID automático añadido
+     */
     public Animal insertarDatos(Animal animal){
         // Gets the data repository in write mode
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -89,6 +110,10 @@ public class BD_Animales extends AppCompatActivity {
 
         return animal;
     }
+    /**
+     * Obtiene los datos de los crotales de todos los animales de la tabla
+     * @return	Listado de los crotales
+     */
     public ArrayList<String> getDatosCrotales(){
         //Obtiene el repositorio de la BD en modo lectura
         SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -113,6 +138,10 @@ public class BD_Animales extends AppCompatActivity {
 
         return items;
     }
+    /**
+     * Obtiene todos los datos de la tabla y los guarda en objetos de la clase Animal
+     * @return	Listado de Animal
+     */
     public ArrayList<Animal> getDatosObjetos(){
         //Obtiene el repositorio de la BD en modo lectura
         SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -137,6 +166,11 @@ public class BD_Animales extends AppCompatActivity {
 
         return items;
     }
+    /**
+     * 
+     * @param crotal
+     * @return
+     */
     public ArrayList<Animal> getDatosObjeto(String crotal){
         //Obtiene el repositorio de la BD en modo lectura
         SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -256,6 +290,10 @@ public class BD_Animales extends AppCompatActivity {
         // Issue SQL statement.
         int deletedRows = db.delete(FeedReaderContract_Animales.FeedEntry.TABLE_NAME, selection, selectionArgs);
     }*/
+    /**
+     * Elimina los datos del objeto pasaso de la base de datos
+     * @param animal	Objeto a borrar
+     */
     public void borrarDatos(Animal animal){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
@@ -290,6 +328,10 @@ public class BD_Animales extends AppCompatActivity {
                 selectionArgs
         );
     }*/
+    /**
+     * Actualiza los datos del objeto pasado en la base de datos
+     * @param animal	Objeto a actualizar
+     */
     public void actualizarBD(Animal animal){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 

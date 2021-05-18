@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.sql.Date;
 import java.util.Arrays;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 class Veterinario implements Serializable {
 
     private static final long serialVersionUID = 1L;

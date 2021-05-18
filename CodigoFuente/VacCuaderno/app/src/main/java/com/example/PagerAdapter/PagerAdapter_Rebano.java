@@ -9,6 +9,9 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import com.example.Fragment.Rebano.Fragment_Rebano;
 import com.example.MainActivity;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 public class PagerAdapter_Rebano extends FragmentStatePagerAdapter {
 
     private int tabsNUmber;

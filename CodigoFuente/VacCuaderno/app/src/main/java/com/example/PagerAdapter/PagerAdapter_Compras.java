@@ -9,6 +9,9 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import com.example.Fragment.Compraventa.Fragment_Compraventa_Compras;
 import com.example.MainActivity;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 public class PagerAdapter_Compras extends FragmentStatePagerAdapter {
 
     private int tabsNUmber;

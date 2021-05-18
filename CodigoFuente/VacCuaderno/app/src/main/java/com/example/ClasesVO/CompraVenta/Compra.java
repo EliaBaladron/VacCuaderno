@@ -2,6 +2,9 @@ package com.example.ClasesVO.CompraVenta;
 
 import java.io.Serializable;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 public class Compra extends CompraVenta implements Serializable {
 
     private static final long serialVersionUID = 1L;

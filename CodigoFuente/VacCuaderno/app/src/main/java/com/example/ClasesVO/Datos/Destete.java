@@ -2,6 +2,9 @@ package com.example.ClasesVO.Datos;
 
 import java.sql.Date;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 public class Destete {
 
     private String crotal;

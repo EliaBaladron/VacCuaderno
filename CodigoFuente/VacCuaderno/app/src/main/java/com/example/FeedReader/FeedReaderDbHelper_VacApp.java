@@ -5,6 +5,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 public class FeedReaderDbHelper_VacApp extends SQLiteOpenHelper {
 
 

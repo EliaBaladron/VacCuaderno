@@ -12,6 +12,9 @@ import com.example.Fragment.Crotales.Fragment_Crotales_Recibidos;
 import com.example.Fragment.Crotales.Fragment_Crotales_SinPoner;
 import com.example.MainActivity;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 public class PagerAdapter_Crotales extends FragmentStatePagerAdapter {
 
     private int tabsNUmber;

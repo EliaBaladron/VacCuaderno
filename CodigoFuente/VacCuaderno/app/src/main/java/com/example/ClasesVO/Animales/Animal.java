@@ -3,6 +3,9 @@ package com.example.ClasesVO.Animales;
 import java.io.Serializable;
 import java.sql.Date;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 public class Animal implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -103,9 +106,9 @@ public class Animal implements Serializable {
     public String getCrotal() {
         return crotal;
     }
-    /*public Date getFechaNac() {
+    public Date getFechaNac() {
         return fechaNac;
-    }*/
+    }
     public String getFechaNacString() {
         return fechaNac.toString();
     }

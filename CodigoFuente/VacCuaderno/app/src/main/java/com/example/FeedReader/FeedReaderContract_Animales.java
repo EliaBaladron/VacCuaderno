@@ -4,6 +4,9 @@ import android.provider.BaseColumns;
 
 import java.util.Date;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 public interface FeedReaderContract_Animales {
 
     class FeedEntry implements BaseColumns {

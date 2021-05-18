@@ -15,15 +15,26 @@
 
  import java.util.ArrayList;
 
+/**
+ * @author Elia Baladrón Peral
+ */
  public class BD_Compraventa_Ventas extends AppCompatActivity {
      FeedReaderDbHelper_VacApp dbHelper;
 
+     /**
+     * Constructor que obtiene la base de datos
+     * @param dbHelperVacApp	Base de datos
+      */
      public BD_Compraventa_Ventas(FeedReaderDbHelper_VacApp dbHelperVacApp){
          this.dbHelper = dbHelperVacApp;
 
          //insertarDatos();
      }
 
+     /**
+      * 
+      * @param savedInstanceState
+      */
      @Override
      protected void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
@@ -33,13 +44,18 @@
          //dbHelper = new FeedReaderDbHelper_VacApp(getApplicationContext());
      }
 
+     /**
+      * 
+      */
      @Override
      protected void onDestroy() {
          dbHelper.close();
          super.onDestroy();
      }
 
-     //Método que inserta datos de prueba
+     /**
+      * Método que inserta datos de prueba
+      */
      public void insertarDatos(){
          insertarDatos(new Venta("ES 1234 1234 1231", 1200.0d, "2018-04-11"));
          insertarDatos(new Venta("ES 1234 1234 1232", 1500.0d, "2018-04-13"));
@@ -47,6 +63,11 @@
      }
 
 
+     /**
+      * 
+      * @param venta
+      * @return
+      */
      public Venta insertarDatos(Venta venta){
          // Gets the data repository in write mode
          SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -76,6 +97,10 @@
          return venta;
      }
 
+     /**
+      * 
+      * @return
+      */
      public ArrayList<Venta> getDatosObjetos(){
          //Obtiene el repositorio de la BD en modo lectura
          SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -100,49 +125,6 @@
 
          return items;
      }
-     /*public ArrayList<String> getDatosCrotales(){
-         //Obtiene el repositorio de la BD en modo lectura
-         SQLiteDatabase db = dbHelper.getReadableDatabase();
-
-         // How you want the results sorted in the resulting Cursor
-         String sortOrder = FeedReaderContract_Compraventa_Venta.FeedEntry.CROTAL + " ASC";
-
-         Cursor cursor = db.query(
-                 FeedReaderContract_Compraventa_Venta.FeedEntry.TABLE_NAME,   // The table to query
-                 null,             // The array of columns to return (pass null to get all)
-                 null,              // The columns for the WHERE clause
-                 null,          // The values for the WHERE clause
-                 null,                   // don't group the rows
-                 null,                   // don't filter by row groups
-                 sortOrder               // The sort order
-         );
-
-         ArrayList<String> items = getCrotales(cursor);
-
-         cursor.close();
-         db.close();
-
-         return items;
-     }*/
-     /*ArrayList<Long> getIDs(Cursor cursor){
-         ArrayList<Long> items = new ArrayList<>();
-         while(cursor.moveToNext()) {
-             long item = cursor.getLong(
-                     cursor.getColumnIndexOrThrow(FeedReaderContract_Compraventa_Venta.FeedEntry._ID));
-             items.add(item);
-         }
-         return items;
-     }*/
-     /*ArrayList<String> getCrotales(Cursor cursor){
-         ArrayList<String> items = new ArrayList<>();
-         while(cursor.moveToNext()) {
-             String item = cursor.getString(
-                     cursor.getColumnIndex(FeedReaderContract_Compraventa_Venta.FeedEntry.CROTAL));
-             items.add(item);
-         }
-
-         return items;
-     }*/
      ArrayList<Venta> getObjetos(Cursor cursor){
          ArrayList<Venta> items = new ArrayList<>();
          while(cursor.moveToNext()) {
@@ -157,6 +139,10 @@
          return items;
      }
 
+     /**
+      * 
+      * @param venta
+      */
      public void borrarDatos(Venta venta){
          SQLiteDatabase db = dbHelper.getWritableDatabase();
 
@@ -170,6 +156,10 @@
          Log.println(Log.INFO, "Venta eliminada ", venta.toString());
      }
 
+     /**
+      * 
+      * @param venta
+      */
      public void actualizarBD(Venta venta){
          SQLiteDatabase db = dbHelper.getWritableDatabase();
 

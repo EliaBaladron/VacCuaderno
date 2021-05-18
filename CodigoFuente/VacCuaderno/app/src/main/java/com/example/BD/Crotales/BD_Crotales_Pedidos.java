@@ -15,15 +15,26 @@ import com.example.FeedReader.FeedReaderDbHelper_VacApp;
 
 import java.util.ArrayList;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 public class BD_Crotales_Pedidos extends AppCompatActivity {
     FeedReaderDbHelper_VacApp dbHelper;
 
+    /**
+     * Constructor que obtiene la base de datos
+     * @param dbHelperVacApp	Base de datos
+     */
     public BD_Crotales_Pedidos(FeedReaderDbHelper_VacApp dbHelperVacApp){
         this.dbHelper = dbHelperVacApp;
 
         //insertarDatos();
     }
 
+    /**
+     * Método invocado en la creación del gestor de la tabla
+     * @param savedInstanceState	
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,17 +44,28 @@ public class BD_Crotales_Pedidos extends AppCompatActivity {
         //dbHelper = new FeedReaderDbHelper_VacApp(getApplicationContext());
     }
 
+    /**
+     * Método invocado en la destrucción del gestor de la tabla
+     */
     @Override
     protected void onDestroy() {
         dbHelper.close();
         super.onDestroy();
     }
 
+    /**
+     * Método que inserta datos de prueba
+     */
     public void insertarDatos(){
         insertarDatos(new Crotal("ES 1234 1234 1233", 1));
         insertarDatos(new Crotal("ES 1234 1234 1237", 2));
     }
 
+    /**
+     * Método que inserta un nuevo objeto
+     * @param crotal	Objeto a guardar en la BD
+     * @return			Objeto creado, con el ID automático añadido
+     */
     public Crotal insertarDatos(Crotal crotal){
         // Gets the data repository in write mode
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -71,6 +93,10 @@ public class BD_Crotales_Pedidos extends AppCompatActivity {
 
         return crotal;
     }
+    /**
+     * Obtiene todos los datos de la tabla y los guarda en objetos de la clase Crotal
+     * @return	Listado de los crotales
+     */
     public ArrayList<Crotal> getDatosObjetos(){
         //Obtiene el repositorio de la BD en modo lectura
         SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -95,23 +121,6 @@ public class BD_Crotales_Pedidos extends AppCompatActivity {
 
         return items;
     }
-    /*ArrayList<Long> obtenerIDs(Cursor cursor){
-        ArrayList<Long> items = new ArrayList<>();
-        while(cursor.moveToNext()) {
-            long itemId = cursor.getLong(
-                    cursor.getColumnIndexOrThrow(FeedReaderContract_Crotales_Pedidos.FeedEntry._ID));
-            items.add(itemId);
-        }
-        return items;
-    }*/
-    /*ArrayList<String> obtenerCrotales(Cursor cursor){
-        ArrayList<String> items = new ArrayList<>();
-        while(cursor.moveToNext()) {
-            String item = cursor.getString(cursor.getColumnIndex(FeedReaderContract_Crotales_Pedidos.FeedEntry.CROTAL));
-            items.add(item);
-        }
-        return items;
-    }*/
     ArrayList<Crotal> getObjetos(Cursor cursor){
         ArrayList<Crotal> items = new ArrayList<>();
         while(cursor.moveToNext()) {
@@ -124,6 +133,10 @@ public class BD_Crotales_Pedidos extends AppCompatActivity {
         return items;
     }
 
+    /**
+     * Elimina los datos del objeto pasaso de la base de datos
+     * @param crotal	Objeto a borrar
+     */
     public void borrarDatos(Crotal crotal){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
@@ -137,6 +150,10 @@ public class BD_Crotales_Pedidos extends AppCompatActivity {
         Log.println(Log.INFO, "Crotal eliminado", crotal.toString());
     }
 
+    /**
+     * Actualiza los datos del objeto pasado en la base de datos
+     * @param crotal	Objeto a actualizar
+     */
     public void actualizarBD(Crotal crotal){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 

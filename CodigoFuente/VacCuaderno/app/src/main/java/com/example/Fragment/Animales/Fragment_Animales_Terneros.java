@@ -23,9 +23,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link Fragment_Animales_Terneros#newInstance} factory method to
- * create an instance of this fragment.
+ * @author Elia Baladrón Peral
  */
 public class Fragment_Animales_Terneros extends Fragment {
 

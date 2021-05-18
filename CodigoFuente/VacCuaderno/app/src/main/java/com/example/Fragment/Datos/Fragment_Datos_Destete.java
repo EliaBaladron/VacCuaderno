@@ -15,9 +15,7 @@ import com.example.prueba03.R;
 import java.util.ArrayList;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link Fragment_Datos_Destete#newInstance} factory method to
- * create an instance of this fragment.
+ * @author Elia Baladrón Peral
  */
 public class Fragment_Datos_Destete extends Fragment {
 

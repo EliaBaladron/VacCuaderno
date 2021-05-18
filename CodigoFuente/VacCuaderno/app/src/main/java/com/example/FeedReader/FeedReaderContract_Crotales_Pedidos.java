@@ -2,6 +2,9 @@ package com.example.FeedReader;
 
 import android.provider.BaseColumns;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 public interface FeedReaderContract_Crotales_Pedidos {
 
     class FeedEntry implements BaseColumns {

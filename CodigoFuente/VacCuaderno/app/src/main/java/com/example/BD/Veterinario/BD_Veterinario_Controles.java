@@ -15,15 +15,26 @@ import com.example.prueba03.R;
 
 import java.util.ArrayList;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 public class BD_Veterinario_Controles extends AppCompatActivity {
     FeedReaderDbHelper_VacApp dbHelper;
 
+    /**
+     * Constructor que obtiene la base de datos
+     * @param dbHelperVacApp	Base de datos
+     */
     public BD_Veterinario_Controles(FeedReaderDbHelper_VacApp dbHelperVacApp){
         this.dbHelper = dbHelperVacApp;
 
         //insertarDatos();
     }
 
+    /**
+     * Método invocado en la creación del gestor de la tabla
+     * @param savedInstanceState	
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,12 +44,18 @@ public class BD_Veterinario_Controles extends AppCompatActivity {
         //dbHelper = new FeedReaderDbHelper_VacApp(getApplicationContext());
     }
 
+    /**
+     * Método invocado en la destrucción del gestor de la tabla
+     */
     @Override
     protected void onDestroy() {
         dbHelper.close();
         super.onDestroy();
     }
 
+    /**
+     * Método que inserta datos de prueba
+     */
     public void insertarDatos(){
         ArrayList<String> animales = new ArrayList<>();
         animales.add("ES 1234 1234 1236");
@@ -48,6 +65,11 @@ public class BD_Veterinario_Controles extends AppCompatActivity {
         insertarDatos(new Controles("Control2", "", "2019-04-15", "ES 1234 1234 1238", "1A78 1B78"));
     }
 
+    /**
+     * Método que inserta un nuevo objeto
+     * @param controles	Objeto a guardar en la BD
+     * @return			Objeto creado, con el ID automático añadido
+     */
     public Controles insertarDatos(Controles controles){
         // Gets the data repository in write mode
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -78,6 +100,10 @@ public class BD_Veterinario_Controles extends AppCompatActivity {
 
         return controles;
     }
+    /**
+     * Obtiene todos los datos de la tabla y los guarda en objetos de la clase Controles
+     * @return	Listado de Crotales
+     */
     public ArrayList<Controles> getDatosobjetos(){
         //Obtiene el repositorio de la BD en modo lectura
         SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -102,23 +128,6 @@ public class BD_Veterinario_Controles extends AppCompatActivity {
 
         return items;
     }
-    /*ArrayList<Long> obtenerIDs(Cursor cursor){
-        ArrayList<Long> items = new ArrayList<>();
-        while(cursor.moveToNext()) {
-            long itemId = cursor.getLong(
-                    cursor.getColumnIndexOrThrow(FeedReaderContract_Veterinario_Controles.FeedEntry._ID));
-            items.add(itemId);
-        }
-        return items;
-    }*/
-    /*ArrayList<String> obtenerTitulos(Cursor cursor){
-        ArrayList<String> items = new ArrayList<>();
-        while(cursor.moveToNext()) {
-            String titulo = cursor.getString(cursor.getColumnIndex(FeedReaderContract_Veterinario_Controles.FeedEntry.TITULO));
-            items.add(titulo);
-        }
-        return items;
-    }*/
     ArrayList<Controles> getObjetos(Cursor cursor){
         ArrayList<Controles> items = new ArrayList<>();
         while(cursor.moveToNext()) {
@@ -134,6 +143,10 @@ public class BD_Veterinario_Controles extends AppCompatActivity {
         return items;
     }
 
+    /**
+     * Elimina los datos del objeto pasaso de la base de datos
+     * @param controles	Objeto a borrar
+     */
     public void borrarDatos(Controles controles){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
@@ -147,6 +160,10 @@ public class BD_Veterinario_Controles extends AppCompatActivity {
         Log.println(Log.INFO, "Control eliminado", controles.toString());
     }
 
+    /**
+     * Actualiza los datos del objeto pasado en la base de datos
+     * @param controles	Objeto a actualizar
+     */
     public void actualizarBD(Controles controles){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 

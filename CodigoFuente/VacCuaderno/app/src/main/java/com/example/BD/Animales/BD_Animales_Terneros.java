@@ -14,15 +14,26 @@ import com.example.FeedReader.*;
 
 import java.util.ArrayList;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 public class BD_Animales_Terneros extends AppCompatActivity {
     FeedReaderDbHelper_VacApp dbHelper;
 
+    /**
+     * Constructor que obtiene la base de datos
+     * @param dbHelperVacApp	Base de datos
+     */
     public BD_Animales_Terneros(FeedReaderDbHelper_VacApp dbHelperVacApp){
         this.dbHelper = dbHelperVacApp;
 
         //insertarDatos();
     }
 
+    /**
+     * Método invocado en la creación del gestor de la tabla
+     * @param savedInstanceState	
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,19 +43,29 @@ public class BD_Animales_Terneros extends AppCompatActivity {
         //dbHelper = new FeedReaderDbHelper_VacApp(getApplicationContext());
     }
 
+    /**
+     * Método invocado en la destrucción del gestor de la tabla
+     */
     @Override
     protected void onDestroy() {
         dbHelper.close();
         super.onDestroy();
     }
 
-    //Método que inserta datos de prueba
+    /**
+     * Método que inserta datos de prueba
+     */
     public void insertarDatos(){
         insertarDatos(new Ternero("ES 1234 1234 1234", "2020-08-14", "Propisto4"));
         insertarDatos(new Ternero("ES 1234 1234 1235", "2020-08-15", "Propisto5"));
         insertarDatos(new Ternero("ES 1234 1234 1236", "2020-08-16", "Propisto6"));
     }
 
+    /**
+     * Método que inserta un nuevo objeto
+     * @param ternero	Objeto a guardar en la BD
+     * @return			Objeto creado, con el ID automático añadido
+     */
     public Ternero insertarDatos(Ternero ternero){
         // Gets the data repository in write mode
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -76,6 +97,10 @@ public class BD_Animales_Terneros extends AppCompatActivity {
 
         return ternero;
     }
+    /**
+     * Obtiene los datos de los crotales de todos los terneros de la tabla
+     * @return	Listado de los crotales
+     */
     public ArrayList<String> getDatosCrotales(){
         //Obtiene el repositorio de la BD en modo lectura
         SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -100,6 +125,10 @@ public class BD_Animales_Terneros extends AppCompatActivity {
 
         return items;
     }
+    /**
+     * Obtiene todos los datos de la tabla y los guarda en objetos de la clase Ternero
+     * @return	Listado de Ternero
+     */
     public ArrayList<Ternero> getDatosObjetos(){
         //Obtiene el repositorio de la BD en modo lectura
         SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -124,47 +153,6 @@ public class BD_Animales_Terneros extends AppCompatActivity {
 
         return items;
     }
-    /*void leerDatos(){
-        //Obtiene el repositorio de la BD en modo lectura
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
-
-        // Define a projection that specifies which columns from the database
-        // you will actually use after this query.
-        String[] projection = {
-                BaseColumns._ID,
-                FeedReaderContract_Animales_Terneros.FeedEntry.CROTAL,
-                FeedReaderContract_Animales_Terneros.FeedEntry.FECHA_DESTETE,
-                FeedReaderContract_Animales_Terneros.FeedEntry.PROPOSITO
-        };
-
-        // Filter results WHERE "title" = 'My Title'
-        String selection = FeedReaderContract_Animales_Terneros.FeedEntry.COLUMN_NAME_TITLE + " = ?";
-        String[] selectionArgs = { "My Title" };
-
-        // How you want the results sorted in the resulting Cursor
-        String sortOrder = FeedReaderContract_Animales_Terneros.FeedEntry.COLUMN_NAME_SUBTITLE + " DESC";
-
-        Cursor cursor = db.query(
-                FeedReaderContract_Animales_Terneros.FeedEntry.TABLE_NAME,   // The table to query
-                projection,             // The array of columns to return (pass null to get all)
-                selection,              // The columns for the WHERE clause
-                selectionArgs,          // The values for the WHERE clause
-                null,                   // don't group the rows
-                null,                   // don't filter by row groups
-                sortOrder               // The sort order
-        );
-
-        List itemIds = obtenerIDs(cursor);
-    }*/
-    /*ArrayList<Long> getIDs(Cursor cursor){
-        ArrayList<Long> itemIds = new ArrayList<>();
-        while(cursor.moveToNext()) {
-            long itemId = cursor.getLong(
-                    cursor.getColumnIndexOrThrow(FeedReaderContract_Animales_Terneros.FeedEntry._ID));
-            itemIds.add(itemId);
-        }
-        return itemIds;
-    }*/
     ArrayList<String> getCrotales(Cursor cursor){
         ArrayList<String> items = new ArrayList<>();
         while(cursor.moveToNext()) {
@@ -187,16 +175,10 @@ public class BD_Animales_Terneros extends AppCompatActivity {
         }
         return items;
     }
-    /*void borrarDatos(){
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-
-        // Define 'where' part of query.
-        String selection = FeedReaderContract_Animales_Terneros.FeedEntry.COLUMN_NAME_TITLE + " LIKE ?";
-        // Specify arguments in placeholder order.
-        String[] selectionArgs = { "MyTitle" };
-        // Issue SQL statement.
-        int deletedRows = db.delete(FeedReaderContract.FeedEntry.TABLE_NAME, selection, selectionArgs);
-    }*/
+    /**
+     * Elimina los datos del objeto pasaso de la base de datos
+     * @param ternero	Objeto a borrar
+     */
     public void borrarDatos(Ternero ternero){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
@@ -208,28 +190,11 @@ public class BD_Animales_Terneros extends AppCompatActivity {
         db.delete(FeedReaderContract_Animales_Terneros.FeedEntry.TABLE_NAME, selection, selectionArgs);
         Log.println(Log.INFO, "Ternero eliminado ", ternero.toString());
     }
-
-
-    /*void actualizarBD(){
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-
-        // New value for one column
-        String title = "MyNewTitle";
-        ContentValues values = new ContentValues();
-        values.put(FeedReaderContract_Animales_Terneros.FeedEntry.COLUMN_NAME_TITLE, title);
-
-        // Which row to update, based on the title
-        String selection = FeedReaderContract_Animales_Terneros.FeedEntry.COLUMN_NAME_TITLE + " LIKE ?";
-        String[] selectionArgs = { "MyOldTitle" };
-
-        int count = db.update(
-                //FeedReaderDbHelper.FeedEntry.TABLE_NAME,
-                FeedReaderContract_Animales_Terneros.FeedEntry.TABLE_NAME,
-                values,
-                selection,
-                selectionArgs
-        );
-    }*/
+    
+    /**
+     * Actualiza los datos del objeto pasado en la base de datos
+     * @param ternero	Objeto a actualizar
+     */
     public void actualizarBD(Ternero ternero){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 

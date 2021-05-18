@@ -3,6 +3,9 @@ package com.example.ClasesVO.Veterinario;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 public class Visitas extends Veterinario implements Serializable {
 
     private static final long serialVersionUID = 1L;

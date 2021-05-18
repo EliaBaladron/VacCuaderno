@@ -15,15 +15,26 @@ import com.example.prueba03.R;
 
 import java.util.ArrayList;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 public class BD_Veterinario_Visitas extends AppCompatActivity {
     FeedReaderDbHelper_VacApp dbHelper;
 
+    /**
+     * Constructor que obtiene la base de datos
+     * @param dbHelperVacApp	Base de datos
+     */
     public BD_Veterinario_Visitas(FeedReaderDbHelper_VacApp dbHelperVacApp){
         this.dbHelper = dbHelperVacApp;
 
         //insertarDatos();
     }
 
+    /**
+     * Método invocado en la creación del gestor de la tabla
+     * @param savedInstanceState	
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,12 +44,18 @@ public class BD_Veterinario_Visitas extends AppCompatActivity {
         //dbHelper = new FeedReaderDbHelper_VacApp(getApplicationContext());
     }
 
+    /**
+     * Método invocado en la destrucción del gestor de la tabla
+     */
     @Override
     protected void onDestroy() {
         dbHelper.close();
         super.onDestroy();
     }
 
+    /**
+     * Método que inserta datos de prueba
+     */
     public void insertarDatos(){
         ArrayList<String> animales = new ArrayList<>();
         animales.add("ES 1234 1234 1234");
@@ -49,6 +66,11 @@ public class BD_Veterinario_Visitas extends AppCompatActivity {
         insertarDatos(new Visitas("Visita2", "", "2020-05-05", "ES 1234 1234 1238", 50.0f));
     }
 
+    /**
+     * Método que inserta un nuevo objeto
+     * @param visitas	Objeto a guardar en la BD
+     * @return			Objeto creado, con el ID automático añadido
+     */
     public Visitas insertarDatos(Visitas visitas){
         // Gets the data repository in write mode
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -79,6 +101,10 @@ public class BD_Veterinario_Visitas extends AppCompatActivity {
 
         return visitas;
     }
+    /**
+     * Obtiene todos los datos de la tabla y los guarda en objetos de la clase Visitas
+     * @return	Listado de las visitas
+     */
     public ArrayList<Visitas> getDatosobjetos(){
         //Obtiene el repositorio de la BD en modo lectura
         SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -103,23 +129,7 @@ public class BD_Veterinario_Visitas extends AppCompatActivity {
 
         return items;
     }
-    /*ArrayList<Long> obtenerIDs(Cursor cursor){
-        ArrayList<Long> items = new ArrayList<>();
-        while(cursor.moveToNext()) {
-            long itemId = cursor.getLong(
-                    cursor.getColumnIndexOrThrow(FeedReaderContract_Veterinario_Visitas.FeedEntry._ID));
-            items.add(itemId);
-        }
-        return items;
-    }*/
-    /*ArrayList<String> obtenerTitulos(Cursor cursor){
-        ArrayList<String> items = new ArrayList<>();
-        while(cursor.moveToNext()) {
-            String titulo = cursor.getString(cursor.getColumnIndex(FeedReaderContract_Veterinario_Visitas.FeedEntry.TITULO));
-            items.add(titulo);
-        }
-        return items;
-    }*/
+    
     ArrayList<Visitas> getObjetos(Cursor cursor){
         ArrayList<Visitas> items = new ArrayList<>();
         while(cursor.moveToNext()) {
@@ -135,6 +145,10 @@ public class BD_Veterinario_Visitas extends AppCompatActivity {
         return items;
     }
 
+    /**
+     * Elimina los datos del objeto pasaso de la base de datos
+     * @param visitas	Objeto a borrar
+     */
     public void borrarDatos(Visitas visitas){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
@@ -148,6 +162,10 @@ public class BD_Veterinario_Visitas extends AppCompatActivity {
         Log.println(Log.INFO, "Visita eliminada", visitas.toString());
     }
 
+    /**
+     * Actualiza los datos del objeto pasado en la base de datos
+     * @param visitas	Objeto a actualizar
+     */
     public void actualizarBD(Visitas visitas){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 

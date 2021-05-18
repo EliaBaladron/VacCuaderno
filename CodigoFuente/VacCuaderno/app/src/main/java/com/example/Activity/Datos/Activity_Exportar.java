@@ -11,6 +11,9 @@ import com.ajts.androidmads.library.ExcelToSQLite;
 import com.ajts.androidmads.library.SQLiteToExcel;
 import com.example.FeedReader.FeedReaderContract_Animales;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 public class Activity_Exportar extends AppCompatActivity {
 
     @Override

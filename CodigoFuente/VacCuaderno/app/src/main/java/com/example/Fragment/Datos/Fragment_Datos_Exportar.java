@@ -16,9 +16,7 @@ import com.example.MainActivity;
 import com.example.prueba03.R;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link Fragment_Datos_Exportar#newInstance} factory method to
- * create an instance of this fragment.
+ * @author Elia Baladrón Peral
  */
 public class Fragment_Datos_Exportar extends Fragment {
 

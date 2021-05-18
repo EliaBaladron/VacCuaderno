@@ -19,6 +19,9 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.sql.Date;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 public class Activity_Animal_Ternero extends AppCompatActivity {
 
     Ternero ternero;

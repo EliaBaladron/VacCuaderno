@@ -12,6 +12,9 @@ import com.example.Fragment.Datos.Fragment_Datos_Exportar;
 import com.example.Fragment.Datos.Fragment_Datos_Importar;
 import com.example.MainActivity;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 public class PagerAdapter_Datos extends FragmentStatePagerAdapter {
 
     private int tabsNUmber;

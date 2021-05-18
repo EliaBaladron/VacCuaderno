@@ -11,6 +11,9 @@ import com.example.Fragment.Compraventa.Fragment_Compraventa_Ventas_Planificadas
 import com.example.Fragment.Compraventa.Fragment_Compraventa_Ventas_Realizadas;
 import com.example.MainActivity;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 public class PagerAdapter_Ventas extends FragmentStatePagerAdapter {
 
     private int tabsNUmber;

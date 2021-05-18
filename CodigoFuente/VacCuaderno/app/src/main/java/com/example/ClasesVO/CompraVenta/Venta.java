@@ -3,6 +3,9 @@ package com.example.ClasesVO.CompraVenta;
 import java.io.Serializable;
 import java.sql.Date;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 public class Venta extends CompraVenta implements Serializable {
 
     private static final long serialVersionUID = 1L;

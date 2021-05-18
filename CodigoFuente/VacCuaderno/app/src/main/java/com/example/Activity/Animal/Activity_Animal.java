@@ -18,6 +18,9 @@ import android.widget.EditText;
 
 import com.example.prueba03.R;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 public class Activity_Animal extends AppCompatActivity {
 
     Animal animal;

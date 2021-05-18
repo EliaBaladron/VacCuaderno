@@ -15,15 +15,26 @@ import com.example.FeedReader.FeedReaderContract_Rebaño;
 
 import java.util.ArrayList;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 public class BD_Rebaños extends AppCompatActivity {
     FeedReaderDbHelper_VacApp dbHelper;
 
+    /**
+     * Constructor que obtiene la base de datos
+     * @param dbHelperVacApp	Base de datos
+     */
     public BD_Rebaños(FeedReaderDbHelper_VacApp dbHelperVacApp){
         this.dbHelper = dbHelperVacApp;
 
         //insertarDatos();
     }
 
+    /**
+     * Método invocado en la creación del gestor de la tabla
+     * @param savedInstanceState	
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,17 +44,28 @@ public class BD_Rebaños extends AppCompatActivity {
         //dbHelper = new FeedReaderDbHelper_VacApp(getApplicationContext());
     }
 
+    /**
+     * Método invocado en la destrucción del gestor de la tabla
+     */
     @Override
     protected void onDestroy() {
         dbHelper.close();
         super.onDestroy();
     }
 
+    /**
+     * Método que inserta datos de prueba
+     */
     public void insertarDatos(){
         insertarDatos(new Rebaño("Granja"));
         insertarDatos(new Rebaño("Campo"));
     }
 
+    /**
+     * Método que inserta un nuevo objeto
+     * @param rebaño	Objeto a guardar en la BD
+     * @return			Objeto creado, con el ID automático añadido
+     */
     public Rebaño insertarDatos(Rebaño rebaño){
         // Gets the data repository in write mode
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -70,6 +92,10 @@ public class BD_Rebaños extends AppCompatActivity {
 
         return rebaño;
     }
+    /**
+     * Obtiene todos los datos de la tabla y los guarda en objetos de la clase Rebaño
+     * @return	Listado de los rebaños
+     */
     public ArrayList<Rebaño> getDatosObjetos(){
         //Obtiene el repositorio de la BD en modo lectura
         SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -94,23 +120,6 @@ public class BD_Rebaños extends AppCompatActivity {
 
         return items;
     }
-    /*ArrayList<Long> obtenerIDs(Cursor cursor){
-        ArrayList<Long> itemIds = new ArrayList<>();
-        while(cursor.moveToNext()) {
-            long itemId = cursor.getLong(
-                    cursor.getColumnIndexOrThrow(FeedReaderContract_Rebaño.FeedEntry._ID));
-            itemIds.add(itemId);
-        }
-        return itemIds;
-    }*/
-    /*ArrayList<String> obtenerNombres(Cursor cursor){
-        ArrayList<String> items = new ArrayList<>();
-        while(cursor.moveToNext()) {
-            String nombre = cursor.getString(cursor.getColumnIndex(FeedReaderContract_Rebaño.FeedEntry.NOMBRE));
-            items.add(nombre);
-        }
-        return items;
-    }*/
     ArrayList<Rebaño> getObjetos(Cursor cursor){
         ArrayList<Rebaño> items = new ArrayList<>();
         while(cursor.moveToNext()) {
@@ -122,6 +131,10 @@ public class BD_Rebaños extends AppCompatActivity {
         return items;
     }
 
+    /**
+     * Elimina los datos del objeto pasaso de la base de datos
+     * @param rebano	Objeto a borrar
+     */
     public void borrarDatos(Rebaño rebano){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
@@ -135,6 +148,10 @@ public class BD_Rebaños extends AppCompatActivity {
         Log.println(Log.INFO, "Rebaño eliminado", rebano.toString());
     }
 
+    /**
+     * Actualiza los datos del objeto pasado en la base de datos
+     * @param rebano	Objeto a actualizar
+     */
     public void actualizarBD(Rebaño rebano){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 

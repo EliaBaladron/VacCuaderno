@@ -10,6 +10,9 @@ import com.example.FeedReader.FeedReaderDbHelper_VacApp;
 import com.example.Fragment.Animales.*;
 import com.example.MainActivity;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 public class PagerAdapter_Animales extends FragmentStatePagerAdapter {
 
     private int tabsNUmber;

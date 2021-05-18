@@ -16,6 +16,9 @@ import com.example.prueba03.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+/**
+ * @author Elia Baladrón Peral
+ */
 public class Activity_Crotal_SinPoner extends AppCompatActivity {
 
     Crotal crotal;

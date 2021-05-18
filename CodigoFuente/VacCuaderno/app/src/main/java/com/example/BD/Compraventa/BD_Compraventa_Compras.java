@@ -15,15 +15,26 @@
 
  import java.util.ArrayList;
 
+/**
+ * @author Elia Baladrón Peral
+ */
  public class BD_Compraventa_Compras extends AppCompatActivity {
      FeedReaderDbHelper_VacApp dbHelper;
 
+     /**
+     * Constructor que obtiene la base de datos
+     * @param dbHelperVacApp	Base de datos
+      */
      public BD_Compraventa_Compras(FeedReaderDbHelper_VacApp dbHelperVacApp){
          this.dbHelper = dbHelperVacApp;
 
          //insertarDatos();
      }
 
+     /**
+     * Método invocado en la creación del gestor de la tabla
+     * @param savedInstanceState	
+      */
      @Override
      protected void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
@@ -33,13 +44,18 @@
          //dbHelper = new FeedReaderDbHelper_VacApp(getApplicationContext());
      }
 
+     /**
+      * Método invocado en la destrucción del gestor de la tabla
+      */
      @Override
      protected void onDestroy() {
          dbHelper.close();
          super.onDestroy();
      }
 
-     //Método que inserta datos de prueba
+     /**
+      * Método que inserta datos de prueba
+      */
      public void insertarDatos(){
          insertarDatos(new Compra("ES 1234 1234 1231", 1200.0d, "2018-04-11"));
          insertarDatos(new Compra("ES 1234 1234 1232", 1500.0d, "2018-04-13"));
@@ -47,6 +63,11 @@
      }
 
 
+     /**
+      * Método que inserta un nuevo objeto
+      * @param compra	Objeto a guardar en la BD
+      * @return			Objeto creado, con el ID automático añadido
+      */
      public Compra insertarDatos(Compra compra){
          // Gets the data repository in write mode
          SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -76,6 +97,10 @@
          return compra;
      }
 
+     /**
+      * Obtiene todos los datos de la tabla y los guarda en objetos de la clase Compra
+      * @return	Listado de Compra
+      */
      public ArrayList<Compra> getDatosObjetos(){
          //Obtiene el repositorio de la BD en modo lectura
          SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -100,49 +125,7 @@
 
          return items;
      }
-     /*public ArrayList getDatosCrotales(){
-         //Obtiene el repositorio de la BD en modo lectura
-         SQLiteDatabase db = dbHelper.getReadableDatabase();
-
-         // How you want the results sorted in the resulting Cursor
-         String sortOrder = FeedReaderContract_Compraventa_Compra.FeedEntry.CROTAL + " ASC";
-
-         Cursor cursor = db.query(
-                 FeedReaderContract_Compraventa_Compra.FeedEntry.TABLE_NAME,   // The table to query
-                 null,             // The array of columns to return (pass null to get all)
-                 null,              // The columns for the WHERE clause
-                 null,          // The values for the WHERE clause
-                 null,                   // don't group the rows
-                 null,                   // don't filter by row groups
-                 sortOrder               // The sort order
-         );
-
-         ArrayList items = getCrotales(cursor);
-
-         cursor.close();
-         db.close();
-
-         return items;
-     }*/
-     /*ArrayList<Long> getIDs(Cursor cursor){
-         ArrayList<Long> items = new ArrayList<>();
-         while(cursor.moveToNext()) {
-             long item = cursor.getLong(
-                     cursor.getColumnIndexOrThrow(FeedReaderContract_Compraventa_Compra.FeedEntry._ID));
-             items.add(item);
-         }
-         return items;
-     }*/
-     /*ArrayList<String> getCrotales(Cursor cursor){
-         ArrayList<String> items = new ArrayList<>();
-         while(cursor.moveToNext()) {
-             String item = cursor.getString(
-                     cursor.getColumnIndex(FeedReaderContract_Compraventa_Compra.FeedEntry.CROTAL));
-             items.add(item);
-         }
-
-         return items;
-     }*/
+     
      ArrayList<Compra> getObjetos(Cursor cursor){
          ArrayList<Compra> items = new ArrayList<Compra>();
          while(cursor.moveToNext()) {
@@ -157,6 +140,10 @@
          return items;
      }
 
+     /**
+      * Elimina los datos del objeto pasaso de la base de datos
+      * @param compra	Objeto a borrar
+      */
      public void borrarDatos(Compra compra){
          SQLiteDatabase db = dbHelper.getWritableDatabase();
 
@@ -170,6 +157,10 @@
          Log.println(Log.INFO, "Compra eliminada ", compra.toString());
      }
 
+     /**
+      * Actualiza los datos del objeto pasado en la base de datos
+      * @param compra	Objeto a actualizar
+      */
      public void actualizarBD(Compra compra){
          SQLiteDatabase db = dbHelper.getWritableDatabase();
 
