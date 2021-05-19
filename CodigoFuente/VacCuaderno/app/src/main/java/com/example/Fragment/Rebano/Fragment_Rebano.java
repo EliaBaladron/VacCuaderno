@@ -72,7 +72,7 @@ public class Fragment_Rebano extends Fragment {
         gridView.setAdapter(adapter);
 
         gridView.setOnItemClickListener((parent, view, position, id) -> {
-            Toast.makeText(getContext(), Integer.toString(position), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getContext(), Integer.toString(position), Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent(getContext(), Activity_Rebano.class);
             intent.putExtra(MainActivity.EDITAR, true);

@@ -36,7 +36,7 @@ public class Activity_Exportar extends AppCompatActivity {
             @Override
             public void onCompleted(String filePath) {
                 Log.println(Log.INFO, "Exportar", "Datos animales exportados");
-                Toast.makeText(getApplicationContext(), "Datos exportados", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Datos exportados", Toast.LENGTH_SHORT).show();
             }
             @Override
             public void onError(Exception e) {

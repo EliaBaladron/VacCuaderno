@@ -106,36 +106,31 @@ public class Activity_Veterinario_Visitas extends AppCompatActivity {
     }
     void iniciarListenerBotones(){
         fab_editar.setOnClickListener(view -> {
-            Snackbar.make(view, "Editar "+visitas.getTitulo(), Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+            //Snackbar.make(view, "Editar "+visitas.getTitulo(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
 
             editar();
         });
 
         fab_eliminar.setOnClickListener(view -> {
-            Snackbar.make(view, "Eliminar "+visitas.getTitulo(), Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+            //Snackbar.make(view, "Eliminar "+visitas.getTitulo(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
 
             eliminar();
         });
 
         fab_volver.setOnClickListener(view -> {
-            Snackbar.make(view, "Volver "+visitas.getTitulo(), Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+            //Snackbar.make(view, "Volver "+visitas.getTitulo(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
 
             volver();
         });
 
         fab_aceptar.setOnClickListener(view -> {
-            Snackbar.make(view, "Aceptar "+visitas.getTitulo(), Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+            //Snackbar.make(view, "Aceptar "+visitas.getTitulo(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
 
             aceptar();
         });
 
         fab_cancelar.setOnClickListener(view -> {
-            Snackbar.make(view, "Cancelar "+visitas.getTitulo(), Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+            //Snackbar.make(view, "Cancelar "+visitas.getTitulo(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
 
             cancelar();
         });

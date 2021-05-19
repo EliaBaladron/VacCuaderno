@@ -97,36 +97,31 @@ public class Activity_Rebano extends AppCompatActivity {
     }
     void iniciarListenerBotones(){
         fab_editar.setOnClickListener(view -> {
-            Snackbar.make(view, "Editar "+rebano.getNombre(), Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+            //Snackbar.make(view, "Editar "+rebano.getNombre(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
 
             editar();
         });
 
         fab_eliminar.setOnClickListener(view -> {
-            Snackbar.make(view, "Eliminar "+rebano.getNombre(), Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+            //Snackbar.make(view, "Eliminar "+rebano.getNombre(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
 
             eliminar();
         });
 
         fab_volver.setOnClickListener(view -> {
-            Snackbar.make(view, "Volver "+rebano.getNombre(), Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+            //Snackbar.make(view, "Volver "+rebano.getNombre(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
 
             volver();
         });
 
         fab_aceptar.setOnClickListener(view -> {
-            Snackbar.make(view, "Aceptar "+rebano.getNombre(), Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+            //Snackbar.make(view, "Aceptar "+rebano.getNombre(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
 
             aceptar();
         });
 
         fab_cancelar.setOnClickListener(view -> {
-            Snackbar.make(view, "Cancelar "+rebano.getNombre(), Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+            //Snackbar.make(view, "Cancelar "+rebano.getNombre(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
 
             cancelar();
         });

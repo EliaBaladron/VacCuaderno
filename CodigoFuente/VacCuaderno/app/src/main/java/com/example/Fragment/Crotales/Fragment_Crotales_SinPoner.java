@@ -75,7 +75,7 @@ public class Fragment_Crotales_SinPoner extends Fragment {
         gridView.setAdapter(adapter);
 
         gridView.setOnItemClickListener((parent, view, position, id) -> {
-            Toast.makeText(getContext(), Integer.toString(position), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getContext(), Integer.toString(position), Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent(getContext(), Activity_Crotal_SinPoner.class);
             intent.putExtra(MainActivity.EDITAR, true);

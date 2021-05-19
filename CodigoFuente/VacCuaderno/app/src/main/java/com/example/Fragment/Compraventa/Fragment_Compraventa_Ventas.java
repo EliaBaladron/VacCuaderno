@@ -73,7 +73,7 @@ public class Fragment_Compraventa_Ventas extends Fragment {
         gridView.setAdapter(adapter);
 
         gridView.setOnItemClickListener((parent, view, position, id) -> {
-            Toast.makeText(getContext(), Integer.toString(position), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getContext(), Integer.toString(position), Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent(getContext(), Activity_Compraventa_Ventas.class);
             intent.putExtra(MainActivity.EDITAR, true);

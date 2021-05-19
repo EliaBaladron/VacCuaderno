@@ -103,36 +103,31 @@ public class Activity_Veterinario_Controles extends AppCompatActivity {
     }
     void iniciarListenerBotones(){
         fab_editar.setOnClickListener(view -> {
-            Snackbar.make(view, "Editar "+controles.getTitulo(), Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+            //Snackbar.make(view, "Editar "+controles.getTitulo(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
 
             editar();
         });
 
         fab_eliminar.setOnClickListener(view -> {
-            Snackbar.make(view, "Eliminar "+controles.getTitulo(), Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+            //Snackbar.make(view, "Eliminar "+controles.getTitulo(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
 
             eliminar();
         });
 
         fab_volver.setOnClickListener(view -> {
-            Snackbar.make(view, "Volver "+controles.getTitulo(), Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+            //Snackbar.make(view, "Volver "+controles.getTitulo(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
 
             volver();
         });
 
         fab_aceptar.setOnClickListener(view -> {
-            Snackbar.make(view, "Aceptar "+controles.getTitulo(), Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+            //Snackbar.make(view, "Aceptar "+controles.getTitulo(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
 
             aceptar();
         });
 
         fab_cancelar.setOnClickListener(view -> {
-            Snackbar.make(view, "Cancelar "+controles.getTitulo(), Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+            //Snackbar.make(view, "Cancelar "+controles.getTitulo(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
 
             cancelar();
         });
