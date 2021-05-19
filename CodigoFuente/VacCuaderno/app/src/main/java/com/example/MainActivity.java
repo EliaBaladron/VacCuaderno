@@ -9,10 +9,13 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.Activity.Animal.Activity_Animal;
+import com.example.Ayudas.Ayuda_Animales;
 import com.example.BD.Animales.BD_Animales;
 import com.example.BD.Animales.BD_Animales_Terneros;
 import com.example.BD.Animales.BD_Animales_Vacas;
@@ -32,6 +35,7 @@ import com.example.FeedReader.FeedReaderDbHelper_VacApp;
 import com.example.PagerAdapter.*;
 
 import com.example.prueba03.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
@@ -175,6 +179,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onTabReselected(TabLayout.Tab tab) {
 
             }
+        });
+
+        //Ayuda
+
+        FloatingActionButton fab_help;
+        fab_help = findViewById(R.id.fab_help);
+        fab_help.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), Ayuda_Animales.class);
+            startActivity(intent);
         });
     }
     void iniciarCompras(){

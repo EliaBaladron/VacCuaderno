@@ -55,6 +55,17 @@
     <string name="id">ID</string>
 
 
+    <string name="bt_anadir">Botón añadir</string>
+    <string name="bt_volver">Botón volver</string>
+    <string name="bt_editar">Botón editar</string>
+    <string name="bt_eliminar">Botón eliminar</string>
+    <string name="bt_aceptar">Botón aceptar</string>
+    <string name="bt_cancelar">Botón cancelar</string>
+
+    <string name="titulo">Titulo</string>
+    <string name="nombre">Nombre</string>
+
+    <string name="ayuda">Ayuda</string>
 
 
     <string name="title_activity__animal">Activity_Animal</string>
