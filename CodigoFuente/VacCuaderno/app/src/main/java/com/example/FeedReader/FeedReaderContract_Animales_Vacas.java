@@ -23,9 +23,6 @@ public interface  FeedReaderContract_Animales_Vacas {
             FeedEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             FeedEntry.CROTAL + " TEXT," +
             FeedEntry.FECHA_EMBARAZO + " TEXT," +
-        /*"FOREIGN KEY (" + FeedReaderContract_Animales_Vacas.FeedEntry.CROTAL +
-            " REFERENCES " +FeedReaderContract_Animales.FeedEntry.TABLE_NAME +
-            "(" +FeedReaderContract_Animales.FeedEntry.CROTAL +"),"+*/
             FeedEntry.TERNERO + " TEXT)"
             ;
 

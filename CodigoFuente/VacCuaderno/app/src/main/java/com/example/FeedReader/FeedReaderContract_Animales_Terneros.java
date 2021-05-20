@@ -22,9 +22,6 @@ public interface FeedReaderContract_Animales_Terneros {
             FeedEntry.TABLE_NAME + " ("+
             FeedEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             FeedEntry.CROTAL + " TEXT," +
-            /*"FOREIGN KEY (" + FeedReaderContract_Animales_Terneros.FeedEntry.CROTAL +
-            ") REFERENCES " + FeedReaderContract_Animales.FeedEntry.TABLE_NAME +
-            "(" +FeedReaderContract_Animales.FeedEntry.CROTAL +"),"+*/
             FeedEntry.FECHA_DESTETE + " TEXT," +
             FeedEntry.PROPOSITO + " TEXT)"
             ;

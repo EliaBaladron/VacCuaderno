@@ -3,7 +3,6 @@ package com.example.FeedReader;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 /**
  * Clase que extiende SQLiteOpenHelper para el control de la base de datos
@@ -11,14 +10,17 @@ import android.util.Log;
  */
 public class FeedReaderDbHelper_VacApp extends SQLiteOpenHelper {
 
-    // If you change the database schema, you must increment the database version.
     public static final int DATABASE_VERSION = 4;
     public static final String DATABASE_NAME = "VacCuaderno.db";
 
     public FeedReaderDbHelper_VacApp(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
-    //Crear las tablas
+
+    /**
+     * Creacion de las tablas
+     * @param db    Instancia de la BD
+     */
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(FeedReaderContract_Animales.             SQL_DELETE_ENTRIES);
         db.execSQL(FeedReaderContract_Animales.             SQL_CREATE_ENTRIES);
@@ -56,12 +58,14 @@ public class FeedReaderDbHelper_VacApp extends SQLiteOpenHelper {
         db.execSQL(FeedReaderContract_Compraventa_Venta.    SQL_DELETE_ENTRIES);
         db.execSQL(FeedReaderContract_Compraventa_Venta.    SQL_CREATE_ENTRIES);
     }
-    private void borrarCrear(){
-
-    }
 
 
-    //Borrar las tablas y crearlas nuevamente
+    /**
+     * Actualización de la BD
+     * @param db            Instancia de la BD
+     * @param oldVersion    Version anterior
+     * @param newVersion    Nueva versión
+     */
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL(FeedReaderContract_Animales.             SQL_DELETE_ENTRIES);
         db.execSQL(FeedReaderContract_Animales_Vacas.       SQL_DELETE_ENTRIES);
