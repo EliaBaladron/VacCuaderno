@@ -2,18 +2,16 @@ package com.example.Activity.Animal;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.example.ClasesVO.Animales.Animal;
-import com.example.MainActivity;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.example.ClasesVO.Animales.Animal;
+import com.example.MainActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.example.prueba03.R;
 
 /**

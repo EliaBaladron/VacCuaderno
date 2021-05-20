@@ -11,8 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Prueba03">
+
         <activity android:name="com.example.Ayudas.Ayuda_Animales"
             android:theme="@style/Theme.AppCompat.DayNight.Dialog" />
+
         <activity
             android:name="com.example.MainActivity"
             android:theme="@style/Theme.Prueba03.NoActionBar">
@@ -21,7 +23,9 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- Animales -->
+        </activity>
+
+        <!-- Animales -->
         <activity
             android:name="com.example.Activity.Animal.Activity_Animal"
             android:theme="@style/Theme.Prueba03.NoActionBar" />
@@ -34,6 +38,7 @@
         <activity
             android:name="com.example.Activity.Animal.Activity_Animal_Toro"
             android:theme="@style/Theme.Prueba03.NoActionBar" />
+
         <!-- Crotales -->
         <activity
             android:name="com.example.Activity.Crotal.Activity_Crotal_Pedidos"
@@ -47,6 +52,7 @@
         <activity
             android:name="com.example.Activity.Crotal.Activity_Crotal_Faltan"
             android:theme="@style/Theme.Prueba03.NoActionBar" />
+
         <!-- Veterinario -->
         <activity
             android:name="com.example.Activity.Veterinario.Activity_Veterinario_Controles"
@@ -54,6 +60,7 @@
         <activity
             android:name="com.example.Activity.Veterinario.Activity_Veterinario_Visitas"
             android:theme="@style/Theme.Prueba03.NoActionBar" />
+
         <!-- Compraventa -->
         <activity
             android:name="com.example.Activity.Compraventa.Activity_Compraventa_Compras"
@@ -67,10 +74,12 @@
         <activity
             android:name="com.example.Activity.Compraventa.Activity_Compraventa_Ventas_Planificadas"
             android:theme="@style/Theme.Prueba03.NoActionBar" />
+
         <!-- Rebaño -->
         <activity
             android:name="com.example.Activity.Rebano.Activity_Rebano"
             android:theme="@style/Theme.Prueba03.NoActionBar" />
+
         <!-- Exportar -->
         <activity
             android:name="com.example.Activity.Datos.Activity_Exportar"
