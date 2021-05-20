@@ -38,6 +38,12 @@ public class Activity_Veterinario_Controles extends AppCompatActivity {
     FloatingActionButton fab_aceptar;
     FloatingActionButton fab_cancelar;
 
+    /**
+     * En la creación de la actividad obtiene los datos a mostrar,
+     * inicia los componentes de la vista y muestra los datos pasado,
+     * y hace los componentes editables o no editabbles según el caso
+     * @param savedInstanceState	sis
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,13 +67,22 @@ public class Activity_Veterinario_Controles extends AppCompatActivity {
     }
 
     //Metodos de los botones
+    /**
+     * Elimina el objeto mostrado
+     */
     void eliminar(){
         Fragment_Veterinario_Controles.eliminar(this.controles);
         volver();
     }
+    /**
+     * Vuelve a la vista anterior
+     */
     void volver(){
         onBackPressed();
     }
+    /**
+     * Edita el objeto mostrado o lo añade a la BD
+     */
     void aceptar(){
         obtenerDatos();
         hacerNoEditable();
@@ -77,6 +92,9 @@ public class Activity_Veterinario_Controles extends AppCompatActivity {
             anadir();
         }
     }
+    /**
+     * Cancela la edición o la introducción en la BD del objeto mostrado
+     */
     void cancelar(){
         hacerNoEditable();
         if(editar){
@@ -85,6 +103,9 @@ public class Activity_Veterinario_Controles extends AppCompatActivity {
             volver();
         }
     }
+    /**
+     * Inicia la edición de los datos mostrados
+     */
     void editar(){
         hacerEditable();
     }

@@ -5,6 +5,9 @@ import android.provider.BaseColumns;
 import java.util.Date;
 
 /**
+ * Interfaz que contiene la estructura de la tabla,
+ * así como el código preformateado para la creación y eliminación de la misma
+ * 
  * @author Elia Baladrón Peral
  */
 public interface FeedReaderContract_Animales {

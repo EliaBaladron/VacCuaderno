@@ -32,6 +32,9 @@ public class Fragment_Compraventa_Ventas extends Fragment {
     public static ArrayList<Venta> ventas;
 
 
+    /**
+     * Constructor vacío del fragmento
+     */
     public Fragment_Compraventa_Ventas() {
         // Required empty public constructor
     }
@@ -39,15 +42,30 @@ public class Fragment_Compraventa_Ventas extends Fragment {
         Fragment_Compraventa_Ventas.main = main;
     }
 
+    /**
+     * Inicia una nueva instancia del fragmento
+     * @return	La instancia del fragmento
+     */
     public static Fragment_Compraventa_Ventas newInstance() {
         return new Fragment_Compraventa_Ventas();
     }
 
+    /**
+     * Método invocado en la creación del fragmento
+     * @param savedInstanceState	sis
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
+    /**
+     * Método invocado en la creación de la vista
+     * @param inflater	inflater
+     * @param container	Contenedor de la vista
+     * @param savedInstanceState	sis
+     * @return	La vista creada
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -60,6 +78,9 @@ public class Fragment_Compraventa_Ventas extends Fragment {
         return view;
     }
 
+    /**
+     * Inicia la vista al iniciar el fragmento
+     */
     @Override
     public void onStart() {
         super.onStart();

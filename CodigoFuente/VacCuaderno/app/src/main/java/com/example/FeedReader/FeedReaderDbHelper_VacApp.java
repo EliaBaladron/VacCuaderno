@@ -6,18 +6,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 /**
+ * Clase que extiende SQLiteOpenHelper para el control de la base de datos
  * @author Elia Baladrón Peral
  */
 public class FeedReaderDbHelper_VacApp extends SQLiteOpenHelper {
-
-
-    //Tipos de datos
-    //NULL
-    //INTEGER
-    //REAL
-    //TEXT
-    //BLOB      +-dato no estructurado
-
 
     // If you change the database schema, you must increment the database version.
     public static final int DATABASE_VERSION = 4;

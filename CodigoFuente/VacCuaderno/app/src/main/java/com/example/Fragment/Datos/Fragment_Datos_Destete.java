@@ -25,6 +25,9 @@ public class Fragment_Datos_Destete extends Fragment {
 
     Estadisticas_Destete estadisticasDestete;
 
+    /**
+     * Constructor vacío del fragmento
+     */
     public Fragment_Datos_Destete() {
         // Required empty public constructor
     }
@@ -32,6 +35,10 @@ public class Fragment_Datos_Destete extends Fragment {
         // Required empty public constructor
     }
 
+    /**
+     * Inicia una nueva instancia del fragmento
+     * @return	La instancia del fragmento
+     */
     public static Fragment_Datos_Destete newInstance() {
         return new Fragment_Datos_Destete();
     }

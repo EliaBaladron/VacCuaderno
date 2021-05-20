@@ -17,6 +17,10 @@ import com.example.FeedReader.FeedReaderContract_Animales;
  */
 public class Activity_Exportar extends AppCompatActivity {
 
+    /**
+     * En la creación de la actividad exporta los datos
+     * @param savedInstanceState	sis
+     */
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);

@@ -21,6 +21,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
 /**
+ * Fragmento
+ * 
  * @author Elia Baladrón Peral
  */
 public class Fragment_Animales_Terneros extends Fragment {
@@ -32,6 +34,9 @@ public class Fragment_Animales_Terneros extends Fragment {
 
     public static ArrayList<Ternero> terneros;
 
+    /**
+     * Constructor vacío del fragmento
+     */
     public Fragment_Animales_Terneros() {
         // Required empty public constructor
     }
@@ -39,15 +44,30 @@ public class Fragment_Animales_Terneros extends Fragment {
         this.main = main;
     }
 
+    /**
+     * Inicia una nueva instancia del fragmento
+     * @return	La instancia del fragmento
+     */
     public static Fragment_Animales_Terneros newInstance() {
         return new Fragment_Animales_Terneros();
     }
 
+    /**
+     * Método invocado en la creación del fragmento
+     * @param savedInstanceState	sis
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
+    /**
+     * Método invocado en la creación de la vista
+     * @param inflater	inflater
+     * @param container	Contenedor de la vista
+     * @param savedInstanceState	sis
+     * @return	La vista creada
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -60,6 +80,9 @@ public class Fragment_Animales_Terneros extends Fragment {
         return view;
     }
 
+    /**
+     * Inicia la vista al iniciar el fragmento
+     */
     @Override
     public void onStart() {
         super.onStart();
@@ -78,8 +101,6 @@ public class Fragment_Animales_Terneros extends Fragment {
         gridView.setAdapter(adapter);
 
         gridView.setOnItemClickListener((parent, view, position, id) -> {
-            //Toast.makeText(getContext(), Integer.toString(position), Toast.LENGTH_SHORT).show();
-
             Intent intent = new Intent(getContext(), Activity_Animal_Ternero.class);
             intent.putExtra(MainActivity.EDITAR, true);
             intent.putExtra(MainActivity.DATOS, terneros.get(position));
@@ -92,24 +113,4 @@ public class Fragment_Animales_Terneros extends Fragment {
             startActivity(intent);
         });
     }
-
-    /*public static void actualizar(Ternero ternero){
-        main.bdAnimalesTerneros.actualizarBD(ternero);
-    }
-    public static void eliminar(Ternero ternero){
-        main.bdAnimalesTerneros.borrarDatos(ternero);
-    }*/
-
-    /**
-     * Si existe un ternero con el crotal pasado se elimina de la BD
-     * @param crotal    Crotal a comprobar y borrar si existe
-     */
-    /*public static void eliminar(String crotal){
-        ArrayList<Ternero> terneros = main.bdAnimalesTerneros.getDatosObjeto(crotal);
-        if(terneros.size() > 0)
-            main.bdAnimalesTerneros.borrarDatos(terneros.get(0));
-    }
-    public static void anadir(Ternero ternero){
-        main.bdAnimalesTerneros.insertarDatos(ternero);
-    }*/
 }

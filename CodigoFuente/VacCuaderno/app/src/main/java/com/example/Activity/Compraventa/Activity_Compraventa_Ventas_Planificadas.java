@@ -35,6 +35,12 @@ public class Activity_Compraventa_Ventas_Planificadas extends AppCompatActivity 
     FloatingActionButton fab_aceptar;
     FloatingActionButton fab_cancelar;
 
+    /**
+     * En la creación de la actividad obtiene los datos a mostrar,
+     * inicia los componentes de la vista y muestra los datos pasado,
+     * y hace los componentes editables o no editabbles según el caso
+     * @param savedInstanceState	sis
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,13 +64,22 @@ public class Activity_Compraventa_Ventas_Planificadas extends AppCompatActivity 
     }
 
     //Metodos de los botones
+    /**
+     * Elimina el objeto mostrado
+     */
     void eliminar(){
         Fragment_Compraventa_Ventas.eliminar(this.venta);
         volver();
     }
+    /**
+     * Vuelve a la vista anterior
+     */
     void volver(){
         onBackPressed();
     }
+    /**
+     * Edita el objeto mostrado o lo añade a la BD
+     */
     void aceptar(){
         obtenerDatos();
         hacerNoEditable();
@@ -74,6 +89,9 @@ public class Activity_Compraventa_Ventas_Planificadas extends AppCompatActivity 
             anadir();
         }
     }
+    /**
+     * Cancela la edición o la introducción en la BD del objeto mostrado
+     */
     void cancelar(){
         hacerNoEditable();
         if(editar){
@@ -82,6 +100,9 @@ public class Activity_Compraventa_Ventas_Planificadas extends AppCompatActivity 
             volver();
         }
     }
+    /**
+     * Inicia la edición de los datos mostrados
+     */
     void editar(){
         hacerEditable();
     }

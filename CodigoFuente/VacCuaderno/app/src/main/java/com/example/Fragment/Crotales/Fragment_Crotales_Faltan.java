@@ -32,6 +32,9 @@ public class Fragment_Crotales_Faltan extends Fragment {
 
     public static ArrayList<Crotal> crotales;
 
+    /**
+     * Constructor vacío del fragmento
+     */
     public Fragment_Crotales_Faltan() {
         // Required empty public constructor
     }
@@ -39,15 +42,30 @@ public class Fragment_Crotales_Faltan extends Fragment {
         Fragment_Crotales_Faltan.main = main;
     }
 
+    /**
+     * Inicia una nueva instancia del fragmento
+     * @return	La instancia del fragmento
+     */
     public static Fragment_Crotales_Faltan newInstance() {
         return new Fragment_Crotales_Faltan();
     }
 
+    /**
+     * Método invocado en la creación del fragmento
+     * @param savedInstanceState	sis
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
+    /**
+     * Método invocado en la creación de la vista
+     * @param inflater	inflater
+     * @param container	Contenedor de la vista
+     * @param savedInstanceState	sis
+     * @return	La vista creada
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -61,6 +79,9 @@ public class Fragment_Crotales_Faltan extends Fragment {
         return view;
     }
 
+    /**
+     * Inicia la vista al iniciar el fragmento
+     */
     @Override
     public void onStart() {
         super.onStart();

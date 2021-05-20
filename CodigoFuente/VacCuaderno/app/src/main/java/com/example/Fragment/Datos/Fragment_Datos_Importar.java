@@ -16,6 +16,10 @@ import com.example.prueba03.R;
 public class Fragment_Datos_Importar extends Fragment {
 
     MainActivity main;
+
+    /**
+     * Constructor vacío del fragmento
+     */
     public Fragment_Datos_Importar() {
         // Required empty public constructor
     }
@@ -23,6 +27,10 @@ public class Fragment_Datos_Importar extends Fragment {
         this.main = main;
     }
 
+    /**
+     * Inicia una nueva instancia del fragmento
+     * @return	La instancia del fragmento
+     */
     public static Fragment_Datos_Importar newInstance() {
         return new Fragment_Datos_Importar();
     }

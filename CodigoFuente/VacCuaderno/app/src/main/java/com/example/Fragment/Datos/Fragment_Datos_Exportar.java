@@ -21,6 +21,9 @@ public class Fragment_Datos_Exportar extends Fragment {
     Button button;
     MainActivity main;
 
+    /**
+     * Constructor vacío del fragmento
+     */
     public Fragment_Datos_Exportar() {
         // Required empty public constructor
     }
@@ -28,6 +31,10 @@ public class Fragment_Datos_Exportar extends Fragment {
         this.main = main;
     }
 
+    /**
+     * Inicia una nueva instancia del fragmento
+     * @return	La instancia del fragmento
+     */
     public static Fragment_Datos_Exportar newInstance() {
         return new Fragment_Datos_Exportar();
     }

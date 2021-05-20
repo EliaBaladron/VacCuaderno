@@ -17,6 +17,9 @@ public class Fragment_Datos_Dinero extends Fragment {
 
     MainActivity main;
 
+    /**
+     * Constructor vacío del fragmento
+     */
     public Fragment_Datos_Dinero() {
         // Required empty public constructor
     }
@@ -24,6 +27,10 @@ public class Fragment_Datos_Dinero extends Fragment {
         this.main = main;
     }
 
+    /**
+     * Inicia una nueva instancia del fragmento
+     * @return	La instancia del fragmento
+     */
     public static Fragment_Datos_Dinero newInstance() {
         return new Fragment_Datos_Dinero();
     }
