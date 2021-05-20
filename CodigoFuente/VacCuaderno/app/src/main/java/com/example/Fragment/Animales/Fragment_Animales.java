@@ -97,7 +97,6 @@ public class Fragment_Animales extends Fragment {
         gridView.setAdapter(adapter);
 
         gridView.setOnItemClickListener((parent, view1, position, id) -> {
-            //Toast.makeText(getContext(), Integer.toString(position), Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent(getContext(), Activity_Animal.class);
             intent.putExtra(MainActivity.EDITAR, true);
@@ -111,14 +110,4 @@ public class Fragment_Animales extends Fragment {
             startActivity(intent);
         });
     }
-
-    /*public static void actualizar(Animal animal){
-        main.bdAnimales.actualizarBD(animal);
-    }
-    public static void eliminar(Animal animal){
-        main.bdAnimales.borrarDatos(animal);
-    }
-    public static void anadir(Animal animal){
-        main.bdAnimales.insertarDatos(animal);
-    }*/
 }

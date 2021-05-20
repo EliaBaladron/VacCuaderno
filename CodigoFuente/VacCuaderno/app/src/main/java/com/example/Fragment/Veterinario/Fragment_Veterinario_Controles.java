@@ -5,15 +5,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.Activity.Animal.Activity_Animal;
 import com.example.Activity.Veterinario.Activity_Veterinario_Controles;
-import com.example.ClasesVO.Animales.Animal;
 import com.example.ClasesVO.Veterinario.Controles;
 import com.example.GridAdapter.Veterinario.GridAdapter_Controles;
 import com.example.MainActivity;
@@ -96,8 +92,6 @@ public class Fragment_Veterinario_Controles extends Fragment {
         gridView.setAdapter(adapter);
 
         gridView.setOnItemClickListener((parent, view, position, id) -> {
-            //Toast.makeText(getContext(), Integer.toString(position), Toast.LENGTH_SHORT).show();
-
             Intent intent = new Intent(getContext(), Activity_Veterinario_Controles.class);
             intent.putExtra(MainActivity.EDITAR, true);
             intent.putExtra(MainActivity.DATOS, controles.get(position));

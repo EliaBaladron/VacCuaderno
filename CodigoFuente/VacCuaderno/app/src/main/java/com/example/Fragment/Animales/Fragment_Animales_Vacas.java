@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -117,25 +116,4 @@ public class Fragment_Animales_Vacas extends Fragment {
             startActivity(intent);
         });
     }
-
-    /*public static void actualizar(Vaca vaca){
-        main.bdAnimalesVacas.actualizarBD(vaca);
-    }
-    public static void eliminar(Vaca vaca){
-        main.bdAnimalesVacas.borrarDatos(vaca);
-    }*/
-
-    /**
-     * Si existe una vaca con el crotal pasado se elimina de la BD
-     * @param crotal    Crotal a comprobar y borrar si existe
-     */
-    /*public static void eliminar(String crotal){
-        ArrayList<Vaca> vacas = main.bdAnimalesVacas.getDatosObjeto(crotal);
-
-        if(vacas.size() > 0)
-            main.bdAnimalesVacas.borrarDatos(vacas.get(0));
-    }
-    public static void anadir(Vaca vaca){
-        main.bdAnimalesVacas.insertarDatos(vaca);
-    }*/
 }

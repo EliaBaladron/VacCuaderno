@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -93,8 +92,6 @@ public class Fragment_Veterinario_Visitas extends Fragment {
         gridView.setAdapter(adapter);
 
         gridView.setOnItemClickListener((parent, view1, position, id) -> {
-            //Toast.makeText(getContext(), Integer.toString(position), Toast.LENGTH_SHORT).show();
-
             Intent intent = new Intent(getContext(), Activity_Veterinario_Visitas.class);
             intent.putExtra(MainActivity.EDITAR, true);
             intent.putExtra(MainActivity.DATOS, visitas.get(position));

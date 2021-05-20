@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -62,7 +61,6 @@ public class Fragment_Compraventa_Ventas extends Fragment {
     /**
      * Método invocado en la creación de la vista
      * @param inflater	inflater
-     * @param container	Contenedor de la vista
      * @param savedInstanceState	sis
      * @return	La vista creada
      */

@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -93,8 +92,6 @@ public class Fragment_Compraventa_Ventas_Planificadas extends Fragment {
         gridView.setAdapter(adapter);
 
         gridView.setOnItemClickListener((parent, view, position, id) -> {
-            //Toast.makeText(getContext(), Integer.toString(position), Toast.LENGTH_SHORT).show();
-
             Intent intent = new Intent(getContext(), Activity_Compraventa_Ventas_Planificadas.class);
             intent.putExtra(MainActivity.EDITAR, true);
             intent.putExtra(MainActivity.DATOS, ventas.get(position));
