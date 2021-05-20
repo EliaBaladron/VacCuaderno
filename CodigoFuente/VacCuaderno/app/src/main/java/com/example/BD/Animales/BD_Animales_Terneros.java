@@ -32,15 +32,12 @@ public class BD_Animales_Terneros extends AppCompatActivity {
 
     /**
      * Método invocado en la creación del gestor de la tabla
-     * @param savedInstanceState	
+     * @param savedInstanceState	sis
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tab_animales);
-
-        //Para acceder a la base de datos, crea una instancia de la subclase de SQLiteOpenHelper
-        //dbHelper = new FeedReaderDbHelper_VacApp(getApplicationContext());
     }
 
     /**
@@ -56,9 +53,9 @@ public class BD_Animales_Terneros extends AppCompatActivity {
      * Método que inserta datos de prueba
      */
     public void insertarDatos(){
-        insertarDatos(new Ternero("ES 1234 1234 1234", "2020-08-14", "Propisto4"));
-        insertarDatos(new Ternero("ES 1234 1234 1235", "2020-08-15", "Propisto5"));
-        insertarDatos(new Ternero("ES 1234 1234 1236", "2020-08-16", "Propisto6"));
+        insertarDatos(new Ternero("ES 1234 1234 1234", "2020-08-14", "Proposito4"));
+        insertarDatos(new Ternero("ES 1234 1234 1235", "2020-08-15", "Proposito5"));
+        insertarDatos(new Ternero("ES 1234 1234 1236", "2020-08-16", "Proposito6"));
     }
 
     /**
@@ -67,10 +64,8 @@ public class BD_Animales_Terneros extends AppCompatActivity {
      * @return			Objeto creado, con el ID automático añadido
      */
     public Ternero insertarDatos(Ternero ternero){
-        // Gets the data repository in write mode
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-        // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
         values.put(FeedReaderContract_Animales_Terneros.FeedEntry.CROTAL, ternero.getCrotal());
         if(ternero.getFechaDestete() == null)
@@ -79,14 +74,8 @@ public class BD_Animales_Terneros extends AppCompatActivity {
             values.put(FeedReaderContract_Animales_Terneros.FeedEntry.FECHA_DESTETE, ternero.getFechaDestete().toString());
         values.put(FeedReaderContract_Animales_Terneros.FeedEntry.PROPOSITO, ternero.getProposito());
 
-        // Insert the new row, returning the primary key value of the new row
-        //insert() devuelve el ID de la fila recién creada o -1 si hubo un error al insertar los datos.
         long newRowId = db.insert(
-                //nombre de la tabla
                 FeedReaderContract_Animales_Terneros.FeedEntry.TABLE_NAME,
-                //indica al framework qué hacer en caso de que ContentValues esté vacío(si no se incluye ningún valor con put)
-                //si se especifica el nombre de una columna, el framework inserta una fila y establece el valor de esa columna como nulo
-                //Si se especifica null, el framework no insertará una fila cuando no haya valores
                 null,
                 values
         );
@@ -102,20 +91,18 @@ public class BD_Animales_Terneros extends AppCompatActivity {
      * @return	Listado de los crotales
      */
     public ArrayList<String> getDatosCrotales(){
-        //Obtiene el repositorio de la BD en modo lectura
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        // How you want the results sorted in the resulting Cursor
         String sortOrder = FeedReaderContract_Animales_Terneros.FeedEntry.CROTAL + " ASC";
 
         Cursor cursor = db.query(
-                FeedReaderContract_Animales_Terneros.FeedEntry.TABLE_NAME,   // The table to query
-                null,             // The array of columns to return (pass null to get all)
-                null,              // The columns for the WHERE clause
-                null,          // The values for the WHERE clause
-                null,                   // don't group the rows
-                null,                   // don't filter by row groups
-                sortOrder               // The sort order
+                FeedReaderContract_Animales_Terneros.FeedEntry.TABLE_NAME,
+                null,
+                null,
+                null,
+                null,
+                null,
+                sortOrder
         );
 
         ArrayList<String> items = getCrotales(cursor);
@@ -130,24 +117,21 @@ public class BD_Animales_Terneros extends AppCompatActivity {
      * @return	Listado de Ternero
      */
     public ArrayList<Ternero> getDatosObjetos(){
-        //Obtiene el repositorio de la BD en modo lectura
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        // How you want the results sorted in the resulting Cursor
         String sortOrder = FeedReaderContract_Animales_Terneros.FeedEntry.CROTAL + " ASC";
 
         Cursor cursor = db.query(
-                FeedReaderContract_Animales_Terneros.FeedEntry.TABLE_NAME,   // The table to query
-                null,             // The array of columns to return (pass null to get all)
-                null,              // The columns for the WHERE clause
-                null,          // The values for the WHERE clause
-                null,                   // don't group the rows
-                null,                   // don't filter by row groups
-                sortOrder               // The sort order
+                FeedReaderContract_Animales_Terneros.FeedEntry.TABLE_NAME,
+                null,
+                null,
+                null,
+                null,
+                null,
+                sortOrder
         );
 
-        ArrayList<Ternero> items = new ArrayList<>();
-        items.addAll(getObjetos(cursor));
+        ArrayList<Ternero> items = new ArrayList<>(getObjetos(cursor));
 
         cursor.close();
         db.close();
@@ -160,27 +144,24 @@ public class BD_Animales_Terneros extends AppCompatActivity {
      * @return          Listado de Ternero cuyo crotal es igual al pasado
      */
     public ArrayList<Ternero> getDatosObjeto(String crotal){
-        //Obtiene el repositorio de la BD en modo lectura
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        // How you want the results sorted in the resulting Cursor
         String sortOrder = FeedReaderContract_Animales_Terneros.FeedEntry.CROTAL + " DESC";
 
         String selection = FeedReaderContract_Animales_Terneros.FeedEntry.CROTAL + " = ?";
         String[] selectionArgs = { crotal };
 
         Cursor cursor = db.query(
-                FeedReaderContract_Animales_Terneros.FeedEntry.TABLE_NAME,   // The table to query
-                null,             // The array of columns to return (pass null to get all)
-                selection,              // The columns for the WHERE clause
-                selectionArgs,          // The values for the WHERE clause
-                null,                   // don't group the rows
-                null,                   // don't filter by row groups
-                sortOrder               // The sort order
+                FeedReaderContract_Animales_Terneros.FeedEntry.TABLE_NAME,
+                null,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                sortOrder
         );
 
-        ArrayList<Ternero> items = new ArrayList<>();
-        items.addAll(getObjetos(cursor));
+        ArrayList<Ternero> items = new ArrayList<>(getObjetos(cursor));
 
         cursor.close();
         db.close();
@@ -241,7 +222,6 @@ public class BD_Animales_Terneros extends AppCompatActivity {
         String[] selectionArgs = {ternero.getIdString()};
 
         int count = db.update(
-                //FeedReaderDbHelper.FeedEntry.TABLE_NAME,
                 FeedReaderContract_Animales_Terneros.FeedEntry.TABLE_NAME,
                 values,
                 selection,

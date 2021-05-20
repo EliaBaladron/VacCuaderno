@@ -8,9 +8,7 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.ClasesVO.Animales.Animal;
 import com.example.ClasesVO.Animales.Vaca;
-import com.example.FeedReader.FeedReaderContract_Animales;
 import com.example.FeedReader.FeedReaderContract_Animales_Vacas;
 import com.example.FeedReader.FeedReaderDbHelper_VacApp;
 import com.example.prueba03.R;
@@ -29,21 +27,16 @@ public class BD_Animales_Vacas extends AppCompatActivity {
      */
     public BD_Animales_Vacas(FeedReaderDbHelper_VacApp dbHelperVacApp){
         this.dbHelper = dbHelperVacApp;
-
-        //insertarDatos();
     }
 
     /**
      * Método invocado en la creación del gestor de la tabla
-     * @param savedInstanceState	
+     * @param savedInstanceState	sis
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tab_animales);
-
-        //Para acceder a la base de datos, crea una instancia de la subclase de SQLiteOpenHelper
-        //dbHelper = new FeedReaderDbHelper_VacApp(getApplicationContext());
     }
 
     /**
@@ -81,23 +74,15 @@ public class BD_Animales_Vacas extends AppCompatActivity {
      * @return			Objeto creado, con el ID automático añadido
      */
     public Vaca insertarDatos(Vaca vaca){
-        // Gets the data repository in write mode
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-        // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
         values.put(FeedReaderContract_Animales_Vacas.FeedEntry.CROTAL, vaca.getCrotal());
         values.put(FeedReaderContract_Animales_Vacas.FeedEntry.FECHA_EMBARAZO, vaca.getFechaEmbarazoString());
         values.put(FeedReaderContract_Animales_Vacas.FeedEntry.TERNERO, vaca.getTernerosString());
 
-        // Insert the new row, returning the primary key value of the new row
-        //insert() devuelve el ID de la fila recién creada o -1 si hubo un error al insertar los datos.
         long newRowId = db.insert(
-                //nombre de la tabla
                 FeedReaderContract_Animales_Vacas.FeedEntry.TABLE_NAME,
-                //indica al framework qué hacer en caso de que ContentValues esté vacío(si no se incluye ningún valor con put)
-                //si se especifica el nombre de una columna, el framework inserta una fila y establece el valor de esa columna como nulo
-                //Si se especifica null, el framework no insertará una fila cuando no haya valores
                 null,
                 values
         );
@@ -113,20 +98,18 @@ public class BD_Animales_Vacas extends AppCompatActivity {
      * @return	Listado de los crotales
      */
     public ArrayList<String> getDatosCrotales(){
-        //Obtiene el repositorio de la BD en modo lectura
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        // How you want the results sorted in the resulting Cursor
         String sortOrder = FeedReaderContract_Animales_Vacas.FeedEntry.CROTAL + " ASC";
 
         Cursor cursor = db.query(
-                FeedReaderContract_Animales_Vacas.FeedEntry.TABLE_NAME,   // The table to query
-                null,             // The array of columns to return (pass null to get all)
-                null,              // The columns for the WHERE clause
-                null,          // The values for the WHERE clause
-                null,                   // don't group the rows
-                null,                   // don't filter by row groups
-                sortOrder               // The sort order
+                FeedReaderContract_Animales_Vacas.FeedEntry.TABLE_NAME,
+                null,
+                null,
+                null,
+                null,
+                null,
+                sortOrder
         );
 
         ArrayList<String> items = getCrotales(cursor);
@@ -141,24 +124,27 @@ public class BD_Animales_Vacas extends AppCompatActivity {
      * @return	Listado de Vaca
      */
     public ArrayList<Vaca> getDatosObjetos(){
-        //Obtiene el repositorio de la BD en modo lectura
+        /*
+         * Obtiene el repositorio de la BD en modo lectura
+         */
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        // How you want the results sorted in the resulting Cursor
+        /*
+         * Orden de los resultados
+         */
         String sortOrder = FeedReaderContract_Animales_Vacas.FeedEntry.CROTAL + " ASC";
 
         Cursor cursor = db.query(
-                FeedReaderContract_Animales_Vacas.FeedEntry.TABLE_NAME,   // The table to query
-                null,             // The array of columns to return (pass null to get all)
-                null,              // The columns for the WHERE clause
-                null,          // The values for the WHERE clause
-                null,                   // don't group the rows
-                null,                   // don't filter by row groups
-                sortOrder               // The sort order
+                FeedReaderContract_Animales_Vacas.FeedEntry.TABLE_NAME,/* Tabla para la consulta */
+                null,       /* Columnas que devuelve la consulta */
+                null,       /* Columnas de la clausula WHERE */
+                null,       /* Valores de la clausula WHERE */
+                null,       /* Forma de agrupación de los resultados */
+                null,
+                sortOrder   /* Orden */
         );
 
-        ArrayList<Vaca> items = new ArrayList<>();
-        items.addAll(getObjetos(cursor));
+        ArrayList<Vaca> items = new ArrayList<>(getObjetos(cursor));
 
         cursor.close();
         db.close();
@@ -171,27 +157,30 @@ public class BD_Animales_Vacas extends AppCompatActivity {
      * @return          Listado de Vaca cuyo crotal es igual al pasado
      */
     public ArrayList<Vaca> getDatosObjeto(String crotal){
-        //Obtiene el repositorio de la BD en modo lectura
+        /*
+         * Obtiene el repositorio de la BD en modo lectura
+         */
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        // How you want the results sorted in the resulting Cursor
         String sortOrder = FeedReaderContract_Animales_Vacas.FeedEntry.CROTAL + " DESC";
 
+        /*
+         * Filtro
+         */
         String selection = FeedReaderContract_Animales_Vacas.FeedEntry.CROTAL + " = ?";
         String[] selectionArgs = { crotal };
 
         Cursor cursor = db.query(
-                FeedReaderContract_Animales_Vacas.FeedEntry.TABLE_NAME,   // The table to query
-                null,             // The array of columns to return (pass null to get all)
-                selection,              // The columns for the WHERE clause
-                selectionArgs,          // The values for the WHERE clause
-                null,                   // don't group the rows
-                null,                   // don't filter by row groups
-                sortOrder               // The sort order
+                FeedReaderContract_Animales_Vacas.FeedEntry.TABLE_NAME,
+                null,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                sortOrder
         );
 
-        ArrayList<Vaca> items = new ArrayList<>();
-        items.addAll(getObjetos(cursor));
+        ArrayList<Vaca> items = new ArrayList<>(getObjetos(cursor));
 
         cursor.close();
         db.close();
@@ -252,7 +241,6 @@ public class BD_Animales_Vacas extends AppCompatActivity {
         String[] selectionArgs = {vaca.getIdString()};
 
         int count = db.update(
-                //FeedReaderDbHelper.FeedEntry.TABLE_NAME,
                 FeedReaderContract_Animales_Vacas.FeedEntry.TABLE_NAME,
                 values,
                 selection,
