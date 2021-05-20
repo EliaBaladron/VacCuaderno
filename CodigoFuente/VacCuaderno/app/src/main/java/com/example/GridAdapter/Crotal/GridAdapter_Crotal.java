@@ -16,8 +16,8 @@ import java.util.ArrayList;
  * @author Elia Baladrón Peral
  */
 public class GridAdapter_Crotal extends BaseAdapter {
-    private Context context;
-    private ArrayList<Crotal> arrayList;
+    private final Context context;
+    private final ArrayList<Crotal> arrayList;
 
     /**
      * Constructor que recibe el contexto y un listado con los objetos a mostrar
@@ -62,14 +62,14 @@ public class GridAdapter_Crotal extends BaseAdapter {
      * Crea y devuelve la vista para la posición introducida
      * @param position		Posición del array para obtener los datos
      * @param convertView	Vista que se va a crear e introducir los nuevos datos
-     * @param parent		
+     * @param parent		p
      * @return	Devuelve la vista creada
      */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
         if(convertView==null){
-            LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = layoutInflater.inflate(R.layout.item_crotal, null);
         }
 

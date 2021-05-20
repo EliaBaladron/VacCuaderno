@@ -16,8 +16,8 @@ import java.util.ArrayList;
  * @author Elia Baladrón Peral
  */
 public class GridAdapter_Vaca extends BaseAdapter {
-    private Context context;
-    private ArrayList<Vaca> arrayList;
+    private final Context context;
+    private final ArrayList<Vaca> arrayList;
 
     /**
      * Constructor que recibe el contexto y un listado con los objetos a mostrar
@@ -62,14 +62,14 @@ public class GridAdapter_Vaca extends BaseAdapter {
      * Crear y devuelve la vista para la posición introducida
      * @param position		Posición del array para obtener los datos
      * @param convertView	Vista que se va a crear e introducir los nuevos datos
-     * @param parent		
+     * @param parent		p
      * @return	Devuelve la vista creada
      */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
         if(convertView==null){
-            LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = layoutInflater.inflate(R.layout.item_animal, null);
         }
 
@@ -85,9 +85,9 @@ public class GridAdapter_Vaca extends BaseAdapter {
         textViewSexo.setText(arrayList.get(position).getAnimal().getSexo());
         textViewSexo.setVisibility(View.VISIBLE);
 
-        TextView textViewRebaño = (TextView)convertView.findViewById(R.id.animal_idReb);
-        textViewRebaño.setText(arrayList.get(position).getAnimal().getIdReb());
-        textViewRebaño.setVisibility(View.VISIBLE);
+        TextView textViewRebano = (TextView)convertView.findViewById(R.id.animal_idReb);
+        textViewRebano.setText(arrayList.get(position).getAnimal().getIdReb());
+        textViewRebano.setVisibility(View.VISIBLE);
 
         return convertView;
     }

@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.ClasesVO.Animales.Animal;
 import com.example.ClasesVO.Animales.Ternero;
 import com.example.prueba03.R;
 
@@ -70,7 +69,7 @@ public class GridAdapter_Ternero extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         if(convertView==null){
-            LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = layoutInflater.inflate(R.layout.item_animal, null);
         }
 
@@ -86,9 +85,9 @@ public class GridAdapter_Ternero extends BaseAdapter {
         textViewSexo.setText(arrayList.get(position).getAnimal().getSexo());
         textViewSexo.setVisibility(View.VISIBLE);
 
-        TextView textViewRebaño = (TextView)convertView.findViewById(R.id.animal_idReb);
-        textViewRebaño.setText(arrayList.get(position).getAnimal().getIdReb());
-        textViewRebaño.setVisibility(View.VISIBLE);
+        TextView textViewRebano = (TextView)convertView.findViewById(R.id.animal_idReb);
+        textViewRebano.setText(arrayList.get(position).getAnimal().getIdReb());
+        textViewRebano.setVisibility(View.VISIBLE);
 
         return convertView;
     }

@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.ClasesVO.Animales.Animal;
 import com.example.prueba03.R;
 
 import java.util.ArrayList;
@@ -16,8 +15,8 @@ import java.util.ArrayList;
  * @author Elia Baladrón Peral
  */
 public class GridAdapter_Lista_Crotales extends BaseAdapter {
-    private Context context;
-    private ArrayList<String> arrayList;
+    private final Context context;
+    private final ArrayList<String> arrayList;
 
     /**
      * Constructor que recibe el contexto y un listado con los objetos a mostrar
@@ -62,14 +61,14 @@ public class GridAdapter_Lista_Crotales extends BaseAdapter {
      * Crear y devuelve la vista para la posición introducida
      * @param position		Posición del array para obtener los datos
      * @param convertView	Vista que se va a crear e introducir los nuevos datos
-     * @param parent		
+     * @param parent		p
      * @return	Devuelve la vista creada
      */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
         if(convertView==null){
-            LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = layoutInflater.inflate(R.layout.item_lista_crotales, null);
         }
 

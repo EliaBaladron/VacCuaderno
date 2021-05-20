@@ -16,8 +16,8 @@ import java.util.ArrayList;
  * @author Elia Baladrón Peral
  */
 public class GridAdapter_Datos_Destete extends BaseAdapter {
-    private Context context;
-    private ArrayList<Destete> arrayList;
+    private final Context context;
+    private final ArrayList<Destete> arrayList;
 
     /**
      * Constructor que recibe el contexto y un listado con los objetos a mostrar
@@ -62,7 +62,7 @@ public class GridAdapter_Datos_Destete extends BaseAdapter {
      * Crear y devuelve la vista para la posición introducida
      * @param position		Posición del array para obtener los datos
      * @param convertView	Vista que se va a crear e introducir los nuevos datos
-     * @param parent		
+     * @param parent		p
      * @return	Devuelve la vista creada
      */
     @Override
