@@ -86,7 +86,7 @@ public class Fragment_Rebano extends Fragment {
     }
 
     void iniciarVista(){
-        rebanos = main.bdRebaños.getDatosObjetos();
+        rebanos = main.bdRebanos.getDatosObjetos();
 
         GridAdapter_Rebano adapter = new GridAdapter_Rebano(this.getContext(), rebanos);
         gridView.setAdapter(adapter);
@@ -106,12 +106,12 @@ public class Fragment_Rebano extends Fragment {
     }
 
     public static void actualizar(Rebaño rebano){
-        main.bdRebaños.actualizarBD(rebano);
+        main.bdRebanos.actualizarBD(rebano);
     }
     public static void eliminar(Rebaño rebano){
-        main.bdRebaños.borrarDatos(rebano);
+        main.bdRebanos.borrarDatos(rebano);
     }
     public static void anadir(Rebaño rebano){
-        main.bdRebaños.insertarDatos(rebano);
+        main.bdRebanos.insertarDatos(rebano);
     }
 }

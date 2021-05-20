@@ -14,7 +14,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.example.Activity.Animal.Activity_Animal;
 import com.example.Ayudas.Ayuda_Animales;
 import com.example.BD.Animales.BD_Animales;
 import com.example.BD.Animales.BD_Animales_Terneros;
@@ -32,8 +31,14 @@ import com.example.ClasesVO.Animales.Animal;
 import com.example.ClasesVO.Animales.Ternero;
 import com.example.ClasesVO.Animales.Vaca;
 import com.example.FeedReader.FeedReaderDbHelper_VacApp;
-import com.example.PagerAdapter.*;
 
+import com.example.PagerAdapter.PagerAdapter_Animales;
+import com.example.PagerAdapter.PagerAdapter_Compras;
+import com.example.PagerAdapter.PagerAdapter_Crotales;
+import com.example.PagerAdapter.PagerAdapter_Datos;
+import com.example.PagerAdapter.PagerAdapter_Rebano;
+import com.example.PagerAdapter.PagerAdapter_Ventas;
+import com.example.PagerAdapter.PagerAdapter_Veterinario;
 import com.example.prueba03.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -59,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public BD_Crotales_Pedidos bdCrotalesPedidos;
     public BD_Crotales_Recibidos bdCrotalesRecibidos;
     public BD_Crotales_SinPoner bdCrotalesSinPoner;
-    public BD_Rebaños bdRebaños;
+    public BD_Rebaños bdRebanos;
     public BD_Veterinario_Controles bdVeterinarioControles;
     public BD_Veterinario_Visitas bdVeterinarioVisitas;
     public BD_Compraventa_Compras bdCompraventaCompras;
@@ -116,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         bdCrotalesPedidos = new BD_Crotales_Pedidos(dbHelper_vacApp);
         bdCrotalesRecibidos = new BD_Crotales_Recibidos(dbHelper_vacApp);
         bdCrotalesSinPoner = new BD_Crotales_SinPoner(dbHelper_vacApp);
-        bdRebaños = new BD_Rebaños(dbHelper_vacApp);
+        bdRebanos = new BD_Rebaños(dbHelper_vacApp);
         bdVeterinarioControles = new BD_Veterinario_Controles(dbHelper_vacApp);
         bdVeterinarioVisitas = new BD_Veterinario_Visitas(dbHelper_vacApp);
         bdCompraventaCompras = new BD_Compraventa_Compras(dbHelper_vacApp);
@@ -131,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         bdCrotalesPedidos.insertarDatos();
         bdCrotalesRecibidos.insertarDatos();
         bdCrotalesSinPoner.insertarDatos();
-        bdRebaños.insertarDatos();
+        bdRebanos.insertarDatos();
         bdVeterinarioControles.insertarDatos();
         bdVeterinarioVisitas.insertarDatos();
         bdCompraventaCompras.insertarDatos();
@@ -449,31 +454,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         switch (item.getItemId()){
             case R.id.menu_animales:
-                Toast.makeText(this, "Boton animales", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Área animales", Toast.LENGTH_SHORT).show();
                 iniciarAnimales();
                 break;
             case R.id.menu_compras:
-                Toast.makeText(this, "Boton compras", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Área compras", Toast.LENGTH_SHORT).show();
                 iniciarCompras();
                 break;
             case R.id.menu_rebano:
-                Toast.makeText(this, "Boton rebaño", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Área rebaño", Toast.LENGTH_SHORT).show();
                 iniciarRebano();
                 break;
             case R.id.menu_ventas:
-                Toast.makeText(this, "Boton ventas", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Área ventas", Toast.LENGTH_SHORT).show();
                 iniciarVentas();
                 break;
             case R.id.menu_crotales:
-                Toast.makeText(this, "Boton crotales", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Área crotales", Toast.LENGTH_SHORT).show();
                 iniciarCrotales();
                 break;
             case R.id.menu_veterinario:
-                Toast.makeText(this, "Boton veterinario", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Área veterinario", Toast.LENGTH_SHORT).show();
                 iniciarVeterinario();
                 break;
             case R.id.menu_datos:
-                Toast.makeText(this, "Boton datos", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Área datos", Toast.LENGTH_SHORT).show();
                 iniciarDatos();
                 break;
         }
