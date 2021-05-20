@@ -10,14 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.ClasesVO.Animales.Ternero;
-import com.example.Fragment.Animales.Fragment_Animales;
-import com.example.Fragment.Animales.Fragment_Animales_Terneros;
 import com.example.MainActivity;
 import com.example.prueba03.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import java.sql.Date;
 
 /**
  * @author Elia Baladrón Peral
@@ -76,8 +71,6 @@ public class Activity_Animal_Ternero extends AppCompatActivity {
      * Elimina el objeto mostrado
      */
     void eliminar(){
-        //Fragment_Animales.eliminar(this.ternero.getAnimal());
-        //Fragment_Animales_Terneros.eliminar(this.ternero);
         MainActivity.eliminar(this.ternero.getAnimal());
         MainActivity.eliminar(this.ternero);
         volver();
@@ -137,35 +130,15 @@ public class Activity_Animal_Ternero extends AppCompatActivity {
         fab_cancelar = findViewById(R.id.animal_ternero_cancelar);
     }
     void iniciarListenerBotones(){
-        fab_editar.setOnClickListener(view -> {
-            //Snackbar.make(view, "Editar "+ternero.getCrotal(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
+        fab_editar.setOnClickListener(view -> editar());
 
-            editar();
-        });
+        fab_eliminar.setOnClickListener(view -> eliminar());
 
-        fab_eliminar.setOnClickListener(view -> {
-            //Snackbar.make(view, "Eliminar "+ternero.getCrotal(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
+        fab_volver.setOnClickListener(view -> volver());
 
-            eliminar();
-        });
+        fab_aceptar.setOnClickListener(view -> aceptar());
 
-        fab_volver.setOnClickListener(view -> {
-            //Snackbar.make(view, "Volver "+ternero.getCrotal(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
-
-            volver();
-        });
-
-        fab_aceptar.setOnClickListener(view -> {
-            //Snackbar.make(view, "Aceptar "+ternero.getCrotal(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
-
-            aceptar();
-        });
-
-        fab_cancelar.setOnClickListener(view -> {
-            //Snackbar.make(view, "Cancelar "+ternero.getCrotal(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
-
-            cancelar();
-        });
+        fab_cancelar.setOnClickListener(view -> cancelar());
     }
     void iniciarDatos(){
         viewNombre.setText(ternero.getAnimal().getNombre());
@@ -177,7 +150,6 @@ public class Activity_Animal_Ternero extends AppCompatActivity {
         viewReb.setText(ternero.getAnimal().getIdReb());
 
         if(ternero.getFechaDestete() == null)
-            //viewDestete.setText(new Date(System.currentTimeMillis()).toString());
             viewDestete.setText("");
         else
             viewDestete.setText(ternero.getFechaDestete().toString());
@@ -236,14 +208,10 @@ public class Activity_Animal_Ternero extends AppCompatActivity {
     }
 
     void actualizar(){
-        //Fragment_Animales.actualizar(this.ternero.getAnimal());
-        //Fragment_Animales_Terneros.actualizar(this.ternero);
         MainActivity.actualizar(this.ternero.getAnimal());
         MainActivity.actualizar(this.ternero);
     }
     void anadir(){
-        //Fragment_Animales.anadir(this.ternero.getAnimal());
-        //Fragment_Animales_Terneros.anadir(this.ternero);
         MainActivity.anadir(this.ternero.getAnimal());
         MainActivity.anadir(this.ternero);
     }

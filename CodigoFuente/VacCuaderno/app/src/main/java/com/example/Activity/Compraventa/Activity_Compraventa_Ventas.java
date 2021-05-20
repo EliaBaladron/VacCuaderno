@@ -14,7 +14,6 @@ import com.example.Fragment.Compraventa.Fragment_Compraventa_Ventas;
 import com.example.MainActivity;
 import com.example.prueba03.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 /**
  * @author Elia Baladrón Peral
@@ -119,35 +118,15 @@ public class Activity_Compraventa_Ventas extends AppCompatActivity {
         fab_cancelar = findViewById(R.id.venta_cancelar);
     }
     void iniciarListenerBotones(){
-        fab_editar.setOnClickListener(view -> {
-            //Snackbar.make(view, "Editar "+venta.getCrotal(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
+        fab_editar.setOnClickListener(view -> editar());
 
-            editar();
-        });
+        fab_eliminar.setOnClickListener(view -> eliminar());
 
-        fab_eliminar.setOnClickListener(view -> {
-            //Snackbar.make(view, "Eliminar "+venta.getCrotal(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
+        fab_volver.setOnClickListener(view -> volver());
 
-            eliminar();
-        });
+        fab_aceptar.setOnClickListener(view -> aceptar());
 
-        fab_volver.setOnClickListener(view -> {
-            //Snackbar.make(view, "Volver "+venta.getCrotal(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
-
-            volver();
-        });
-
-        fab_aceptar.setOnClickListener(view -> {
-            //Snackbar.make(view, "Aceptar "+venta.getCrotal(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
-
-            aceptar();
-        });
-
-        fab_cancelar.setOnClickListener(view -> {
-            //Snackbar.make(view, "Cancelar "+venta.getCrotal(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
-
-            cancelar();
-        });
+        fab_cancelar.setOnClickListener(view -> cancelar());
     }
     void iniciarDatos(){
         viewCrotal.setText(venta.getCrotal());

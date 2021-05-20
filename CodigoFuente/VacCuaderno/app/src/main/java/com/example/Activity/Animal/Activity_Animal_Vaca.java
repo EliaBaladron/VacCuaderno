@@ -11,13 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.ClasesVO.Animales.Vaca;
-import com.example.Fragment.Animales.Fragment_Animales;
-import com.example.Fragment.Animales.Fragment_Animales_Vacas;
 import com.example.GridAdapter.GridAdapter_Lista_Crotales;
 import com.example.MainActivity;
 import com.example.prueba03.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 /**
  * @author Elia Baladrón Peral
@@ -78,8 +75,6 @@ public class Activity_Animal_Vaca extends AppCompatActivity {
      * Elimina el objeto mostrado
      */
     void eliminar(){
-        //Fragment_Animales.eliminar(this.vaca.getAnimal());
-        //Fragment_Animales_Vacas.eliminar(this.vaca);
         MainActivity.eliminar(this.vaca.getAnimal());
         MainActivity.eliminar(this.vaca);
         volver();
@@ -139,35 +134,15 @@ public class Activity_Animal_Vaca extends AppCompatActivity {
         fab_cancelar = findViewById(R.id.animal_vaca_cancelar);
     }
     void iniciarListenersBotones(){
-        fab_editar.setOnClickListener(view -> {
-            //Snackbar.make(view, "Editar "+vaca.getAnimal().getCrotal(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
+        fab_editar.setOnClickListener(view -> editar());
 
-            editar();
-        });
+        fab_eliminar.setOnClickListener(view -> eliminar());
 
-        fab_eliminar.setOnClickListener(view -> {
-            //Snackbar.make(view, "Eliminar "+vaca.getAnimal().getCrotal(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
+        fab_volver.setOnClickListener(view -> volver());
 
-            eliminar();
-        });
+        fab_aceptar.setOnClickListener(view -> aceptar());
 
-        fab_volver.setOnClickListener(view -> {
-            //Snackbar.make(view, "Volver "+vaca.getAnimal().getCrotal(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
-
-            volver();
-        });
-
-        fab_aceptar.setOnClickListener(view -> {
-            //Snackbar.make(view, "Aceptar "+vaca.getAnimal().getCrotal(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
-
-            aceptar();
-        });
-
-        fab_cancelar.setOnClickListener(view -> {
-            //Snackbar.make(view, "Cancelar "+vaca.getAnimal().getCrotal(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
-
-            cancelar();
-        });
+        fab_cancelar.setOnClickListener(view -> cancelar());
     }
     void iniciarDatos(){
         viewNombre.setText(vaca.getAnimal().getNombre());
@@ -231,14 +206,6 @@ public class Activity_Animal_Vaca extends AppCompatActivity {
         fab_cancelar.setVisibility(View.INVISIBLE);
     }
 
-    /*void actualizar(){
-        Fragment_Animales.actualizar(this.vaca.getAnimal());
-        Fragment_Animales_Vacas.actualizar(this.vaca);
-    }
-    void anadir(){
-        Fragment_Animales.anadir(this.vaca.getAnimal());
-        Fragment_Animales_Vacas.anadir(this.vaca);
-    }*/
     void actualizar(){
         MainActivity.actualizar(this.vaca.getAnimal());
         MainActivity.actualizar(this.vaca);

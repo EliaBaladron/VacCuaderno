@@ -16,7 +16,6 @@ import com.example.GridAdapter.GridAdapter_Lista_Crotales;
 import com.example.MainActivity;
 import com.example.prueba03.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 /**
  * @author Elia Baladrón Peral
@@ -123,35 +122,15 @@ public class Activity_Veterinario_Controles extends AppCompatActivity {
         fab_cancelar = findViewById(R.id.veterinario_c_cancelar);
     }
     void iniciarListenerBotones(){
-        fab_editar.setOnClickListener(view -> {
-            //Snackbar.make(view, "Editar "+controles.getTitulo(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
+        fab_editar.setOnClickListener(view -> editar());
 
-            editar();
-        });
+        fab_eliminar.setOnClickListener(view -> eliminar());
 
-        fab_eliminar.setOnClickListener(view -> {
-            //Snackbar.make(view, "Eliminar "+controles.getTitulo(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
+        fab_volver.setOnClickListener(view -> volver());
 
-            eliminar();
-        });
+        fab_aceptar.setOnClickListener(view -> aceptar());
 
-        fab_volver.setOnClickListener(view -> {
-            //Snackbar.make(view, "Volver "+controles.getTitulo(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
-
-            volver();
-        });
-
-        fab_aceptar.setOnClickListener(view -> {
-            //Snackbar.make(view, "Aceptar "+controles.getTitulo(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
-
-            aceptar();
-        });
-
-        fab_cancelar.setOnClickListener(view -> {
-            //Snackbar.make(view, "Cancelar "+controles.getTitulo(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
-
-            cancelar();
-        });
+        fab_cancelar.setOnClickListener(view -> cancelar());
     }
     void iniciarDatos(){
         viewTitulo.setText(controles.getTitulo());

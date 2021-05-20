@@ -4,12 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.ClasesVO.Animales.Animal;
-import com.example.Fragment.Animales.Fragment_Animales;
-import com.example.Fragment.Animales.Fragment_Animales_Terneros;
-import com.example.Fragment.Animales.Fragment_Animales_Vacas;
 import com.example.MainActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -135,35 +131,15 @@ public class Activity_Animal extends AppCompatActivity {
         fab_cancelar = findViewById(R.id.animal_cancelar);
     }
     void iniciarListenerBotones(){
-        fab_editar.setOnClickListener(view -> {
-            //Snackbar.make(view, "Editar "+animal.getCrotal(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
+        fab_editar.setOnClickListener(view -> editar());
 
-            editar();
-        });
+        fab_eliminar.setOnClickListener(view -> eliminar());
 
-        fab_eliminar.setOnClickListener(view -> {
-            //Snackbar.make(view, "Eliminar "+animal.getCrotal(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
+        fab_volver.setOnClickListener(view -> volver());
 
-            eliminar();
-        });
+        fab_aceptar.setOnClickListener(view -> aceptar());
 
-        fab_volver.setOnClickListener(view -> {
-            //Snackbar.make(view, "Volver "+animal.getCrotal(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
-
-            volver();
-        });
-
-        fab_aceptar.setOnClickListener(view -> {
-            //Snackbar.make(view, "Aceptar "+animal.getCrotal(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
-
-            aceptar();
-        });
-
-        fab_cancelar.setOnClickListener(view -> {
-            //Snackbar.make(view, "Cancelar "+animal.getCrotal(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
-
-            cancelar();
-        });
+        fab_cancelar.setOnClickListener(view -> cancelar());
     }
     void iniciarDatos(){
         viewNombre.setText(animal.getNombre());
@@ -218,13 +194,6 @@ public class Activity_Animal extends AppCompatActivity {
         fab_cancelar.setVisibility(View.INVISIBLE);
     }
 
-    /*
-    void actualizar(){
-        Fragment_Animales.actualizar(this.animal);
-    }
-    void anadir(){
-        Fragment_Animales.anadir(this.animal);
-    }*/
     void actualizar(){
         MainActivity.actualizar(this.animal);
     }
