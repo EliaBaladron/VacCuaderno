@@ -44,12 +44,6 @@ public class Ternero implements Serializable {
             this.fechaDestete = Date.valueOf(fechaDestete);
         this.proposito = proposito;
     }
-    /*public Ternero(long id, String crotal, Date fechaDestete, String proposito) {
-        this.id = id;
-        this.crotal = crotal;
-        this.fechaDestete = fechaDestete;
-        this.proposito = proposito;
-    }*/
 
     /**
      * Constructor utilizado para la creación de objetos que no están en la BD, por lo que no tienen un ID
@@ -62,11 +56,6 @@ public class Ternero implements Serializable {
         this.fechaDestete = Date.valueOf(fechaDestete);
         this.proposito = proposito;
     }
-    /*public Ternero(String crotal, Date fechaDestete, String proposito) {
-        this.crotal = crotal;
-        this.fechaDestete = fechaDestete;
-        this.proposito = proposito;
-    }*/
 
     //Getters
     public long getId() {
@@ -96,9 +85,6 @@ public class Ternero implements Serializable {
     public void setCrotal(String crotal) {
         this.crotal = crotal;
     }
-    /*public void setFechaDestete(Date fechaDestete) {
-        this.fechaDestete = fechaDestete;
-    }*/
     public void setFechaDestete(String fechaDestete) {
         if(fechaDestete.equals(""))
             this.fechaDestete = null;

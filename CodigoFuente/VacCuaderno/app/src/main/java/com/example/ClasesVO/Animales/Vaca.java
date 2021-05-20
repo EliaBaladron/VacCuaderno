@@ -69,9 +69,6 @@ public class Vaca implements Serializable {
     public String getCrotal() {
         return crotal;
     }
-    /*public Date getFechaEmbarazo() {
-        return fechaEmbarazo;
-    }*/
     public String getFechaEmbarazoString() {
         return fechaEmbarazo.toString();
     }
@@ -96,15 +93,9 @@ public class Vaca implements Serializable {
     public void setCrotal(String crotal) {
         this.crotal = crotal;
     }
-    /*public void setFechaEmbarazo(Date fechaEmbarazo){
-        this.fechaEmbarazo = fechaEmbarazo;
-    }*/
     public void setFechaEmbarazo(String fechaEmbarazo){
         this.fechaEmbarazo = Date.valueOf(fechaEmbarazo);
     }
-    /*public void setTerneros(ArrayList<String> terneros) {
-        this.terneros = terneros;
-    }*/
     public void setAnimal(Animal animal) {
         this.animal = animal;
     }

@@ -23,11 +23,6 @@ public class CompraVenta implements Serializable {
         this.precio = 1000d;
         this.fecha = new Date(System.currentTimeMillis());
     }
-    /*public CompraVenta(String crotal, Double precio, Date fecha) {
-        this.crotal = crotal;
-        this.precio = precio;
-        this.fecha = fecha;
-    }*/
 
     /**
      *Constructor utilizado para la creación de objetos que no están en la BD, por lo que no tienen un ID
@@ -40,12 +35,6 @@ public class CompraVenta implements Serializable {
         this.precio = precio;
         this.fecha = Date.valueOf(fecha);
     }
-    /*public CompraVenta(long id, String crotal, Double precio, Date fecha) {
-        this.id = id;
-        this.crotal = crotal;
-        this.precio = precio;
-        this.fecha = fecha;
-    }*/
 
     /**
      * Constructor utilizado en la obtención de datos de la Base de Datos

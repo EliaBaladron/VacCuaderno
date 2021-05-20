@@ -31,16 +31,6 @@ public class Animal implements Serializable {
         this.codMadre = "ES 1234 1234 1234";
         this.idReb = "0";
     }
-    /*public Animal(long id, String nombre, String crotal, Date fechaNac, String sexo, String raza, String codMadre, String idReb) {
-        this.id = id;
-        this.nombre = nombre;
-        this.crotal = crotal;
-        this.fechaNac = fechaNac;
-        this.sexo = sexo;
-        this.raza = raza;
-        this.codMadre = codMadre;
-        this.idReb = idReb;
-    }*/
 
     /**
      * Constructor utilizado en la obtención de datos de la Base de Datos
@@ -63,15 +53,6 @@ public class Animal implements Serializable {
         this.codMadre = codMadre;
         this.idReb = idReb;
     }
-    /*public Animal(String nombre, String crotal, Date fechaNac, String sexo, String raza, String codMadre, String idReb) {
-        this.nombre = nombre;
-        this.crotal = crotal;
-        this.fechaNac = fechaNac;
-        this.sexo = sexo;
-        this.raza = raza;
-        this.codMadre = codMadre;
-        this.idReb = idReb;
-    }*/
 
     /**
      * Constructor utilizado para la creación de objetos que no están en la BD, por lo que no tienen un ID

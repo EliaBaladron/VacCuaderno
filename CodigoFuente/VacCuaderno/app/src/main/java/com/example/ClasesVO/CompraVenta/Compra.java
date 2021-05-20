@@ -15,9 +15,7 @@ public class Compra extends CompraVenta implements Serializable {
     public Compra() {
         super();
     }
-    /*public Compra(String crotal, Double precio, Date fecha) {
-        super(crotal, precio, fecha);
-    }*/
+
 
     /**
      * Constructor utilizado en la obtención de datos de la Base de Datos
@@ -38,7 +36,5 @@ public class Compra extends CompraVenta implements Serializable {
     public Compra(String crotal, Double precio, String fecha) {
         super(crotal, precio, fecha);
     }
-    /*public Compra(long id, String crotal, Double precio, Date fecha) {
-        super(id, crotal, precio, fecha);
-    }*/
+
 }

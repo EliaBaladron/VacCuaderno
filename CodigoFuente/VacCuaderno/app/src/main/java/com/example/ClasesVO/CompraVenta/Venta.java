@@ -16,9 +16,7 @@ public class Venta extends CompraVenta implements Serializable {
     public Venta(){
         super();
     }
-    /*public Venta(String crotal, Double precio, Date fecha) {
-        super(crotal, precio, fecha);
-    }*/
+
 
     /**
      * Constructor utilizado para la creación de objetos que no están en la BD, por lo que no tienen un ID
@@ -29,9 +27,7 @@ public class Venta extends CompraVenta implements Serializable {
     public Venta(String crotal, Double precio, String fecha) {
         super(crotal, precio, fecha);
     }
-    /*public Venta(long id, String crotal, Double precio, Date fecha) {
-        super(id, crotal, precio, fecha);
-    }*/
+
 
     /**
      * Constructor utilizado en la obtención de datos de la Base de Datos
