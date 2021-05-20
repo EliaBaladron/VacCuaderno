@@ -3,7 +3,6 @@ package com.example.PagerAdapter;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.example.Fragment.Crotales.Fragment_Crotales_Faltan;
@@ -17,12 +16,12 @@ import com.example.MainActivity;
  */
 public class PagerAdapter_Crotales extends FragmentStatePagerAdapter {
 
-    private int tabsNUmber;
+    private final int tabsNumber;
     MainActivity main;
 
     public PagerAdapter_Crotales(@NonNull FragmentManager fm, int behavior, int tabs, MainActivity main) {
         super(fm, behavior);
-        this.tabsNUmber = tabs;
+        this.tabsNumber = tabs;
         this.main = main;
     }
 
@@ -45,7 +44,6 @@ public class PagerAdapter_Crotales extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return this.tabsNUmber;
-        //return 4;
+        return this.tabsNumber;
     }
 }

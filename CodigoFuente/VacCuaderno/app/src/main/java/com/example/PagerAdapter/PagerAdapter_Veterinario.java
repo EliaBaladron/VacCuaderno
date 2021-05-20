@@ -3,7 +3,6 @@ package com.example.PagerAdapter;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.example.Fragment.Veterinario.Fragment_Veterinario_Controles;
@@ -15,12 +14,12 @@ import com.example.MainActivity;
  */
 public class PagerAdapter_Veterinario extends FragmentStatePagerAdapter {
 
-    private int tabsNUmber;
+    private final int tabsNumber;
     MainActivity main;
 
     public PagerAdapter_Veterinario(@NonNull FragmentManager fm, int behavior, int tabs, MainActivity main) {
         super(fm, behavior);
-        this.tabsNUmber = tabs;
+        this.tabsNumber = tabs;
         this.main = main;
     }
 
@@ -39,6 +38,6 @@ public class PagerAdapter_Veterinario extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return this.tabsNUmber;
+        return this.tabsNumber;
     }
 }
