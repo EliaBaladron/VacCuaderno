@@ -14,19 +14,17 @@ import com.example.MainActivity;
 public class PagerAdapter_Rebano extends FragmentStatePagerAdapter {
 
     private final int tabsNumber;
-    MainActivity main;
 
-    public PagerAdapter_Rebano(@NonNull FragmentManager fm, int behavior, int tabs, MainActivity main) {
+    public PagerAdapter_Rebano(@NonNull FragmentManager fm, int behavior, int tabs) {
         super(fm, behavior);
         this.tabsNumber = tabs;
-        this.main = main;
     }
 
     @NonNull
     @Override
     public Fragment getItem(int position) {
         if (position == 0) {
-            return new Fragment_Rebano(main);
+            return new Fragment_Rebano();
         }
         return null;
     }

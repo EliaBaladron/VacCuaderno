@@ -30,8 +30,6 @@ public class Fragment_Animales_Terneros extends Fragment {
     GridView gridView;
     FloatingActionButton fab_add;
 
-    static MainActivity main;
-
     public static ArrayList<Ternero> terneros;
 
     /**
@@ -39,9 +37,6 @@ public class Fragment_Animales_Terneros extends Fragment {
      */
     public Fragment_Animales_Terneros() {
         // Required empty public constructor
-    }
-    public Fragment_Animales_Terneros(MainActivity main) {
-        this.main = main;
     }
 
     /**
@@ -90,12 +85,7 @@ public class Fragment_Animales_Terneros extends Fragment {
     }
 
     void iniciarVista(){
-        terneros = main.bdAnimalesTerneros.getDatosObjetos();
-
-        for(Ternero ternero: terneros){
-            ArrayList<Animal> t = main.bdAnimales.getDatosObjeto(ternero.getCrotal());
-            ternero.setAnimal((Animal) t.get(0));
-        }
+        terneros = MainActivity.obtenerTerneros();
 
         GridAdapter_Ternero adapter = new GridAdapter_Ternero(this.getContext(), terneros);
         gridView.setAdapter(adapter);

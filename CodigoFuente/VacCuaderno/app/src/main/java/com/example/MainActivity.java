@@ -51,6 +51,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
+import java.sql.Date;
 import java.util.ArrayList;
 
 /**
@@ -172,7 +173,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.setDrawerIndicatorEnabled(true);
         toggle.syncState();
 
-        adapter = new PagerAdapter_Animales(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, tabLayout.getTabCount(), this);
+        adapter = new PagerAdapter_Animales(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -221,7 +222,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.setDrawerIndicatorEnabled(true);
         toggle.syncState();
 
-        adapter_compras = new PagerAdapter_Compras(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, tabLayout.getTabCount(), this);
+        adapter_compras = new PagerAdapter_Compras(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, tabLayout.getTabCount());
         viewPager.setAdapter(adapter_compras);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -263,7 +264,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.setDrawerIndicatorEnabled(true);
         toggle.syncState();
 
-        adapter_ventas = new PagerAdapter_Ventas(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, tabLayout.getTabCount(), this);
+        adapter_ventas = new PagerAdapter_Ventas(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, tabLayout.getTabCount());
         viewPager.setAdapter(adapter_ventas);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -306,7 +307,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.setDrawerIndicatorEnabled(true);
         toggle.syncState();
 
-        adapter_crotales = new PagerAdapter_Crotales(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, tabLayout.getTabCount(), this);
+        adapter_crotales = new PagerAdapter_Crotales(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, tabLayout.getTabCount());
         viewPager.setAdapter(adapter_crotales);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -347,7 +348,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.setDrawerIndicatorEnabled(true);
         toggle.syncState();
 
-        adapter_veterinario = new PagerAdapter_Veterinario(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, tabLayout.getTabCount(), this);
+        adapter_veterinario = new PagerAdapter_Veterinario(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, tabLayout.getTabCount());
         viewPager.setAdapter(adapter_veterinario);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -390,7 +391,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.setDrawerIndicatorEnabled(true);
         toggle.syncState();
 
-        adapter_datos = new PagerAdapter_Datos(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, tabLayout.getTabCount(), this);
+        adapter_datos = new PagerAdapter_Datos(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, tabLayout.getTabCount());
         viewPager.setAdapter(adapter_datos);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -430,7 +431,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.setDrawerIndicatorEnabled(true);
         toggle.syncState();
 
-        adapter_rebano = new PagerAdapter_Rebano(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, tabLayout.getTabCount(), this);
+        adapter_rebano = new PagerAdapter_Rebano(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, tabLayout.getTabCount());
         viewPager.setAdapter(adapter_rebano);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -494,44 +495,44 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
     //Animales
-    public static void anadir(Animal animal){
+    public static void insertar(Animal animal){
         bdAnimales.insertarDatos(animal);
     }
-    public static void anadir(Ternero ternero){
+    public static void insertar(Ternero ternero){
         bdAnimalesTerneros.insertarDatos(ternero);
     }
-    public static void anadir(Vaca vaca){
+    public static void insertar(Vaca vaca){
         bdAnimalesVacas.insertarDatos(vaca);
     }
     //Compraventa
-    public static void anadir(Compra compra){
+    public static void insertar(Compra compra){
         bdCompraventaCompras.insertarDatos(compra);
     }
-    public static void anadir(Venta venta){
+    public static void insertar(Venta venta){
         bdCompraventaVentas.insertarDatos(venta);
     }
     //Crotales
-    public static void anadirFaltan(Crotal crotal){
+    public static void insertarFaltan(Crotal crotal){
         bdCrotalesFaltan.insertarDatos(crotal);
     }
-    public static void anadirPedidos(Crotal crotal){
+    public static void insertarPedidos(Crotal crotal){
         bdCrotalesPedidos.insertarDatos(crotal);
     }
-    public static void anadirRecibidos(Crotal crotal){
+    public static void insertarRecibidos(Crotal crotal){
         bdCrotalesRecibidos.insertarDatos(crotal);
     }
-    public static void anadirSinPoner(Crotal crotal){
+    public static void insertarSinPoner(Crotal crotal){
         bdCrotalesSinPoner.insertarDatos(crotal);
     }
     //Rebaño
-    public static void añadir(Rebaño rebano){
+    public static void insertar(Rebaño rebano){
         bdRebanos.insertarDatos(rebano);
     }
     //Veterinario
-    public static void añadir(Controles control){
+    public static void insertar(Controles control){
         bdVeterinarioControles.insertarDatos(control);
     }
-    public static void añadir(Visitas visita){
+    public static void insertar(Visitas visita){
         bdVeterinarioVisitas.insertarDatos(visita);
     }
 
@@ -691,6 +692,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
     public static ArrayList<Venta> obtenerVentas(){
         return bdCompraventaVentas.getDatosObjetos();
+    }
+    public static ArrayList<Venta> obtenerVentasRealizadas(){
+        ArrayList<Venta> ventas = bdCompraventaVentas.getDatosObjetos();
+
+        for(Venta v: ventas){
+            if(v.getFecha().after(new Date(System.currentTimeMillis()))){
+                ventas.remove(v);
+            }
+        }
+
+        return ventas;
+    }
+    public static ArrayList<Venta> obtenerVentasPlanificadas(){
+        ArrayList<Venta> ventas = bdCompraventaVentas.getDatosObjetos();
+
+        for(Venta v: ventas){
+            if(v.getFecha().before(new Date(System.currentTimeMillis()))){
+                ventas.remove(v);
+            }
+        }
+
+        return ventas;
     }
     //Crotales
     public static ArrayList<Crotal> obtenerCrotalesFaltan(){

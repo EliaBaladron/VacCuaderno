@@ -66,7 +66,7 @@ public class Activity_Crotal_SinPoner extends AppCompatActivity {
      * Elimina el objeto mostrado
      */
     void eliminar(){
-        Fragment_Crotales_SinPoner.eliminar(this.crotal);
+        MainActivity.eliminarSinPoner(this.crotal);
         volver();
     }
     /**
@@ -160,9 +160,9 @@ public class Activity_Crotal_SinPoner extends AppCompatActivity {
     }
 
     void actualizar(){
-        Fragment_Crotales_SinPoner.actualizar(this.crotal);
+        MainActivity.actualizarSinPoner(this.crotal);
     }
     void anadir(){
-        Fragment_Crotales_SinPoner.anadir(this.crotal);
+        MainActivity.insertarSinPoner(this.crotal);
     }
 }

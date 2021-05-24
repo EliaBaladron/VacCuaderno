@@ -26,8 +26,6 @@ public class Fragment_Compraventa_Ventas_Realizadas extends Fragment {
     GridView gridView;
     FloatingActionButton fab_add;
 
-    MainActivity main;
-
     public static ArrayList<Venta> ventas;
 
 
@@ -35,9 +33,6 @@ public class Fragment_Compraventa_Ventas_Realizadas extends Fragment {
      * Constructor vacío del fragmento
      */
     public Fragment_Compraventa_Ventas_Realizadas() {
-    }
-    public Fragment_Compraventa_Ventas_Realizadas(MainActivity main) {
-        this.main = main;
     }
 
     /**
@@ -86,7 +81,8 @@ public class Fragment_Compraventa_Ventas_Realizadas extends Fragment {
     }
 
     void iniciarVista(){
-        ventas = main.bdCompraventaVentas.getDatosObjetos();
+        //ventas = MainActivity.obtenerVentasRealizadas();
+        ventas = MainActivity.obtenerVentas();
 
         GridAdapter_Compraventa adapter = new GridAdapter_Compraventa(this.getContext(), ventas);
         gridView.setAdapter(adapter);

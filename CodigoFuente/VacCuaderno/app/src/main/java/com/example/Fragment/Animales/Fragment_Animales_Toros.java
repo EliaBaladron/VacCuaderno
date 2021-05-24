@@ -32,8 +32,6 @@ public class Fragment_Animales_Toros extends Fragment {
     GridView gridView;
     FloatingActionButton fab_add;
 
-    static MainActivity main;
-
     public static ArrayList<Animal> toros;
 
     /**
@@ -41,9 +39,6 @@ public class Fragment_Animales_Toros extends Fragment {
      */
     public Fragment_Animales_Toros() {
         // Required empty public constructor
-    }
-    public Fragment_Animales_Toros(MainActivity main) {
-        this.main = main;
     }
 
     /**
@@ -92,24 +87,7 @@ public class Fragment_Animales_Toros extends Fragment {
     }
 
     void iniciarVista(){
-        toros = new ArrayList<>();
-
-        ArrayList<String> crotalesA = main.bdAnimales.getDatosCrotales();
-        ArrayList<String> crotalesV = main.bdAnimalesVacas.getDatosCrotales();
-        ArrayList<String> crotalesT = main.bdAnimalesTerneros.getDatosCrotales();
-
-        for(String crotal: crotalesV)
-            crotalesA.remove(crotal);
-        for(String crotal: crotalesT)
-            crotalesA.remove(crotal);
-
-        Log.println(Log.INFO, "INFO", Integer.toString(crotalesA.size()));
-
-        for(String crotal: crotalesA){
-            ArrayList<Animal> t = main.bdAnimales.getDatosObjeto(crotal);
-            toros.add((Animal) t.get(0));
-        }
-
+        toros = MainActivity.obtenerToros();
 
         GridAdapter_Toro adapter = new GridAdapter_Toro(this.getContext(), toros);
         gridView.setAdapter(adapter);

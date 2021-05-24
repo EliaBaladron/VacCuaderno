@@ -70,7 +70,7 @@ public class Activity_Veterinario_Controles extends AppCompatActivity {
      * Elimina el objeto mostrado
      */
     void eliminar(){
-        Fragment_Veterinario_Controles.eliminar(this.controles);
+        MainActivity.eliminar(this.controles);
         volver();
     }
     /**
@@ -173,9 +173,9 @@ public class Activity_Veterinario_Controles extends AppCompatActivity {
     }
 
     void actualizar(){
-        Fragment_Veterinario_Controles.actualizar(this.controles);
+        MainActivity.actualizar(this.controles);
     }
     void anadir(){
-        Fragment_Veterinario_Controles.anadir(this.controles);
+        MainActivity.insertar(this.controles);
     }
 }

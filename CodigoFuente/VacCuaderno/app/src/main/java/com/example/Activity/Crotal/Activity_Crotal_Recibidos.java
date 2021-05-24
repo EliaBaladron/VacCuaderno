@@ -66,7 +66,7 @@ public class Activity_Crotal_Recibidos extends AppCompatActivity {
      * Elimina el objeto mostrado
      */
     void eliminar(){
-        Fragment_Crotales_Recibidos.eliminar(this.crotal);
+        MainActivity.eliminarRecibidos(this.crotal);
         volver();
     }
     /**
@@ -160,9 +160,9 @@ public class Activity_Crotal_Recibidos extends AppCompatActivity {
     }
 
     void actualizar(){
-        Fragment_Crotales_Recibidos.actualizar(this.crotal);
+        MainActivity.actualizarRecibidos(this.crotal);
     }
     void anadir(){
-        Fragment_Crotales_Recibidos.anadir(this.crotal);
+        MainActivity.insertarRecibidos(this.crotal);
     }
 }

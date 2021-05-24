@@ -26,8 +26,6 @@ public class Fragment_Compraventa_Ventas extends Fragment {
     GridView gridView;
     FloatingActionButton fab_add;
 
-    static MainActivity main;
-
     public static ArrayList<Venta> ventas;
 
 
@@ -36,9 +34,6 @@ public class Fragment_Compraventa_Ventas extends Fragment {
      */
     public Fragment_Compraventa_Ventas() {
         // Required empty public constructor
-    }
-    public Fragment_Compraventa_Ventas(MainActivity main) {
-        Fragment_Compraventa_Ventas.main = main;
     }
 
     /**
@@ -86,7 +81,7 @@ public class Fragment_Compraventa_Ventas extends Fragment {
     }
 
     void iniciarVista(){
-        ventas = main.bdCompraventaVentas.getDatosObjetos();
+        ventas = MainActivity.obtenerVentas();
 
         GridAdapter_Compraventa adapter = new GridAdapter_Compraventa(this.getContext(), ventas);
         gridView.setAdapter(adapter);
@@ -106,15 +101,5 @@ public class Fragment_Compraventa_Ventas extends Fragment {
             intent.putExtra(MainActivity.DATOS, new Venta());
             startActivity(intent);
         });
-    }
-
-    public static void actualizar(Venta venta){
-        main.bdCompraventaVentas.actualizarBD(venta);
-    }
-    public static void eliminar(Venta venta){
-        main.bdCompraventaVentas.borrarDatos(venta);
-    }
-    public static void anadir(Venta venta){
-        main.bdCompraventaVentas.insertarDatos(venta);
     }
 }

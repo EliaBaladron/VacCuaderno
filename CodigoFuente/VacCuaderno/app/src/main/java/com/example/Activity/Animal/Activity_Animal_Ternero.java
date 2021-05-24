@@ -212,7 +212,7 @@ public class Activity_Animal_Ternero extends AppCompatActivity {
         MainActivity.actualizar(this.ternero);
     }
     void anadir(){
-        MainActivity.anadir(this.ternero.getAnimal());
-        MainActivity.anadir(this.ternero);
+        MainActivity.insertar(this.ternero.getAnimal());
+        MainActivity.insertar(this.ternero);
     }
 }

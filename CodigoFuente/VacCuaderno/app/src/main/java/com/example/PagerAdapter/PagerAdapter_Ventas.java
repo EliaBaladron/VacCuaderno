@@ -16,12 +16,10 @@ import com.example.MainActivity;
 public class PagerAdapter_Ventas extends FragmentStatePagerAdapter {
 
     private final int tabsNumber;
-    MainActivity main;
 
-    public PagerAdapter_Ventas(@NonNull FragmentManager fm, int behavior, int tabs, MainActivity main) {
+    public PagerAdapter_Ventas(@NonNull FragmentManager fm, int behavior, int tabs) {
         super(fm, behavior);
         this.tabsNumber = tabs;
-        this.main = main;
     }
 
     @NonNull
@@ -29,11 +27,11 @@ public class PagerAdapter_Ventas extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                return new Fragment_Compraventa_Ventas(main);
+                return new Fragment_Compraventa_Ventas();
             case 1:
-                return new Fragment_Compraventa_Ventas_Planificadas(main);
+                return new Fragment_Compraventa_Ventas_Planificadas();
             case 2:
-                return new Fragment_Compraventa_Ventas_Realizadas(main);
+                return new Fragment_Compraventa_Ventas_Realizadas();
             default:
                 return null;
         }

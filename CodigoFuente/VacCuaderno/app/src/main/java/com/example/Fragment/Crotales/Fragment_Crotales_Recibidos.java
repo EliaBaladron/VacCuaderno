@@ -27,8 +27,6 @@ public class Fragment_Crotales_Recibidos extends Fragment {
     GridView gridView;
     FloatingActionButton fab_add;
 
-    static MainActivity main;
-
     public static ArrayList<Crotal> crotales;
 
     /**
@@ -36,9 +34,6 @@ public class Fragment_Crotales_Recibidos extends Fragment {
      */
     public Fragment_Crotales_Recibidos() {
         // Required empty public constructor
-    }
-    public Fragment_Crotales_Recibidos(MainActivity main) {
-        Fragment_Crotales_Recibidos.main = main;
     }
 
     /**
@@ -88,7 +83,7 @@ public class Fragment_Crotales_Recibidos extends Fragment {
     }
 
     void iniciarVista(){
-        crotales = main.bdCrotalesRecibidos.getDatosObjetos();
+        crotales = MainActivity.obtenerCrotalesRecibidos();
 
         GridAdapter_Crotal adapter = new GridAdapter_Crotal(this.getContext(), crotales);
         gridView.setAdapter(adapter);
@@ -106,15 +101,5 @@ public class Fragment_Crotales_Recibidos extends Fragment {
             intent.putExtra(MainActivity.DATOS, new Crotal());
             startActivity(intent);
         });
-    }
-
-    public static void actualizar(Crotal crotal){
-        main.bdCrotalesRecibidos.actualizarBD(crotal);
-    }
-    public static void eliminar(Crotal crotal){
-        main.bdCrotalesRecibidos.borrarDatos(crotal);
-    }
-    public static void anadir(Crotal crotal){
-        main.bdCrotalesRecibidos.insertarDatos(crotal);
     }
 }

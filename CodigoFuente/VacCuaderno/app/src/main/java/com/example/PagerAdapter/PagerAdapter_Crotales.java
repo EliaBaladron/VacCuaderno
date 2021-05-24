@@ -17,12 +17,10 @@ import com.example.MainActivity;
 public class PagerAdapter_Crotales extends FragmentStatePagerAdapter {
 
     private final int tabsNumber;
-    MainActivity main;
 
-    public PagerAdapter_Crotales(@NonNull FragmentManager fm, int behavior, int tabs, MainActivity main) {
+    public PagerAdapter_Crotales(@NonNull FragmentManager fm, int behavior, int tabs) {
         super(fm, behavior);
         this.tabsNumber = tabs;
-        this.main = main;
     }
 
     @NonNull
@@ -30,13 +28,13 @@ public class PagerAdapter_Crotales extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                return new Fragment_Crotales_Faltan(main);
+                return new Fragment_Crotales_Faltan();
             case 1:
-                return new Fragment_Crotales_Pedidos(main);
+                return new Fragment_Crotales_Pedidos();
             case 2:
-                return new Fragment_Crotales_Recibidos(main);
+                return new Fragment_Crotales_Recibidos();
             case 3:
-                return new Fragment_Crotales_SinPoner(main);
+                return new Fragment_Crotales_SinPoner();
             default:
                 return null;
         }

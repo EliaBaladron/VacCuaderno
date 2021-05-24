@@ -211,7 +211,7 @@ public class Activity_Animal_Vaca extends AppCompatActivity {
         MainActivity.actualizar(this.vaca);
     }
     void anadir(){
-        MainActivity.anadir(this.vaca.getAnimal());
-        MainActivity.anadir(this.vaca);
+        MainActivity.insertar(this.vaca.getAnimal());
+        MainActivity.insertar(this.vaca);
     }
 }

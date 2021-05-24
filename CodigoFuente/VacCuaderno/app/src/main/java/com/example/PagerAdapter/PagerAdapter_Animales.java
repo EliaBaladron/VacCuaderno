@@ -14,12 +14,10 @@ import com.example.MainActivity;
 public class PagerAdapter_Animales extends FragmentStatePagerAdapter {
 
     private final int tabsNumber;
-    MainActivity main;
 
-    public PagerAdapter_Animales(@NonNull FragmentManager fm, int behavior, int tabs, MainActivity main) {
+    public PagerAdapter_Animales(@NonNull FragmentManager fm, int behavior, int tabs) {
         super(fm, behavior);
         this.tabsNumber = tabs;
-        this.main = main;
     }
 
     @NonNull
@@ -27,13 +25,13 @@ public class PagerAdapter_Animales extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                return new Fragment_Animales(main);
+                return new Fragment_Animales();
             case 1:
-                return new Fragment_Animales_Vacas(main);
+                return new Fragment_Animales_Vacas();
             case 2:
-                return new Fragment_Animales_Terneros(main);
+                return new Fragment_Animales_Terneros();
             case 3:
-                return new Fragment_Animales_Toros(main);
+                return new Fragment_Animales_Toros();
             default:
                 return null;
         }

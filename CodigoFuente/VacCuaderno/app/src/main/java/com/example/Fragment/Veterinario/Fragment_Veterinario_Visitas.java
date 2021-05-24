@@ -26,8 +26,6 @@ public class Fragment_Veterinario_Visitas extends Fragment {
     GridView gridView;
     FloatingActionButton fab_add;
 
-    static MainActivity main;
-
     public static ArrayList<Visitas> visitas;
 
     /**
@@ -35,9 +33,6 @@ public class Fragment_Veterinario_Visitas extends Fragment {
      */
     public Fragment_Veterinario_Visitas() {
         // Required empty public constructor
-    }
-    public Fragment_Veterinario_Visitas(MainActivity main) {
-        Fragment_Veterinario_Visitas.main = main;
     }
 
     /**
@@ -86,7 +81,7 @@ public class Fragment_Veterinario_Visitas extends Fragment {
     }
 
     void iniciarVista(){
-        visitas = main.bdVeterinarioVisitas.getDatosObjetos();
+        visitas = MainActivity.obtenerVisitas();
 
         GridAdapter_Visitas adapter = new GridAdapter_Visitas(this.getContext(), visitas);
         gridView.setAdapter(adapter);
@@ -104,15 +99,5 @@ public class Fragment_Veterinario_Visitas extends Fragment {
             intent.putExtra(MainActivity.DATOS, new Visitas());
             startActivity(intent);
         });
-    }
-
-    public static void actualizar(Visitas visitas){
-        main.bdVeterinarioVisitas.actualizarBD(visitas);
-    }
-    public static void eliminar(Visitas visitas){
-        main.bdVeterinarioVisitas.borrarDatos(visitas);
-    }
-    public static void anadir(Visitas visitas){
-        main.bdVeterinarioVisitas.insertarDatos(visitas);
     }
 }

@@ -66,7 +66,7 @@ public class Activity_Rebano extends AppCompatActivity {
      * Elimina el objeto mostrado
      */
     void eliminar(){
-        Fragment_Rebano.eliminar(this.rebano);
+        MainActivity.eliminar(this.rebano);
         volver();
     }
     /**
@@ -157,9 +157,9 @@ public class Activity_Rebano extends AppCompatActivity {
     }
 
     void actualizar(){
-        Fragment_Rebano.actualizar(this.rebano);
+        MainActivity.actualizar(this.rebano);
     }
     void anadir(){
-        Fragment_Rebano.anadir(this.rebano);
+        MainActivity.insertar(this.rebano);
     }
 }

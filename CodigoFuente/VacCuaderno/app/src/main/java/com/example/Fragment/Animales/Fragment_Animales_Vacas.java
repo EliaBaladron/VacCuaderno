@@ -29,8 +29,6 @@ public class Fragment_Animales_Vacas extends Fragment {
     GridView gridView;
     FloatingActionButton fab_add;
 
-    static MainActivity main;
-
     public static ArrayList<Vaca> vacas;
 
     /**
@@ -38,9 +36,6 @@ public class Fragment_Animales_Vacas extends Fragment {
      */
     public Fragment_Animales_Vacas() {
         // Required empty public constructor
-    }
-    public Fragment_Animales_Vacas(MainActivity main) {
-        this.main = main;
     }
 
     /**
@@ -89,13 +84,7 @@ public class Fragment_Animales_Vacas extends Fragment {
     }
 
     void iniciarVista(){
-        vacas = main.bdAnimalesVacas.getDatosObjetos();
-
-        for(Vaca vaca: vacas){
-            ArrayList<Animal> t = main.bdAnimales.getDatosObjeto(vaca.getCrotal());
-            if(t.size() > 0)
-                vaca.setAnimal((Animal) t.get(0));
-        }
+        vacas = MainActivity.obtenerVacas();
 
         GridAdapter_Vaca adapter = new GridAdapter_Vaca(this.getContext(), vacas);
         gridView.setAdapter(adapter);

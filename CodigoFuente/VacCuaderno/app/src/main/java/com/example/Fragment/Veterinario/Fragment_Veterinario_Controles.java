@@ -26,8 +26,6 @@ public class Fragment_Veterinario_Controles extends Fragment {
     GridView gridView;
     FloatingActionButton fab_add;
 
-    static MainActivity main;
-
     public static ArrayList<Controles> controles;
 
     /**
@@ -35,9 +33,6 @@ public class Fragment_Veterinario_Controles extends Fragment {
      */
     public Fragment_Veterinario_Controles() {
         // Required empty public constructor
-    }
-    public Fragment_Veterinario_Controles(MainActivity main) {
-        Fragment_Veterinario_Controles.main = main;
     }
 
     /**
@@ -86,7 +81,7 @@ public class Fragment_Veterinario_Controles extends Fragment {
     }
 
     void iniciarVista(){
-        controles = main.bdVeterinarioControles.getDatosObjetos();
+        controles = MainActivity.obtenerControles();
 
         GridAdapter_Controles adapter = new GridAdapter_Controles(this.getContext(), controles);
         gridView.setAdapter(adapter);
@@ -104,15 +99,5 @@ public class Fragment_Veterinario_Controles extends Fragment {
             intent.putExtra(MainActivity.DATOS, new Controles());
             startActivity(intent);
         });
-    }
-
-    public static void actualizar(Controles controles){
-        main.bdVeterinarioControles.actualizarBD(controles);
-    }
-    public static void eliminar(Controles controles){
-        main.bdVeterinarioControles.borrarDatos(controles);
-    }
-    public static void anadir(Controles controles){
-        main.bdVeterinarioControles.insertarDatos(controles);
     }
 }

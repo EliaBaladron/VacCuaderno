@@ -33,7 +33,6 @@ public class Fragment_Animales extends Fragment {
     GridView gridView;
     FloatingActionButton fab_add;
 
-    static MainActivity main;
 
     public static ArrayList<Animal> animales;
 
@@ -41,9 +40,6 @@ public class Fragment_Animales extends Fragment {
      * Constructor vacío del fragmento
      */
     public Fragment_Animales(){}
-    public Fragment_Animales(MainActivity main) {
-        this.main = main;
-    }
 
     /**
      * Inicia una nueva instancia del fragmento
@@ -91,7 +87,7 @@ public class Fragment_Animales extends Fragment {
     }
 
     void iniciarVista(){
-        animales = main.bdAnimales.getDatosObjetos();
+        animales = MainActivity.bdAnimales.getDatosObjetos();
 
         GridAdapter_Animal adapter = new GridAdapter_Animal(this.getContext(), animales);
         gridView.setAdapter(adapter);

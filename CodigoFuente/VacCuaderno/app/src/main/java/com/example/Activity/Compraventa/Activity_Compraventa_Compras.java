@@ -67,7 +67,7 @@ public class Activity_Compraventa_Compras extends AppCompatActivity {
      * Elimina el objeto mostrado
      */
     void eliminar(){
-        Fragment_Compraventa_Compras.eliminar(this.compra);
+        MainActivity.eliminar(this.compra);
         volver();
     }
     /**
@@ -166,9 +166,9 @@ public class Activity_Compraventa_Compras extends AppCompatActivity {
     }
 
     void actualizar(){
-        Fragment_Compraventa_Compras.actualizar(this.compra);
+        MainActivity.actualizar(this.compra);
     }
     void anadir(){
-        Fragment_Compraventa_Compras.anadir(this.compra);
+        MainActivity.insertar(this.compra);
     }
 }

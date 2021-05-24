@@ -66,7 +66,7 @@ public class Activity_Crotal_Pedidos extends AppCompatActivity {
      * Elimina el objeto mostrado
      */
     void eliminar(){
-        Fragment_Crotales_Pedidos.eliminar(this.crotal);
+        MainActivity.eliminarPedidos(this.crotal);
         volver();
     }
     /**
@@ -160,9 +160,9 @@ public class Activity_Crotal_Pedidos extends AppCompatActivity {
     }
 
     void actualizar(){
-        Fragment_Crotales_Pedidos.actualizar(this.crotal);
+        MainActivity.actualizarPedidos(this.crotal);
     }
     void anadir(){
-        Fragment_Crotales_Pedidos.anadir(this.crotal);
+        MainActivity.insertarPedidos(this.crotal);
     }
 }

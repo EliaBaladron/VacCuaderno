@@ -72,7 +72,7 @@ public class Activity_Veterinario_Visitas extends AppCompatActivity {
      * Elimina el objeto mostrado
      */
     void eliminar(){
-        Fragment_Veterinario_Visitas.eliminar(this.visitas);
+        MainActivity.eliminar(this.visitas);
         volver();
     }
     /**
@@ -176,9 +176,9 @@ public class Activity_Veterinario_Visitas extends AppCompatActivity {
     }
 
     void actualizar(){
-        Fragment_Veterinario_Visitas.actualizar(this.visitas);
+        MainActivity.actualizar(this.visitas);
     }
     void anadir(){
-        Fragment_Veterinario_Visitas.anadir(this.visitas);
+        MainActivity.insertar(this.visitas);
     }
 }

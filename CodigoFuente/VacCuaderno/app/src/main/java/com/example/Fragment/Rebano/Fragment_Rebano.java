@@ -26,8 +26,6 @@ public class Fragment_Rebano extends Fragment {
     GridView gridView;
     FloatingActionButton fab_add;
 
-    static MainActivity main;
-
     public static ArrayList<Rebaño> rebanos;
 
     /**
@@ -35,9 +33,6 @@ public class Fragment_Rebano extends Fragment {
      */
     public Fragment_Rebano() {
         // Required empty public constructor
-    }
-    public Fragment_Rebano(MainActivity main) {
-        Fragment_Rebano.main = main;
     }
 
     /**
@@ -86,7 +81,7 @@ public class Fragment_Rebano extends Fragment {
     }
 
     void iniciarVista(){
-        rebanos = main.bdRebanos.getDatosObjetos();
+        rebanos = MainActivity.obtenerRebanos();
 
         GridAdapter_Rebano adapter = new GridAdapter_Rebano(this.getContext(), rebanos);
         gridView.setAdapter(adapter);
@@ -103,15 +98,5 @@ public class Fragment_Rebano extends Fragment {
             intent.putExtra(MainActivity.DATOS, new Rebaño());
             startActivity(intent);
         });
-    }
-
-    public static void actualizar(Rebaño rebano){
-        main.bdRebanos.actualizarBD(rebano);
-    }
-    public static void eliminar(Rebaño rebano){
-        main.bdRebanos.borrarDatos(rebano);
-    }
-    public static void anadir(Rebaño rebano){
-        main.bdRebanos.insertarDatos(rebano);
     }
 }

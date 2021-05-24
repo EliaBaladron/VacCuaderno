@@ -196,7 +196,7 @@ public class Activity_Animal extends AppCompatActivity {
         MainActivity.actualizar(this.animal);
     }
     void anadir(){
-        MainActivity.anadir(this.animal);
+        MainActivity.insertar(this.animal);
     }
 
 

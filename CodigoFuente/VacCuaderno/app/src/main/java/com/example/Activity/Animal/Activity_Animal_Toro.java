@@ -189,6 +189,6 @@ public class Activity_Animal_Toro extends AppCompatActivity {
         MainActivity.actualizar(this.animal);
     }
     void anadir(){
-        MainActivity.anadir(this.animal);
+        MainActivity.insertar(this.animal);
     }
 }

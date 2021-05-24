@@ -67,7 +67,7 @@ public class Activity_Crotal_Faltan extends AppCompatActivity {
      * Elimina el objeto mostrado
      */
     void eliminar(){
-        Fragment_Crotales_Faltan.eliminar(this.crotal);
+        MainActivity.eliminarFaltan(this.crotal);
         volver();
     }
     /**
@@ -161,9 +161,9 @@ public class Activity_Crotal_Faltan extends AppCompatActivity {
     }
 
     void actualizar(){
-        Fragment_Crotales_Faltan.actualizar(this.crotal);
+        MainActivity.actualizarFaltan(this.crotal);
     }
     void anadir(){
-        Fragment_Crotales_Faltan.anadir(this.crotal);
+        MainActivity.insertarFaltan(this.crotal);
     }
 }

@@ -27,8 +27,6 @@ public class Fragment_Crotales_Pedidos extends Fragment {
     GridView gridView;
     FloatingActionButton fab_add;
 
-    static MainActivity main;
-
     public static ArrayList<Crotal> crotales;
 
     /**
@@ -36,9 +34,6 @@ public class Fragment_Crotales_Pedidos extends Fragment {
      */
     public Fragment_Crotales_Pedidos() {
         // Required empty public constructor
-    }
-    public Fragment_Crotales_Pedidos(MainActivity main) {
-        Fragment_Crotales_Pedidos.main = main;
     }
 
     /**
@@ -88,7 +83,7 @@ public class Fragment_Crotales_Pedidos extends Fragment {
     }
 
     void iniciarVista(){
-        crotales = main.bdCrotalesPedidos.getDatosObjetos();
+        crotales = MainActivity.obtenerCrotalesPedidos();
 
         GridAdapter_Crotal adapter = new GridAdapter_Crotal(this.getContext(), crotales);
         gridView.setAdapter(adapter);
@@ -106,15 +101,5 @@ public class Fragment_Crotales_Pedidos extends Fragment {
             intent.putExtra(MainActivity.DATOS, new Crotal());
             startActivity(intent);
         });
-    }
-
-    public static void actualizar(Crotal crotal){
-        main.bdCrotalesPedidos.actualizarBD(crotal);
-    }
-    public static void eliminar(Crotal crotal){
-        main.bdCrotalesPedidos.borrarDatos(crotal);
-    }
-    public static void anadir(Crotal crotal){
-        main.bdCrotalesPedidos.insertarDatos(crotal);
     }
 }
