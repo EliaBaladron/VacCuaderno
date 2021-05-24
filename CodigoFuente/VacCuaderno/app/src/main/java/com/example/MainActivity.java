@@ -24,7 +24,7 @@ import com.example.BD.Crotales.BD_Crotales_Faltan;
 import com.example.BD.Crotales.BD_Crotales_Pedidos;
 import com.example.BD.Crotales.BD_Crotales_Recibidos;
 import com.example.BD.Crotales.BD_Crotales_SinPoner;
-import com.example.BD.Rebaño.BD_Rebaños;
+import com.example.BD.Rebano.BD_Rebanos;
 import com.example.BD.Veterinario.BD_Veterinario_Controles;
 import com.example.BD.Veterinario.BD_Veterinario_Visitas;
 import com.example.ClasesVO.Animales.Animal;
@@ -33,7 +33,7 @@ import com.example.ClasesVO.Animales.Vaca;
 import com.example.ClasesVO.CompraVenta.Compra;
 import com.example.ClasesVO.CompraVenta.Venta;
 import com.example.ClasesVO.Otros.Crotal;
-import com.example.ClasesVO.Otros.Rebaño;
+import com.example.ClasesVO.Otros.Rebano;
 import com.example.ClasesVO.Veterinario.Controles;
 import com.example.ClasesVO.Veterinario.Visitas;
 import com.example.FeedReader.FeedReaderDbHelper_VacApp;
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public static BD_Crotales_Pedidos bdCrotalesPedidos;
     public static BD_Crotales_Recibidos bdCrotalesRecibidos;
     public static BD_Crotales_SinPoner bdCrotalesSinPoner;
-    public static BD_Rebaños bdRebanos;
+    public static BD_Rebanos bdRebanos;
     public static BD_Veterinario_Controles bdVeterinarioControles;
     public static BD_Veterinario_Visitas bdVeterinarioVisitas;
     public static BD_Compraventa_Compras bdCompraventaCompras;
@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         bdCrotalesPedidos = new BD_Crotales_Pedidos(dbHelper_vacApp);
         bdCrotalesRecibidos = new BD_Crotales_Recibidos(dbHelper_vacApp);
         bdCrotalesSinPoner = new BD_Crotales_SinPoner(dbHelper_vacApp);
-        bdRebanos = new BD_Rebaños(dbHelper_vacApp);
+        bdRebanos = new BD_Rebanos(dbHelper_vacApp);
         bdVeterinarioControles = new BD_Veterinario_Controles(dbHelper_vacApp);
         bdVeterinarioVisitas = new BD_Veterinario_Visitas(dbHelper_vacApp);
         bdCompraventaCompras = new BD_Compraventa_Compras(dbHelper_vacApp);
@@ -461,31 +461,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         switch (item.getItemId()){
             case R.id.menu_animales:
-                Toast.makeText(this, "Área animales", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Area animales", Toast.LENGTH_SHORT).show();
                 iniciarAnimales();
                 break;
             case R.id.menu_compras:
-                Toast.makeText(this, "Área compras", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Area compras", Toast.LENGTH_SHORT).show();
                 iniciarCompras();
                 break;
             case R.id.menu_rebano:
-                Toast.makeText(this, "Área rebaño", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Area rebaño", Toast.LENGTH_SHORT).show();
                 iniciarRebano();
                 break;
             case R.id.menu_ventas:
-                Toast.makeText(this, "Área ventas", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Area ventas", Toast.LENGTH_SHORT).show();
                 iniciarVentas();
                 break;
             case R.id.menu_crotales:
-                Toast.makeText(this, "Área crotales", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Area crotales", Toast.LENGTH_SHORT).show();
                 iniciarCrotales();
                 break;
             case R.id.menu_veterinario:
-                Toast.makeText(this, "Área veterinario", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Area veterinario", Toast.LENGTH_SHORT).show();
                 iniciarVeterinario();
                 break;
             case R.id.menu_datos:
-                Toast.makeText(this, "Área datos", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Area datos", Toast.LENGTH_SHORT).show();
                 iniciarDatos();
                 break;
         }
@@ -525,7 +525,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         bdCrotalesSinPoner.insertarDatos(crotal);
     }
     //Rebaño
-    public static void insertar(Rebaño rebano){
+    public static void insertar(Rebano rebano){
         bdRebanos.insertarDatos(rebano);
     }
     //Veterinario
@@ -569,7 +569,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         bdCrotalesSinPoner.actualizarBD(crotal);
     }
     //Rebaño
-    public static void actualizar(Rebaño rebano){
+    public static void actualizar(Rebano rebano){
         bdRebanos.actualizarBD(rebano);
     }
     //Veterinario
@@ -612,7 +612,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         bdCrotalesSinPoner.borrarDatos(crotal);
     }
     //Rebaño
-    public static void eliminar(Rebaño rebano){
+    public static void eliminar(Rebano rebano){
         bdRebanos.borrarDatos(rebano);
     }
     //Veterinario
@@ -729,7 +729,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return bdCrotalesSinPoner.getDatosObjetos();
     }
     //Rebaño
-    public static ArrayList<Rebaño> obtenerRebanos(){
+    public static ArrayList<Rebano> obtenerRebanos(){
         return bdRebanos.getDatosObjetos();
     }
     //Veterinario

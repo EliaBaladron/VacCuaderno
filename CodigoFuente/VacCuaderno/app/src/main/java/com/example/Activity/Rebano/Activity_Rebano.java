@@ -9,8 +9,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.example.ClasesVO.Otros.Rebaño;
-import com.example.Fragment.Rebano.Fragment_Rebano;
+import com.example.ClasesVO.Otros.Rebano;
 import com.example.MainActivity;
 import com.example.prueba03.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -20,7 +19,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
  */
 public class Activity_Rebano extends AppCompatActivity {
 
-    Rebaño rebano;
+    Rebano rebano;
 
     boolean editar;
 
@@ -47,7 +46,7 @@ public class Activity_Rebano extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Intent intent = getIntent();
-        rebano = (Rebaño) intent.getSerializableExtra(MainActivity.DATOS);
+        rebano = (Rebano) intent.getSerializableExtra(MainActivity.DATOS);
         editar = intent.getBooleanExtra(MainActivity.EDITAR, true);
 
         iniciarComponentes();

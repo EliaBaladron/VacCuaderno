@@ -10,8 +10,8 @@ import android.widget.GridView;
 import androidx.fragment.app.Fragment;
 
 import com.example.Activity.Rebano.Activity_Rebano;
-import com.example.ClasesVO.Otros.Rebaño;
-import com.example.GridAdapter.Rebaño.GridAdapter_Rebano;
+import com.example.ClasesVO.Otros.Rebano;
+import com.example.GridAdapter.Rebano.GridAdapter_Rebano;
 import com.example.MainActivity;
 import com.example.prueba03.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -26,7 +26,7 @@ public class Fragment_Rebano extends Fragment {
     GridView gridView;
     FloatingActionButton fab_add;
 
-    public static ArrayList<Rebaño> rebanos;
+    public static ArrayList<Rebano> rebanos;
 
     /**
      * Constructor vacío del fragmento
@@ -95,7 +95,7 @@ public class Fragment_Rebano extends Fragment {
         fab_add.setOnClickListener(view -> {
             Intent intent = new Intent(getContext(), Activity_Rebano.class);
             intent.putExtra(MainActivity.EDITAR, false);
-            intent.putExtra(MainActivity.DATOS, new Rebaño());
+            intent.putExtra(MainActivity.DATOS, new Rebano());
             startActivity(intent);
         });
     }

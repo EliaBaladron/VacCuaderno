@@ -31,8 +31,8 @@ public class FeedReaderDbHelper_VacApp extends SQLiteOpenHelper {
         db.execSQL(FeedReaderContract_Animales_Terneros.    SQL_DELETE_ENTRIES);
         db.execSQL(FeedReaderContract_Animales_Terneros.    SQL_CREATE_ENTRIES);
 
-        db.execSQL(FeedReaderContract_Rebaño.               SQL_DELETE_ENTRIES);
-        db.execSQL(FeedReaderContract_Rebaño.               SQL_CREATE_ENTRIES);
+        db.execSQL(FeedReaderContract_Rebano.               SQL_DELETE_ENTRIES);
+        db.execSQL(FeedReaderContract_Rebano.               SQL_CREATE_ENTRIES);
 
         db.execSQL(FeedReaderContract_Veterinario_Controles.SQL_DELETE_ENTRIES);
         db.execSQL(FeedReaderContract_Veterinario_Controles.SQL_CREATE_ENTRIES);
@@ -70,7 +70,7 @@ public class FeedReaderDbHelper_VacApp extends SQLiteOpenHelper {
         db.execSQL(FeedReaderContract_Animales.             SQL_DELETE_ENTRIES);
         db.execSQL(FeedReaderContract_Animales_Vacas.       SQL_DELETE_ENTRIES);
         db.execSQL(FeedReaderContract_Animales_Terneros.    SQL_DELETE_ENTRIES);
-        db.execSQL(FeedReaderContract_Rebaño.               SQL_DELETE_ENTRIES);
+        db.execSQL(FeedReaderContract_Rebano.               SQL_DELETE_ENTRIES);
         db.execSQL(FeedReaderContract_Veterinario_Controles.SQL_DELETE_ENTRIES);
         db.execSQL(FeedReaderContract_Veterinario_Visitas.  SQL_DELETE_ENTRIES);
         db.execSQL(FeedReaderContract_Crotales_Faltan.      SQL_DELETE_ENTRIES);
