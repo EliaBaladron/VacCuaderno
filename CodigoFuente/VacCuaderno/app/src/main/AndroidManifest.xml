@@ -6,18 +6,18 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icono_vacuaderno"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/icono_vacuaderno"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Prueba03">
+        android:theme="@style/Theme.VacCuaderno">
 
         <activity android:name="com.example.Ayudas.Ayuda_Animales"
             android:theme="@style/Theme.AppCompat.DayNight.Dialog" />
 
         <activity
             android:name="com.example.MainActivity"
-            android:theme="@style/Theme.Prueba03.NoActionBar">
+            android:theme="@style/Theme.VacCuaderno.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,62 +28,70 @@
         <!-- Animales -->
         <activity
             android:name="com.example.Activity.Animal.Activity_Animal"
-            android:theme="@style/Theme.Prueba03.NoActionBar" />
+            android:theme="@style/Theme.VacCuaderno.NoActionBar"
+            android:windowSoftInputMode="adjustPan"
+            />
         <activity
             android:name="com.example.Activity.Animal.Activity_Animal_Ternero"
-            android:theme="@style/Theme.Prueba03.NoActionBar" />
+            android:theme="@style/Theme.VacCuaderno.NoActionBar"
+            android:windowSoftInputMode="adjustPan"
+            />
         <activity
             android:name="com.example.Activity.Animal.Activity_Animal_Vaca"
-            android:theme="@style/Theme.Prueba03.NoActionBar" />
+            android:theme="@style/Theme.VacCuaderno.NoActionBar"
+            android:windowSoftInputMode="adjustPan"
+            />
         <activity
             android:name="com.example.Activity.Animal.Activity_Animal_Toro"
-            android:theme="@style/Theme.Prueba03.NoActionBar" />
+            android:theme="@style/Theme.VacCuaderno.NoActionBar"
+            android:windowSoftInputMode="adjustPan"
+            />
 
         <!-- Crotales -->
         <activity
             android:name="com.example.Activity.Crotal.Activity_Crotal_Pedidos"
-            android:theme="@style/Theme.Prueba03.NoActionBar" />
+            android:theme="@style/Theme.VacCuaderno.NoActionBar" />
         <activity
             android:name="com.example.Activity.Crotal.Activity_Crotal_Recibidos"
-            android:theme="@style/Theme.Prueba03.NoActionBar" />
+            android:theme="@style/Theme.VacCuaderno.NoActionBar" />
         <activity
             android:name="com.example.Activity.Crotal.Activity_Crotal_SinPoner"
-            android:theme="@style/Theme.Prueba03.NoActionBar" />
+            android:theme="@style/Theme.VacCuaderno.NoActionBar" />
         <activity
             android:name="com.example.Activity.Crotal.Activity_Crotal_Faltan"
-            android:theme="@style/Theme.Prueba03.NoActionBar" />
+            android:theme="@style/Theme.VacCuaderno.NoActionBar" />
 
         <!-- Veterinario -->
         <activity
             android:name="com.example.Activity.Veterinario.Activity_Veterinario_Controles"
-            android:theme="@style/Theme.Prueba03.NoActionBar" />
+            android:theme="@style/Theme.VacCuaderno.NoActionBar" />
         <activity
             android:name="com.example.Activity.Veterinario.Activity_Veterinario_Visitas"
-            android:theme="@style/Theme.Prueba03.NoActionBar" />
+            android:theme="@style/Theme.VacCuaderno.NoActionBar" />
 
         <!-- Compraventa -->
         <activity
             android:name="com.example.Activity.Compraventa.Activity_Compraventa_Compras"
-            android:theme="@style/Theme.Prueba03.NoActionBar" />
+            android:theme="@style/Theme.VacCuaderno.NoActionBar" />
         <activity
             android:name="com.example.Activity.Compraventa.Activity_Compraventa_Ventas"
-            android:theme="@style/Theme.Prueba03.NoActionBar" />
+            android:theme="@style/Theme.VacCuaderno.NoActionBar" />
         <activity
             android:name="com.example.Activity.Compraventa.Activity_Compraventa_Ventas_Realizadas"
-            android:theme="@style/Theme.Prueba03.NoActionBar" />
+            android:theme="@style/Theme.VacCuaderno.NoActionBar" />
         <activity
             android:name="com.example.Activity.Compraventa.Activity_Compraventa_Ventas_Planificadas"
-            android:theme="@style/Theme.Prueba03.NoActionBar" />
+            android:theme="@style/Theme.VacCuaderno.NoActionBar" />
 
         <!-- Rebaño -->
         <activity
             android:name="com.example.Activity.Rebano.Activity_Rebano"
-            android:theme="@style/Theme.Prueba03.NoActionBar" />
+            android:theme="@style/Theme.VacCuaderno.NoActionBar" />
 
         <!-- Exportar -->
         <activity
             android:name="com.example.Activity.Datos.Activity_Exportar"
-            android:theme="@style/Theme.Prueba03.NoActionBar" />
+            android:theme="@style/Theme.VacCuaderno.NoActionBar" />
     </application>
 
 </manifest>
