@@ -86,7 +86,7 @@ public class Fragment_Veterinario_Visitas extends Fragment {
     }
 
     void iniciarVista(){
-        visitas = main.bdVeterinarioVisitas.getDatosobjetos();
+        visitas = main.bdVeterinarioVisitas.getDatosObjetos();
 
         GridAdapter_Visitas adapter = new GridAdapter_Visitas(this.getContext(), visitas);
         gridView.setAdapter(adapter);

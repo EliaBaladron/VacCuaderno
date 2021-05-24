@@ -30,6 +30,12 @@ import com.example.BD.Veterinario.BD_Veterinario_Visitas;
 import com.example.ClasesVO.Animales.Animal;
 import com.example.ClasesVO.Animales.Ternero;
 import com.example.ClasesVO.Animales.Vaca;
+import com.example.ClasesVO.CompraVenta.Compra;
+import com.example.ClasesVO.CompraVenta.Venta;
+import com.example.ClasesVO.Otros.Crotal;
+import com.example.ClasesVO.Otros.Rebaño;
+import com.example.ClasesVO.Veterinario.Controles;
+import com.example.ClasesVO.Veterinario.Visitas;
 import com.example.FeedReader.FeedReaderDbHelper_VacApp;
 
 import com.example.PagerAdapter.PagerAdapter_Animales;
@@ -60,15 +66,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public static BD_Animales bdAnimales;
     public static BD_Animales_Terneros bdAnimalesTerneros;
     public static BD_Animales_Vacas bdAnimalesVacas;
-    public BD_Crotales_Faltan bdCrotalesFaltan;
-    public BD_Crotales_Pedidos bdCrotalesPedidos;
-    public BD_Crotales_Recibidos bdCrotalesRecibidos;
-    public BD_Crotales_SinPoner bdCrotalesSinPoner;
-    public BD_Rebaños bdRebanos;
-    public BD_Veterinario_Controles bdVeterinarioControles;
-    public BD_Veterinario_Visitas bdVeterinarioVisitas;
-    public BD_Compraventa_Compras bdCompraventaCompras;
-    public BD_Compraventa_Ventas bdCompraventaVentas;
+    public static BD_Crotales_Faltan bdCrotalesFaltan;
+    public static BD_Crotales_Pedidos bdCrotalesPedidos;
+    public static BD_Crotales_Recibidos bdCrotalesRecibidos;
+    public static BD_Crotales_SinPoner bdCrotalesSinPoner;
+    public static BD_Rebaños bdRebanos;
+    public static BD_Veterinario_Controles bdVeterinarioControles;
+    public static BD_Veterinario_Visitas bdVeterinarioVisitas;
+    public static BD_Compraventa_Compras bdCompraventaCompras;
+    public static BD_Compraventa_Ventas bdCompraventaVentas;
 
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle toggle;
@@ -487,16 +493,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-    public static ArrayList<Ternero> obtenerTerneros(){
-        ArrayList<Ternero> terneros = bdAnimalesTerneros.getDatosObjetos();
-
-        for(Ternero ternero: terneros){
-            ArrayList<Animal> t = bdAnimales.getDatosObjeto(ternero.getCrotal());
-            ternero.setAnimal((Animal) t.get(0));
-        }
-        return terneros;
-    }
-
+    //Animales
     public static void anadir(Animal animal){
         bdAnimales.insertarDatos(animal);
     }
@@ -506,7 +503,41 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public static void anadir(Vaca vaca){
         bdAnimalesVacas.insertarDatos(vaca);
     }
+    //Compraventa
+    public static void anadir(Compra compra){
+        bdCompraventaCompras.insertarDatos(compra);
+    }
+    public static void anadir(Venta venta){
+        bdCompraventaVentas.insertarDatos(venta);
+    }
+    //Crotales
+    public static void anadirFaltan(Crotal crotal){
+        bdCrotalesFaltan.insertarDatos(crotal);
+    }
+    public static void anadirPedidos(Crotal crotal){
+        bdCrotalesPedidos.insertarDatos(crotal);
+    }
+    public static void anadirRecibidos(Crotal crotal){
+        bdCrotalesRecibidos.insertarDatos(crotal);
+    }
+    public static void anadirSinPoner(Crotal crotal){
+        bdCrotalesSinPoner.insertarDatos(crotal);
+    }
+    //Rebaño
+    public static void añadir(Rebaño rebano){
+        bdRebanos.insertarDatos(rebano);
+    }
+    //Veterinario
+    public static void añadir(Controles control){
+        bdVeterinarioControles.insertarDatos(control);
+    }
+    public static void añadir(Visitas visita){
+        bdVeterinarioVisitas.insertarDatos(visita);
+    }
 
+
+
+    //Animales
     public static void actualizar(Animal animal){
         bdAnimales.actualizarBD(animal);
     }
@@ -516,7 +547,40 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public static void actualizar(Vaca vaca){
         bdAnimalesVacas.actualizarBD(vaca);
     }
+    //Compraventa
+    public static void actualizar(Compra compra){
+        bdCompraventaCompras.actualizarBD(compra);
+    }
+    public static void actualizar(Venta venta){
+        bdCompraventaVentas.actualizarBD(venta);
+    }
+    //Crotales
+    public static void actualizarFaltan(Crotal crotal){
+        bdCrotalesFaltan.actualizarBD(crotal);
+    }
+    public static void actualizarPedidos(Crotal crotal){
+        bdCrotalesPedidos.actualizarBD(crotal);
+    }
+    public static void actualizarRecibidos(Crotal crotal){
+        bdCrotalesRecibidos.actualizarBD(crotal);
+    }
+    public static void actualizarSinPoner(Crotal crotal){
+        bdCrotalesSinPoner.actualizarBD(crotal);
+    }
+    //Rebaño
+    public static void actualizar(Rebaño rebano){
+        bdRebanos.actualizarBD(rebano);
+    }
+    //Veterinario
+    public static void actualizar(Controles control){
+        bdVeterinarioControles.actualizarBD(control);
+    }
+    public static void actualizar(Visitas visita){
+        bdVeterinarioVisitas.actualizarBD(visita);
+    }
 
+
+    //Animales
     public static void eliminar(Animal animal){
         bdAnimales.borrarDatos(animal);
     }
@@ -526,7 +590,37 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public static void eliminar(Vaca vaca){
         bdAnimalesVacas.borrarDatos(vaca);
     }
-
+    //Compraventa
+    public static void eliminar(Compra compra){
+        bdCompraventaCompras.borrarDatos(compra);
+    }
+    public static void eliminar(Venta venta){
+        bdCompraventaVentas.borrarDatos(venta);
+    }
+    //Crotales
+    public static void eliminarFaltan(Crotal crotal){
+        bdCrotalesFaltan.borrarDatos(crotal);
+    }
+    public static void eliminarPedidos(Crotal crotal){
+        bdCrotalesPedidos.borrarDatos(crotal);
+    }
+    public static void eliminarRecibidos(Crotal crotal){
+        bdCrotalesRecibidos.borrarDatos(crotal);
+    }
+    public static void eliminarSinPoner(Crotal crotal){
+        bdCrotalesSinPoner.borrarDatos(crotal);
+    }
+    //Rebaño
+    public static void eliminar(Rebaño rebano){
+        bdRebanos.borrarDatos(rebano);
+    }
+    //Veterinario
+    public static void eliminar(Controles control){
+        bdVeterinarioControles.borrarDatos(control);
+    }
+    public static void eliminar(Visitas visita){
+        bdVeterinarioVisitas.borrarDatos(visita);
+    }
 
     /**
      * Si existe un ternero con el crotal pasado se elimina de la BD
@@ -549,4 +643,77 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
+    //Animales
+    public static ArrayList<Animal> obtenerAnimales(){
+        return bdAnimales.getDatosObjetos();
+    }
+    public static ArrayList<Ternero> obtenerTerneros(){
+        ArrayList<Ternero> terneros = bdAnimalesTerneros.getDatosObjetos();
+
+        for(Ternero ternero: terneros){
+            ArrayList<Animal> t = bdAnimales.getDatosObjeto(ternero.getCrotal());
+            ternero.setAnimal((Animal) t.get(0));
+        }
+        return terneros;
+    }
+    public static ArrayList<Vaca> obtenerVacas(){
+        ArrayList<Vaca> vacas = bdAnimalesVacas.getDatosObjetos();
+
+        for(Vaca vaca: vacas){
+            ArrayList<Animal> t = bdAnimales.getDatosObjeto(vaca.getCrotal());
+            if(t.size() > 0)
+                vaca.setAnimal((Animal) t.get(0));
+        }
+        return vacas;
+    }
+    public static ArrayList<Animal> obtenerToros(){
+        ArrayList<Animal> toros = new ArrayList<>();
+
+        ArrayList<String> crotalesA = bdAnimales.getDatosCrotales();
+        ArrayList<String> crotalesV = bdAnimalesVacas.getDatosCrotales();
+        ArrayList<String> crotalesT = bdAnimalesTerneros.getDatosCrotales();
+
+        for(String crotal: crotalesV)
+            crotalesA.remove(crotal);
+        for(String crotal: crotalesT)
+            crotalesA.remove(crotal);
+
+        for(String crotal: crotalesA){
+            ArrayList<Animal> t = bdAnimales.getDatosObjeto(crotal);
+            toros.add((Animal) t.get(0));
+        }
+
+        return toros;
+    }
+    //Compraventa
+    public static ArrayList<Compra> obtenerCompras(){
+        return bdCompraventaCompras.getDatosObjetos();
+    }
+    public static ArrayList<Venta> obtenerVentas(){
+        return bdCompraventaVentas.getDatosObjetos();
+    }
+    //Crotales
+    public static ArrayList<Crotal> obtenerCrotalesFaltan(){
+        return bdCrotalesFaltan.getDatosObjetos();
+    }
+    public static ArrayList<Crotal> obtenerCrotalesPedidos(){
+        return bdCrotalesPedidos.getDatosObjetos();
+    }
+    public static ArrayList<Crotal> obtenerCrotalesRecibidos(){
+        return bdCrotalesRecibidos.getDatosObjetos();
+    }
+    public static ArrayList<Crotal> obtenerCrotalesSinPoner(){
+        return bdCrotalesSinPoner.getDatosObjetos();
+    }
+    //Rebaño
+    public static ArrayList<Rebaño> obtenerRebanos(){
+        return bdRebanos.getDatosObjetos();
+    }
+    //Veterinario
+    public static ArrayList<Controles> obtenerControles(){
+        return bdVeterinarioControles.getDatosObjetos();
+    }
+    public static ArrayList<Visitas> obtenerVisitas(){
+        return bdVeterinarioVisitas.getDatosObjetos();
+    }
 }

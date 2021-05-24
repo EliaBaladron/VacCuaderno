@@ -91,7 +91,7 @@ public class BD_Veterinario_Controles extends AppCompatActivity {
      * Obtiene todos los datos de la tabla y los guarda en objetos de la clase Controles
      * @return	Listado de Crotales
      */
-    public ArrayList<Controles> getDatosobjetos(){
+    public ArrayList<Controles> getDatosObjetos(){
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
         String sortOrder = FeedReaderContract_Veterinario_Controles.FeedEntry.FECHA + " ASC";

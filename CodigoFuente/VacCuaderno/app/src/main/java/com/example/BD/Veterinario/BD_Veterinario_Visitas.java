@@ -92,7 +92,7 @@ public class BD_Veterinario_Visitas extends AppCompatActivity {
      * Obtiene todos los datos de la tabla y los guarda en objetos de la clase Visitas
      * @return	Listado de las visitas
      */
-    public ArrayList<Visitas> getDatosobjetos(){
+    public ArrayList<Visitas> getDatosObjetos(){
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
         String sortOrder = FeedReaderContract_Veterinario_Visitas.FeedEntry.TITULO + " ASC";

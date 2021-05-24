@@ -86,7 +86,7 @@ public class Fragment_Veterinario_Controles extends Fragment {
     }
 
     void iniciarVista(){
-        controles = main.bdVeterinarioControles.getDatosobjetos();
+        controles = main.bdVeterinarioControles.getDatosObjetos();
 
         GridAdapter_Controles adapter = new GridAdapter_Controles(this.getContext(), controles);
         gridView.setAdapter(adapter);
