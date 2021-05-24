@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -28,13 +30,15 @@ public class Activity_Animal_Vaca extends AppCompatActivity {
     EditText viewNombre;
     EditText viewCrotal;
     EditText viewNacimiento;
-    EditText viewSexo;
+    //EditText viewSexo;
     EditText viewRaza;
     EditText viewMadre;
     EditText viewReb;
     EditText viewEmbarazo;
 
     GridView gridView;
+
+    Spinner spinner;
 
     FloatingActionButton fab_editar;
     FloatingActionButton fab_eliminar;
@@ -119,7 +123,8 @@ public class Activity_Animal_Vaca extends AppCompatActivity {
         viewNombre = findViewById(R.id.layout_animal_nombre);
         viewCrotal = findViewById(R.id.layout_animal_crotal);
         viewNacimiento = findViewById(R.id.layout_animal_fechaNac);
-        viewSexo = findViewById(R.id.layout_animal_sexo);
+        //viewSexo = findViewById(R.id.layout_animal_sexo);
+        iniciarSpinner();
         viewRaza = findViewById(R.id.layout_animal_raza);
         viewMadre = findViewById(R.id.layout_animal_codMadre);
         viewReb = findViewById(R.id.layout_animal_reb);
@@ -133,26 +138,35 @@ public class Activity_Animal_Vaca extends AppCompatActivity {
         fab_aceptar = findViewById(R.id.animal_vaca_aceptar);
         fab_cancelar = findViewById(R.id.animal_vaca_cancelar);
     }
+    void iniciarSpinner(){
+        spinner = (Spinner) findViewById(R.id.layout_animal_sexo);
+        //Crea un ArrayAdapter usando un string-array guardado en strings.xml
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.sexos_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+    }
     void iniciarListenersBotones(){
         fab_editar.setOnClickListener(view -> editar());
-
         fab_eliminar.setOnClickListener(view -> eliminar());
-
         fab_volver.setOnClickListener(view -> volver());
-
         fab_aceptar.setOnClickListener(view -> aceptar());
-
         fab_cancelar.setOnClickListener(view -> cancelar());
     }
     void iniciarDatos(){
         viewNombre.setText(vaca.getAnimal().getNombre());
         viewCrotal.setText(vaca.getAnimal().getCrotal());
         viewNacimiento.setText(vaca.getAnimal().getFechaNacString());
-        viewSexo.setText(vaca.getAnimal().getSexo());
+        //viewSexo.setText(vaca.getAnimal().getSexo());
         viewRaza.setText(vaca.getAnimal().getRaza());
         viewMadre.setText(vaca.getAnimal().getCodMadre());
         viewReb.setText(vaca.getAnimal().getIdReb());
         viewEmbarazo.setText(vaca.getFechaEmbarazoString());
+
+        if(vaca.getAnimal().getSexo().equals("M"))
+            spinner.setSelection(0);
+        else
+            spinner.setSelection(1);
 
         GridAdapter_Lista_Crotales adapter = new GridAdapter_Lista_Crotales(this.getApplicationContext(), vaca.getTerneros());
         gridView.setAdapter(adapter);
@@ -161,7 +175,8 @@ public class Activity_Animal_Vaca extends AppCompatActivity {
         vaca.getAnimal().setNombre(viewNombre.getText().toString());
         vaca.getAnimal().setCrotal(viewCrotal.getText().toString());
         vaca.getAnimal().setFechaNac(viewNacimiento.getText().toString());
-        vaca.getAnimal().setSexo(viewSexo.getText().toString());
+        //vaca.getAnimal().setSexo(viewSexo.getText().toString());
+        vaca.getAnimal().setSexo(spinner.getSelectedItem().toString());
         vaca.getAnimal().setRaza(viewRaza.getText().toString());
         vaca.getAnimal().setCodMadre(viewMadre.getText().toString());
         vaca.getAnimal().setIdReb(viewReb.getText().toString());
@@ -175,7 +190,8 @@ public class Activity_Animal_Vaca extends AppCompatActivity {
         viewNombre.setEnabled(true);
         viewCrotal.setEnabled(true);
         viewNacimiento.setEnabled(true);
-        viewSexo.setEnabled(true);
+        //viewSexo.setEnabled(true);
+        spinner.setEnabled(true);
         viewRaza.setEnabled(true);
         viewMadre.setEnabled(true);
         viewReb.setEnabled(true);
@@ -192,7 +208,8 @@ public class Activity_Animal_Vaca extends AppCompatActivity {
         viewNombre.setEnabled(false);
         viewCrotal.setEnabled(false);
         viewNacimiento.setEnabled(false);
-        viewSexo.setEnabled(false);
+        //viewSexo.setEnabled(false);
+        spinner.setEnabled(false);
         viewRaza.setEnabled(false);
         viewMadre.setEnabled(false);
         viewReb.setEnabled(false);

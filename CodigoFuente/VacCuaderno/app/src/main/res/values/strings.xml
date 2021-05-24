@@ -79,4 +79,10 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 
+
+    <string-array name="sexos_array">
+        <item>M</item>
+        <item>H</item>
+    </string-array>
+
 </resources>

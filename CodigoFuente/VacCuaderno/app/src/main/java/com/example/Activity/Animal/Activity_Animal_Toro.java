@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -26,10 +28,12 @@ public class Activity_Animal_Toro extends AppCompatActivity {
     EditText viewNombre;
     EditText viewCrotal;
     EditText viewNacimiento;
-    EditText viewSexo;
+    //EditText viewSexo;
     EditText viewRaza;
     EditText viewMadre;
     EditText viewReb;
+
+    Spinner spinner;
 
     FloatingActionButton fab_editar;
     FloatingActionButton fab_eliminar;
@@ -113,11 +117,11 @@ public class Activity_Animal_Toro extends AppCompatActivity {
         viewNombre = findViewById(R.id.layout_animal_nombre);
         viewCrotal = findViewById(R.id.layout_animal_crotal);
         viewNacimiento = findViewById(R.id.layout_animal_fechaNac);
-        viewSexo = findViewById(R.id.layout_animal_sexo);
+        //viewSexo = findViewById(R.id.layout_animal_sexo);
+        iniciarSpinner();
         viewRaza = findViewById(R.id.layout_animal_raza);
         viewMadre = findViewById(R.id.layout_animal_codMadre);
         viewReb = findViewById(R.id.layout_animal_reb);
-
 
         fab_editar = findViewById(R.id.animal_toro_editar);
         fab_eliminar = findViewById(R.id.animal_toro_eliminar);
@@ -125,29 +129,39 @@ public class Activity_Animal_Toro extends AppCompatActivity {
         fab_aceptar = findViewById(R.id.animal_toro_aceptar);
         fab_cancelar = findViewById(R.id.animal_toro_cancelar);
     }
+    void iniciarSpinner(){
+        spinner = (Spinner) findViewById(R.id.layout_animal_sexo);
+        //Crea un ArrayAdapter usando un string-array guardado en strings.xml
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.sexos_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+    }
     void iniciarListenerBotones(){
         fab_editar.setOnClickListener(view -> editar());
-
         fab_eliminar.setOnClickListener(view -> eliminar());
-
         fab_volver.setOnClickListener(view -> volver());
-
         fab_aceptar.setOnClickListener(view -> aceptar());
-
         fab_cancelar.setOnClickListener(view -> cancelar());
     }
     void iniciarDatos(){
         viewNombre.setText(animal.getNombre());
         viewNacimiento.setText(animal.getFechaNacString());
-        viewSexo.setText(animal.getSexo());
+        //viewSexo.setText(animal.getSexo());
         viewRaza.setText(animal.getRaza());
         viewMadre.setText(animal.getCodMadre());
         viewReb.setText(animal.getIdReb());
+
+        if(animal.getSexo().equals("M"))
+            spinner.setSelection(0);
+        else
+            spinner.setSelection(1);
     }
     void obtenerDatos(){
         animal.setNombre(viewNombre.getText().toString());
         animal.setFechaNac(viewNacimiento.getText().toString());
-        animal.setSexo(viewSexo.getText().toString());
+        //animal.setSexo(viewSexo.getText().toString());
+        animal.setSexo(spinner.getSelectedItem().toString());
         animal.setRaza(viewRaza.getText().toString());
         animal.setCodMadre(viewMadre.getText().toString());
         animal.setIdReb(viewReb.getText().toString());
@@ -157,7 +171,8 @@ public class Activity_Animal_Toro extends AppCompatActivity {
     void hacerEditable(){
         viewNombre.setEnabled(true);
         viewNacimiento.setEnabled(true);
-        viewSexo.setEnabled(true);
+        //viewSexo.setEnabled(true);
+        spinner.setEnabled(true);
         viewRaza.setEnabled(true);
         viewMadre.setEnabled(true);
         viewReb.setEnabled(true);
@@ -172,7 +187,8 @@ public class Activity_Animal_Toro extends AppCompatActivity {
     void hacerNoEditable(){
         viewNombre.setEnabled(false);
         viewNacimiento.setEnabled(false);
-        viewSexo.setEnabled(false);
+        //viewSexo.setEnabled(false);
+        spinner.setEnabled(false);
         viewRaza.setEnabled(false);
         viewMadre.setEnabled(false);
         viewReb.setEnabled(false);

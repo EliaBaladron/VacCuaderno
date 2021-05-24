@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -26,12 +28,14 @@ public class Activity_Animal_Ternero extends AppCompatActivity {
     EditText viewNombre;
     EditText viewCrotal;
     EditText viewNacimiento;
-    EditText viewSexo;
+    //EditText viewSexo;
     EditText viewRaza;
     EditText viewMadre;
     EditText viewReb;
     EditText viewDestete;
     EditText viewProposito;
+
+    Spinner spinner;
 
     FloatingActionButton fab_editar;
     FloatingActionButton fab_eliminar;
@@ -115,7 +119,8 @@ public class Activity_Animal_Ternero extends AppCompatActivity {
         viewNombre = findViewById(R.id.layout_animal_nombre);
         viewCrotal = findViewById(R.id.layout_animal_crotal);
         viewNacimiento = findViewById(R.id.layout_animal_fechaNac);
-        viewSexo = findViewById(R.id.layout_animal_sexo);
+        //viewSexo = findViewById(R.id.layout_animal_sexo);
+        iniciarSpinner();
         viewRaza = findViewById(R.id.layout_animal_raza);
         viewMadre = findViewById(R.id.layout_animal_codMadre);
         viewReb = findViewById(R.id.layout_animal_reb);
@@ -129,37 +134,48 @@ public class Activity_Animal_Ternero extends AppCompatActivity {
         fab_aceptar = findViewById(R.id.animal_ternero_aceptar);
         fab_cancelar = findViewById(R.id.animal_ternero_cancelar);
     }
+    void iniciarSpinner(){
+        spinner = (Spinner) findViewById(R.id.layout_animal_sexo);
+        //Crea un ArrayAdapter usando un string-array guardado en strings.xml
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.sexos_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+    }
     void iniciarListenerBotones(){
         fab_editar.setOnClickListener(view -> editar());
-
         fab_eliminar.setOnClickListener(view -> eliminar());
-
         fab_volver.setOnClickListener(view -> volver());
-
         fab_aceptar.setOnClickListener(view -> aceptar());
-
         fab_cancelar.setOnClickListener(view -> cancelar());
     }
     void iniciarDatos(){
         viewNombre.setText(ternero.getAnimal().getNombre());
         viewCrotal.setText(ternero.getAnimal().getCrotal());
         viewNacimiento.setText(ternero.getAnimal().getFechaNacString());
-        viewSexo.setText(ternero.getAnimal().getSexo());
+        //viewSexo.setText(ternero.getAnimal().getSexo());
         viewRaza.setText(ternero.getAnimal().getRaza());
         viewMadre.setText(ternero.getAnimal().getCodMadre());
         viewReb.setText(ternero.getAnimal().getIdReb());
+
+        if(ternero.getAnimal().getSexo().equals("M"))
+            spinner.setSelection(0);
+        else
+            spinner.setSelection(1);
 
         if(ternero.getFechaDestete() == null)
             viewDestete.setText("");
         else
             viewDestete.setText(ternero.getFechaDestete().toString());
+
         viewProposito.setText(ternero.getProposito());
     }
     void obtenerDatos(){
         ternero.getAnimal().setNombre(viewNombre.getText().toString());
         ternero.getAnimal().setCrotal(viewCrotal.getText().toString());
         ternero.getAnimal().setFechaNac(viewNacimiento.getText().toString());
-        ternero.getAnimal().setSexo(viewSexo.getText().toString());
+        //ternero.getAnimal().setSexo(viewSexo.getText().toString());
+        ternero.getAnimal().setSexo(spinner.getSelectedItem().toString());
         ternero.getAnimal().setRaza(viewRaza.getText().toString());
         ternero.getAnimal().setCodMadre(viewMadre.getText().toString());
         ternero.getAnimal().setIdReb(viewReb.getText().toString());
@@ -174,7 +190,8 @@ public class Activity_Animal_Ternero extends AppCompatActivity {
         viewNombre.setEnabled(true);
         viewCrotal.setEnabled(true);
         viewNacimiento.setEnabled(true);
-        viewSexo.setEnabled(true);
+        //viewSexo.setEnabled(true);
+        spinner.setEnabled(true);
         viewRaza.setEnabled(true);
         viewMadre.setEnabled(true);
         viewReb.setEnabled(true);
@@ -192,7 +209,8 @@ public class Activity_Animal_Ternero extends AppCompatActivity {
         viewNombre.setEnabled(false);
         viewCrotal.setEnabled(false);
         viewNacimiento.setEnabled(false);
-        viewSexo.setEnabled(false);
+        //viewSexo.setEnabled(false);
+        spinner.setEnabled(false);
         viewRaza.setEnabled(false);
         viewMadre.setEnabled(false);
         viewReb.setEnabled(false);

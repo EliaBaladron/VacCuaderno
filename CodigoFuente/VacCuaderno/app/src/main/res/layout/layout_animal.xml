@@ -74,16 +74,14 @@
             android:textColor="@color/verdeOscuro"
             android:textSize="30sp" />
 
-        <EditText
+        <include
             android:enabled="false"
-            android:id="@+id/layout_animal_sexo"
             android:layout_width="225dp"
             android:layout_height="50dp"
             android:layout_row="3"
             android:layout_column="1"
-            android:gravity="center"
-            android:text="sexo"
-            android:textSize="25sp" />
+            layout="@layout/spinner"
+            />
 
         <TextView
             android:layout_width="175dp"
