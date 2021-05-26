@@ -80,7 +80,6 @@ public class Activity_Animal_Vaca extends AppCompatActivity {
      */
     void eliminar(){
         MainActivity.eliminar(this.vaca.getAnimal());
-        MainActivity.eliminar(this.vaca);
         volver();
     }
     /**

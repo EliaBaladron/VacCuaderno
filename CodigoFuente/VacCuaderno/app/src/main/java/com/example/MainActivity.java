@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public static String DATOS = "Datos";
     public static String EDITAR = "Editar";
+    public static String CROTAL = "Crotal";
 
     FeedReaderDbHelper_VacApp dbHelper_vacApp;
 
@@ -455,9 +456,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         drawerLayout.closeDrawer(GravityCompat.START);
-        /*if(item.getItemId() == R.id.menu_animales){
-            Toast.makeText(this, "Boton animales", Toast.LENGTH_SHORT).show();
-        }*/
 
         switch (item.getItemId()){
             case R.id.menu_animales:
@@ -584,6 +582,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //Animales
     public static void eliminar(Animal animal){
         bdAnimales.borrarDatos(animal);
+
+        eliminarVaca(animal.getCrotal());
+        eliminarTernero(animal.getCrotal());
     }
     public static void eliminar(Ternero ternero){
         bdAnimalesTerneros.borrarDatos(ternero);
@@ -624,6 +625,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     /**
+     * Si existe un animal con el crotal pasado se elimina de la BD
+     * @param crotal    Crotal a comprobar y borrar si existe
+     */
+    public static void eliminarAnimal(String crotal){
+        ArrayList<Animal> animales = bdAnimales.getDatosObjeto(crotal);
+        if(animales.size() > 0)
+            bdAnimales.borrarDatos(animales.get(0));
+    }
+    /**
      * Si existe un ternero con el crotal pasado se elimina de la BD
      * @param crotal    Crotal a comprobar y borrar si existe
      */
@@ -653,7 +663,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         for(Ternero ternero: terneros){
             ArrayList<Animal> t = bdAnimales.getDatosObjeto(ternero.getCrotal());
-            ternero.setAnimal((Animal) t.get(0));
+            ternero.setAnimal(t.get(0));
         }
         return terneros;
     }
@@ -663,7 +673,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         for(Vaca vaca: vacas){
             ArrayList<Animal> t = bdAnimales.getDatosObjeto(vaca.getCrotal());
             if(t.size() > 0)
-                vaca.setAnimal((Animal) t.get(0));
+                vaca.setAnimal(t.get(0));
         }
         return vacas;
     }
@@ -681,7 +691,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         for(String crotal: crotalesA){
             ArrayList<Animal> t = bdAnimales.getDatosObjeto(crotal);
-            toros.add((Animal) t.get(0));
+            toros.add(t.get(0));
         }
 
         return toros;

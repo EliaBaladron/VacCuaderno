@@ -75,8 +75,6 @@ public class Activity_Animal extends AppCompatActivity {
      */
     void eliminar(){
         MainActivity.eliminar(this.animal);
-        MainActivity.eliminarVaca(this.animal.getCrotal());
-        MainActivity.eliminarTernero(this.animal.getCrotal());
 
         volver();
     }

@@ -12,4 +12,7 @@
     <color name="verde">#24B229</color>
     <color name="verdeOscuro">#097F0C</color>
     <color name="verdeGris">#66806C</color>
+
+    <color name="rojoFondo">#F68080</color>
+    <color name="verdeFondo">#AEF3AE</color>
 </resources>

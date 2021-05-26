@@ -76,7 +76,6 @@ public class Activity_Animal_Ternero extends AppCompatActivity {
      */
     void eliminar(){
         MainActivity.eliminar(this.ternero.getAnimal());
-        MainActivity.eliminar(this.ternero);
         volver();
     }
     /**

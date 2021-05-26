@@ -87,7 +87,7 @@ public class Fragment_Animales extends Fragment {
     }
 
     void iniciarVista(){
-        animales = MainActivity.bdAnimales.getDatosObjetos();
+        animales = MainActivity.obtenerAnimales();
 
         GridAdapter_Animal adapter = new GridAdapter_Animal(this.getContext(), animales);
         gridView.setAdapter(adapter);

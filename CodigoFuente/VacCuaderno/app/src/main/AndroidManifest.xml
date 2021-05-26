@@ -73,9 +73,13 @@
         <activity
             android:name="com.example.Activity.Compraventa.Activity_Compraventa_Compras"
             android:theme="@style/Theme.VacCuaderno.NoActionBar" />
+        <activity android:name="com.example.Activity.Compraventa.Pregunta_Alta"
+            android:theme="@style/Theme.AppCompat.DayNight.Dialog" />
         <activity
             android:name="com.example.Activity.Compraventa.Activity_Compraventa_Ventas"
             android:theme="@style/Theme.VacCuaderno.NoActionBar" />
+        <activity android:name="com.example.Activity.Compraventa.Pregunta_Baja"
+            android:theme="@style/Theme.AppCompat.DayNight.Dialog" />
         <activity
             android:name="com.example.Activity.Compraventa.Activity_Compraventa_Ventas_Realizadas"
             android:theme="@style/Theme.VacCuaderno.NoActionBar" />

@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.ClasesVO.CompraVenta.Venta;
-import com.example.Fragment.Compraventa.Fragment_Compraventa_Ventas;
 import com.example.MainActivity;
 import com.example.prueba03.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -170,5 +169,8 @@ public class Activity_Compraventa_Ventas extends AppCompatActivity {
     }
     void anadir(){
         MainActivity.insertar(this.venta);
+        Intent intent = new Intent(getApplicationContext(), Pregunta_Baja.class);
+        intent.putExtra(MainActivity.CROTAL, venta.getCrotal());
+        startActivity(intent);
     }
 }
